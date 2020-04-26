@@ -1,11 +1,7 @@
 import React from "react"
 
 export default () => (
-  <div
-    style={{
-      marginLeft: `1.2em`,
-    }}
-  >
+  <div>
     <link
       href="https://fonts.googleapis.com/css?family=Playfair+Display:400,600,900i&display=swap"
       rel="stylesheet"
@@ -17,7 +13,7 @@ export default () => (
         fontStyle: `italic`,
       }}
     >
-      willhall.uk
+      Oops.
     </h1>
     <h3
       style={{
@@ -25,15 +21,7 @@ export default () => (
         fontWeight: `600`,
       }}
     >
-      Under construction and coming soon.
+      Nothing to see here.
     </h3>
-    <p
-      style={{
-        fontFamily: `Playfair Display`,
-        fontWeight: `400`,
-      }}
-    >
-      Tweet <a href="https://twitter.com/WillTheVideoMan">@WillTheVideoMan</a>.
-    </p>
   </div>
 )
