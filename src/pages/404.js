@@ -1,27 +1,11 @@
 import React from "react"
+import Layout from "../components/Layout"
+import Greeting from "../components/Greeting"
+import SEO from "../components/SEO"
 
 export default () => (
-  <div>
-    <link
-      href="https://fonts.googleapis.com/css?family=Playfair+Display:400,600,900i&display=swap"
-      rel="stylesheet"
-    />
-    <h1
-      style={{
-        fontFamily: `Playfair Display`,
-        fontWeight: `900`,
-        fontStyle: `italic`,
-      }}
-    >
-      Oops.
-    </h1>
-    <h3
-      style={{
-        fontFamily: `Playfair Display`,
-        fontWeight: `600`,
-      }}
-    >
-      Nothing to see here.
-    </h3>
-  </div>
+  <Layout>
+    <SEO title="Oops" />
+    <Greeting headline="Oops." message="Nothing to see here." />
+  </Layout>
 )
