@@ -1,0 +1,13 @@
+name: Say Hello
+on: [push,pull_request]
+
+jobs:
+  Greeting:
+    name: Greeting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World
+        run: echo 'Hello World'
+        id: hello
+      - name: Print Greeting Time
+        run: echo 'Hello was printed at ${{steps.hello.outputs.time}}'
