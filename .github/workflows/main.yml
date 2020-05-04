@@ -1,0 +1,10 @@
+name: oopsy test
+on: [push,pull_request]
+jobs:
+  fail:
+   runs-on: ubuntu-latest
+   name: Failure!
+   steps:
+     - name: Break
+       run: npm run break
+       id: break
