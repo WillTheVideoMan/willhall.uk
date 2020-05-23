@@ -5,7 +5,7 @@ import SEO from "../components/SEO"
 
 export default () => (
   <Layout>
-    <SEO title="Welcome" pathname="/" />
+    <SEO title="Welcome" route="/" />
     <Greeting
       headline="willhall.uk"
       message="Under construction and coming soon."
