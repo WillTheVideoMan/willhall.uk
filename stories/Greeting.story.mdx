@@ -1,0 +1,30 @@
+import { Meta, Story, Preview, Props } from "@storybook/addon-docs/blocks"
+import Greeting from "../src/components/Greeting"
+import { withKnobs, text } from "@storybook/addon-knobs"
+
+<Meta title="Greeting" component={Greeting} decorators={[withKnobs]} />
+
+# Greeting
+
+This is what a greeting looks like - pretty cool.
+
+<Preview>
+  <Story name="Default Greeting">
+    <Greeting
+      headline={text("Headline", "willhall.uk")}
+      message={text("Message", "Under construction and coming soon.")}
+    />
+  </Story>
+</Preview>
+
+<Props of={Greeting} />
+
+Greetings also support having no message.
+
+<Preview>
+  <Story name="No Message Greeting">
+    <Greeting headline={text("Headline", "willhall.uk")} message={" "} />
+  </Story>
+</Preview>
+
+All greetings have a fun tweet section, so all homies can follow me on twitter.

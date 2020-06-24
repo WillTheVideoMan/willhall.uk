@@ -11,7 +11,9 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "babel-plugin-styled-components": "1.10.7",
@@ -29,7 +31,24 @@
     "styled-components": "5.1.0"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "@babel/core": "^7.10.3",
+    "@storybook/addon-a11y": "^5.3.19",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-console": "^1.2.1",
+    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/addon-knobs": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addon-storyshots": "^5.3.19",
+    "@storybook/addon-viewport": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "babel-jest": "^26.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-gatsby": "^0.4.12",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "25.5.4",
+    "prettier": "2.0.5",
+    "react-test-renderer": "^16.13.1"
   },
   "repository": {
     "type": "git",

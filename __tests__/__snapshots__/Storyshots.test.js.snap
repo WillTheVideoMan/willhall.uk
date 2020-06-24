@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Greeting Example Story 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "#eeeeee",
+      "padding": "16px",
+    }
+  }
+>
+  <h1
+    style={
+      Object {
+        "color": "rebeccapurple",
+      }
+    }
+  >
+    Hello from Storybook and Gatsby!
+  </h1>
+</div>
+`;
