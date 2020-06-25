@@ -9,7 +9,7 @@ const Headline = styled.h1`
   font-weight: 900;
   font-style: italic;
 `
-const Message = styled.h3`
+const Message = styled.h2`
   font-weight: 600;
 `
 /**
@@ -17,9 +17,9 @@ const Message = styled.h3`
  */
 const Greeting = ({ headline, message }) => (
   <Container>
-    <Headline>{headline}</Headline>
-    <Message>{message}</Message>
-    <p>
+    <Headline data-testid="greeting-headline">{headline}</Headline>
+    <Message data-testid="greeting-message">{message}</Message>
+    <p data-testid="greeting-tweet">
       Tweet <a href="https://twitter.com/WillTheVideoMan">@WillTheVideoMan</a>.
     </p>
   </Container>

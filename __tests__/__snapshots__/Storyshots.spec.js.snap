@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Greeting Default Greeting 1`] = `
+<div
+  className="sc-AxjAm bDXhOS"
+>
+  <h1
+    className="sc-AxirZ ixGLQw"
+    data-testid="greeting-headline"
+  >
+    willhall.uk
+  </h1>
+  <h2
+    className="sc-AxiKw cvnEaT"
+    data-testid="greeting-message"
+  >
+    Under construction and coming soon.
+  </h2>
+  <p
+    data-testid="greeting-tweet"
+  >
+    Tweet 
+    <a
+      href="https://twitter.com/WillTheVideoMan"
+    >
+      @WillTheVideoMan
+    </a>
+    .
+  </p>
+</div>
+`;
+
+exports[`Storyshots Greeting No Message 1`] = `
+<div
+  className="sc-AxjAm bDXhOS"
+>
+  <h1
+    className="sc-AxirZ ixGLQw"
+    data-testid="greeting-headline"
+  >
+    willhall.uk
+  </h1>
+  <h2
+    className="sc-AxiKw cvnEaT"
+    data-testid="greeting-message"
+  >
+    
+  </h2>
+  <p
+    data-testid="greeting-tweet"
+  >
+    Tweet 
+    <a
+      href="https://twitter.com/WillTheVideoMan"
+    >
+      @WillTheVideoMan
+    </a>
+    .
+  </p>
+</div>
+`;
