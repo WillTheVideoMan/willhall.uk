@@ -21,7 +21,7 @@ test("displays the headline only when no message is provided", () => {
   render(<Greeting headline={headline} />)
 
   expect(screen.getByTestId("greeting-headline")).toHaveTextContent(headline)
-  expect(screen.getByTestId("greeting-message")).toHaveTextContent("")
+  expect(screen.queryByTestId("greeting-message")).toBeNull()
   expect(screen.getByTestId("greeting-tweet")).toHaveTextContent(
     "Tweet @WillTheVideoMan"
   )

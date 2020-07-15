@@ -40,12 +40,6 @@ exports[`Storyshots Greeting No Message 1`] = `
   >
     willhall.uk
   </h1>
-  <h2
-    className="sc-AxiKw cvnEaT"
-    data-testid="greeting-message"
-  >
-    
-  </h2>
   <p
     data-testid="greeting-tweet"
   >
