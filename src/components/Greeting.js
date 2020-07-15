@@ -18,7 +18,9 @@ const Message = styled.h2`
 const Greeting = ({ headline, message }) => (
   <Container>
     <Headline data-testid="greeting-headline">{headline}</Headline>
-    <Message data-testid="greeting-message">{message}</Message>
+    {message ? (
+      <Message data-testid="greeting-message">{message}</Message>
+    ) : null}
     <p data-testid="greeting-tweet">
       Tweet <a href="https://twitter.com/WillTheVideoMan">@WillTheVideoMan</a>.
     </p>
