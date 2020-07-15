@@ -11,10 +11,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Cypress run [Chrome]
-        uses: cypress-io/github-action@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
         with:
-          browser: chrome
-          start: npm run start
-          wait-on: "http://localhost:8000"
-          cache-key: ${{ runner.os }}-hash-${{ hashFiles('**/package.lock') }}
+          path: ~/.npm
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+      - name: Install modules
+        run: npm ci
+      - name: Run tests
+        run: npm run test:e2e:ci
