@@ -3,12 +3,26 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ lang, meta, title, description, pathname }) => {
-  const { site } = useStaticQuery(
+/**
+ * Inserts proper SEO tags into the document head.
+ *
+ * @param {*} props - title is the only required prop. Route is recommended where possible.
+ */
+const SEO = ({ lang, title, description, route }) => {
+  /**
+   * Query the site metadata from the Gatsby configuration and from Ghost.
+   */
+  const { ghostSettings, site } = useStaticQuery(
     graphql`
       query {
+        ghostSettings {
+          lang
+          title
+          description
+        }
         site {
           siteMetadata {
+            lang
             title
             description
             author
@@ -19,40 +33,60 @@ const SEO = ({ lang, meta, title, description, pathname }) => {
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  /**
+   * Set the language from props, then from Ghost, then from Gatsby config.
+   */
+  const metaLang =
+    lang || (ghostSettings ? ghostSettings.lang : site.siteMetadata.lang)
 
-  const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null
+  /**
+   * The site title does not change between routes.
+   *
+   * Set the site tail from Ghost, then from Gatsby config.
+   */
+  const metaSiteTitle = ghostSettings
+    ? ghostSettings.title
+    : site.siteMetadata.title
+
+  /**
+   * Set the description from props, then from Ghost, then from Gatbsy config.
+   */
+  const metaDescription =
+    description ||
+    (ghostSettings ? ghostSettings.description : site.siteMetadata.description)
+
+  /**
+   * If a route is passed in props, set absolute canonical URL of the current route.
+   */
+  const canonical = route ? `${site.siteMetadata.siteUrl}${route}` : null
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
+      htmlAttributes={{ lang: metaLang }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${metaSiteTitle}`}
       link={canonical ? [{ rel: `canonical`, href: canonical }] : []}
       meta={[
         {
           name: `description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ]}
     />
   )
 }
 
 SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
+  lang: ``,
   description: ``,
+  route: ``,
 }
 
 SEO.propTypes = {
   lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
-  pathname: PropTypes.string,
+  route: PropTypes.string,
 }
 
 export default SEO
