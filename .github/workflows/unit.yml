@@ -2,16 +2,16 @@ name: Unit tests
 on: [push]
 jobs:
   jest-run:
-     runs-on: ubuntu-latest
-     steps:
-       - name: Checkout
-         uses: actions/checkout@v2
-       - name: Cache node modules
-         uses: actions/cache@v2
-         with:
-           path: ~/.npm 
-           key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
-       - name: Install modules
-         run: npm ci
-       - name: Run tests
-         run: npm run test:jest
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+      - name: Install modules
+        run: npm ci
+      - name: Run tests
+        run: npm run test:jest
