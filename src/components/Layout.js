@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 
-const App = styled.div`
+const App = styled.main`
   margin-left: 1.2em;
 `
 const Link = styled.p`

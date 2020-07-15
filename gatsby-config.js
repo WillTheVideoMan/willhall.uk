@@ -10,12 +10,21 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
+    lang: `en`,
     title: `Will Hall`,
     description: `Will Hall's Journey Through Everything.`,
     author: `Will Hall`,
     siteUrl: process.env.SITE_URL,
   },
   plugins: [
+    {
+      resolve: `gatsby-source-ghost`,
+      options: {
+        apiUrl: process.env.GHOST_API_URL,
+        contentApiKey: process.env.GHOST_CONTENT_API_KEY,
+      },
+    },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
