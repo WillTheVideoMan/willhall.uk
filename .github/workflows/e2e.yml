@@ -1,7 +1,7 @@
 name: End-to-end tests
 on: [push]
 env:
-  SITE_URL: 'http://localhost:9000'
+  SITE_URL: "http://localhost:8000"
   METOMIC_CLIENT_ID: ${{ secrets.METOMIC_CLIENT_ID }}
   GHOST_API_URL: http://gatsby.ghost.io
   GHOST_CONTENT_API_KEY: ${{ secrets.GHOST_CONTENT_API_KEY }}
@@ -15,6 +15,6 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           browser: chrome
-          build: npm run build 
-          start: npm run serve
-          wait-on: 'http://localhost:9000'
+          start: npm run start
+          wait-on: "http://localhost:8000"
+          cache-key: ${{ runner.os }}-hash-${{ hashFiles('**/package.lock') }}
