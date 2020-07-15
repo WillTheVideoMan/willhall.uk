@@ -7,8 +7,6 @@ jobs:
        - name: Checkout
          uses: actions/checkout@v2
        - name: Install modules
-         run: npm install
-       - name: Build site
-         run: npm run build
+         run: npm ci
        - name: Run tests
-         run: npm test:jest
+         run: npm run test:jest

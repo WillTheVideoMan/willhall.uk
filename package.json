@@ -24,9 +24,9 @@
     "gatsby-plugin-metomic": "0.0.2",
     "gatsby-plugin-offline": "3.2.17",
     "gatsby-plugin-react-helmet": "3.3.10",
-    "gatsby-plugin-sitemap": "2.4.0",
+    "gatsby-plugin-sitemap": "2.4.11",
     "gatsby-plugin-styled-components": "3.3.10",
-    "gatsby-source-ghost": "4.0.4",
+    "gatsby-source-ghost": "4.0.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-helmet": "6.1.0",
@@ -57,7 +57,7 @@
     "jest": "25.5.4",
     "prettier": "2.0.5",
     "react-test-renderer": "16.13.1",
-    "start-server-and-test": "1.11.0"
+    "start-server-and-test": "1.11.2"
   },
   "repository": {
     "type": "git",
