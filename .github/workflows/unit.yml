@@ -1,10 +1,5 @@
 name: Unit testing
 on: [push]
-env:
-  SITE_URL: 'http://localhost:8000'
-  METOMIC_CLIENT_ID: ${{ secrets.METOMIC_CLIENT_ID }}
-  GHOST_API_URL: http://gatsby.ghost.io
-  GHOST_CONTENT_API_KEY: ${{ secrets.GHOST_CONTENT_API_KEY }}
 jobs:
   jest-run:
      runs-on: ubuntu-latest
@@ -12,8 +7,6 @@ jobs:
        - name: Checkout
          uses: actions/checkout@v2
        - name: Install modules
-         run: npm install
-       - name: Build site
-         run: npm start
+         run: npm ci
        - name: Run tests
          run: npm test:jest
