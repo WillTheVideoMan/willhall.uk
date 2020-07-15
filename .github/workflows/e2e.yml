@@ -7,16 +7,13 @@ env:
   GHOST_CONTENT_API_KEY: ${{ secrets.GHOST_CONTENT_API_KEY }}
 jobs:
   cypress-run-linux:
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/checkout@v1
+      - name: Cypress run [Chrome]
+        uses: cypress-io/github-action@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
-      - name: Install modules
-        run: npm ci
-      - name: Run tests
-        run: npm run test:e2e:ci
+          browser: chrome
+          start: npm run start
+          wait-on: "http://localhost:8000"
