@@ -16,4 +16,5 @@ jobs:
         with:
           browser: chrome
           start: npm run start
+          cache-key: ${{ runner.os }}-hash-${{ hashFiles('package-lock.json') }}
           wait-on: "http://localhost:8000"
