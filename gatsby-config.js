@@ -24,6 +24,21 @@ module.exports = {
         contentApiKey: process.env.GHOST_CONTENT_API_KEY,
       },
     },
+    {
+      resolve: `gatsby-transformer-rehype`,
+      options: {
+        filter: node => node.internal.type === `GhostPost`,
+        source: node => node.html,
+        plugins: [
+          {
+            resolve: `gatsby-rehype-ghost-links`,
+            resolve: `gatsby-rehype-ghost-images`,
+            resolve: `gatsby-rehype-inline-images`,
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-sharp`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,

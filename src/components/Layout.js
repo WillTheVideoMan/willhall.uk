@@ -1,6 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
+import { Normalize } from "styled-normalize"
 
 const App = styled.main`
   margin-left: 1.2em;
@@ -20,9 +21,10 @@ export default ({ children }) => (
   <App>
     <Helmet>
       <link
-        href="https://fonts.googleapis.com/css?family=Playfair+Display:400,600,900i&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
         rel="stylesheet"
       />
+      <Normalize />
     </Helmet>
     {children}
     <Footer>

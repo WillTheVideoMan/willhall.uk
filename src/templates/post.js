@@ -1,14 +1,15 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Article from "../components/Article"
+import Layout from "../components/Layout"
 
 const Post = ({ data }) => {
   const post = data.ghostPost
-
   return (
-    <>
+    <Layout>
       <h1>{post.title}</h1>
-      <p dangerouslySetInnerHTML={{ __html: post.html }} />
-    </>
+      <Article htmlAst={post.childHtmlRehype.htmlAst} />
+    </Layout>
   )
 }
 
@@ -19,7 +20,9 @@ export const postQuery = graphql`
     ghostPost(slug: { eq: $slug }) {
       title
       slug
-      html
+      childHtmlRehype {
+        htmlAst
+      }
     }
   }
 `
