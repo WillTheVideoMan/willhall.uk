@@ -1,55 +1,262 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Greeting Default Greeting 1`] = `
-<div
-  className="sc-AxjAm bDXhOS"
->
-  <h1
-    className="sc-AxirZ ixGLQw"
-    data-testid="greeting-headline"
+exports[`Storyshots Article Default Article 1`] = `
+Array [
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono&display=swap"
+    rel="stylesheet"
+  />,
+  <div
+    className="sc-AxjAm jfAWov"
   >
-    willhall.uk
-  </h1>
-  <h2
-    className="sc-AxiKw cvnEaT"
-    data-testid="greeting-message"
-  >
-    Under construction and coming soon.
-  </h2>
-  <p
-    data-testid="greeting-tweet"
-  >
-    Tweet 
-    <a
-      href="https://twitter.com/WillTheVideoMan"
+    <h2>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    </h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque non arcu eu efficitur. Aliquam non convallis quam. Donec a pretium velit, non congue magna. Maecenas tempor lectus id tempus lobortis. Curabitur in vestibulum nunc. Suspendisse vitae posuere eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut gravida, odio at interdum fermentum, justo nibh varius enim, vitae pulvinar est mauris quis purus. Donec scelerisque sapien a congue luctus. Maecenas suscipit lacinia pretium. Maecenas sed suscipit augue. 
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque non arcu eu efficitur. Aliquam non convallis quam. Donec a pretium velit, non congue magna. Maecenas tempor lectus id tempus lobortis. Curabitur in vestibulum nunc. Suspendisse vitae posuere eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut gravida, odio at interdum fermentum, justo nibh varius enim, vitae pulvinar est mauris quis purus. Donec scelerisque sapien a congue luctus. Maecenas suscipit lacinia pretium. Maecenas sed suscipit augue. 
+    </p>
+    <blockquote>
+      <em>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </em>
+    </blockquote>
+    <ul>
+      
+
+      <li>
+        Sed pellentesque non arcu eu efficitur.
+      </li>
+      
+
+      <li>
+        Aliquam non convallis quam.
+      </li>
+      
+
+      <li>
+        Donec a pretium velit, non congue magna.
+      </li>
+      
+
+    </ul>
+    <figure
+      className="kg-card kg-image-card kg-card-hascaption fluid-image"
+      style={
+        Object {
+          "flex": "1 1 0",
+        }
+      }
     >
-      @WillTheVideoMan
-    </a>
-    .
-  </p>
-</div>
+      <div
+        className=" gatsby-image-wrapper"
+        style={
+          Object {
+            "maxHeight": null,
+            "maxWidth": null,
+            "overflow": "hidden",
+            "position": "relative",
+          }
+        }
+      >
+        <div
+          aria-hidden={true}
+          style={
+            Object {
+              "paddingBottom": "100%",
+              "width": "100%",
+            }
+          }
+        />
+        <img
+          alt=""
+          aria-hidden={true}
+          src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAIFAQME/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAABvefbXFqDEQkD/8QAGxAAAwACAwAAAAAAAAAAAAAAAQIDEBEABBL/2gAIAQEAAQUCY+VnZaNyg3LrTZKnGgMf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAGhAAAgMBAQAAAAAAAAAAAAAAAREAEDFRAv/aAAgBAQAGPwInkQr0OiMrFeV//8QAGRABAQEBAQEAAAAAAAAAAAAAAQARMSFB/9oACAEBAAE/IQR4Nt565s2QdQIR4vk3U++JCNBdv//aAAwDAQACAAMAAAAQAAc8/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPxAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPxAf/8QAHRABAAICAgMAAAAAAAAAAAAAAQARITFBYVFxsf/aAAgBAQABPxCmmwr6lP1nHxMXEarZIaLSHUTqVuzifCICBOyVAH1F2Z//2Q=="
+          style={
+            Object {
+              "height": "100%",
+              "left": 0,
+              "objectFit": "cover",
+              "objectPosition": "center",
+              "opacity": 1,
+              "position": "absolute",
+              "top": 0,
+              "transitionDelay": "500ms",
+              "width": "100%",
+            }
+          }
+        />
+        <picture>
+          <source
+            sizes="(max-width: 700px) 100vw, 700px"
+            srcSet="/static/23dfe93a995f5f55eba116c48f5c3232/c54d4/pamela.webp 175w,
+/static/23dfe93a995f5f55eba116c48f5c3232/a3432/pamela.webp 350w,
+/static/23dfe93a995f5f55eba116c48f5c3232/426ac/pamela.webp 700w"
+            type="image/webp"
+          />
+          <source
+            sizes="(max-width: 700px) 100vw, 700px"
+            srcSet="/static/23dfe93a995f5f55eba116c48f5c3232/e52aa/pamela.jpg 175w,
+/static/23dfe93a995f5f55eba116c48f5c3232/70ebb/pamela.jpg 350w,
+/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg 700w"
+          />
+          <img
+            alt="alt text for pamela"
+            loading="lazy"
+            onLoad={[Function]}
+            sizes="(max-width: 700px) 100vw, 700px"
+            src="/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg"
+            srcSet="/static/23dfe93a995f5f55eba116c48f5c3232/e52aa/pamela.jpg 175w,
+/static/23dfe93a995f5f55eba116c48f5c3232/70ebb/pamela.jpg 350w,
+/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg 700w"
+            style={
+              Object {
+                "height": "100%",
+                "left": 0,
+                "objectFit": "cover",
+                "objectPosition": "center",
+                "opacity": 0,
+                "position": "absolute",
+                "top": 0,
+                "transition": "opacity 500ms",
+                "width": "100%",
+              }
+            }
+          />
+        </picture>
+        <noscript
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "<picture><source type='image/webp' srcset=\\"/static/23dfe93a995f5f55eba116c48f5c3232/c54d4/pamela.webp 175w,
+/static/23dfe93a995f5f55eba116c48f5c3232/a3432/pamela.webp 350w,
+/static/23dfe93a995f5f55eba116c48f5c3232/426ac/pamela.webp 700w\\" sizes=\\"(max-width: 700px) 100vw, 700px\\" /><source srcset=\\"/static/23dfe93a995f5f55eba116c48f5c3232/e52aa/pamela.jpg 175w,
+/static/23dfe93a995f5f55eba116c48f5c3232/70ebb/pamela.jpg 350w,
+/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg 700w\\" sizes=\\"(max-width: 700px) 100vw, 700px\\" /><img loading=\\"lazy\\" sizes=\\"(max-width: 700px) 100vw, 700px\\" srcset=\\"/static/23dfe93a995f5f55eba116c48f5c3232/e52aa/pamela.jpg 175w,
+/static/23dfe93a995f5f55eba116c48f5c3232/70ebb/pamela.jpg 350w,
+/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg 700w\\" src=\\"/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg\\" alt=\\"alt text for pamela\\" style=\\"position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
+            }
+          }
+        />
+      </div>
+      <figcaption>
+        Curabitur in vestibulum nunc. 
+      </figcaption>
+    </figure>
+    <pre>
+      <code
+        className="language-javascript"
+      >
+        import { Greeting } from './Greeting';
+
+export default {
+  title: 'Default Greeting',
+  // Pass the component to allow the docs addon access to the metadata!
+  component: Greeting,
+};
+
+      </code>
+    </pre>
+  </div>,
+]
 `;
 
-exports[`Storyshots Greeting No Message 1`] = `
-<div
-  className="sc-AxjAm bDXhOS"
->
-  <h1
-    className="sc-AxirZ ixGLQw"
-    data-testid="greeting-headline"
+exports[`Storyshots Inline Sharp Image Default Inline Sharp Image 1`] = `
+Array [
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono&display=swap"
+    rel="stylesheet"
+  />,
+  <div
+    className=" gatsby-image-wrapper"
+    style={
+      Object {
+        "maxHeight": null,
+        "maxWidth": null,
+        "overflow": "hidden",
+        "position": "relative",
+      }
+    }
   >
-    willhall.uk
-  </h1>
-  <p
-    data-testid="greeting-tweet"
-  >
-    Tweet 
-    <a
-      href="https://twitter.com/WillTheVideoMan"
-    >
-      @WillTheVideoMan
-    </a>
-    .
-  </p>
-</div>
+    <div
+      aria-hidden={true}
+      style={
+        Object {
+          "paddingBottom": "100%",
+          "width": "100%",
+        }
+      }
+    />
+    <img
+      alt=""
+      aria-hidden={true}
+      src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAIFAQME/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAABvefbXFqDEQkD/8QAGxAAAwACAwAAAAAAAAAAAAAAAQIDEBEABBL/2gAIAQEAAQUCY+VnZaNyg3LrTZKnGgMf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAGhAAAgMBAQAAAAAAAAAAAAAAAREAEDFRAv/aAAgBAQAGPwInkQr0OiMrFeV//8QAGRABAQEBAQEAAAAAAAAAAAAAAQARMSFB/9oACAEBAAE/IQR4Nt565s2QdQIR4vk3U++JCNBdv//aAAwDAQACAAMAAAAQAAc8/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPxAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPxAf/8QAHRABAAICAgMAAAAAAAAAAAAAAQARITFBYVFxsf/aAAgBAQABPxCmmwr6lP1nHxMXEarZIaLSHUTqVuzifCICBOyVAH1F2Z//2Q=="
+      style={
+        Object {
+          "height": "100%",
+          "left": 0,
+          "objectFit": "cover",
+          "objectPosition": "center",
+          "opacity": 1,
+          "position": "absolute",
+          "top": 0,
+          "transitionDelay": "500ms",
+          "width": "100%",
+        }
+      }
+    />
+    <picture>
+      <source
+        sizes="(max-width: 700px) 100vw, 700px"
+        srcSet="/static/23dfe93a995f5f55eba116c48f5c3232/c54d4/pamela.webp 175w,
+/static/23dfe93a995f5f55eba116c48f5c3232/a3432/pamela.webp 350w,
+/static/23dfe93a995f5f55eba116c48f5c3232/426ac/pamela.webp 700w"
+        type="image/webp"
+      />
+      <source
+        sizes="(max-width: 700px) 100vw, 700px"
+        srcSet="/static/23dfe93a995f5f55eba116c48f5c3232/e52aa/pamela.jpg 175w,
+/static/23dfe93a995f5f55eba116c48f5c3232/70ebb/pamela.jpg 350w,
+/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg 700w"
+      />
+      <img
+        alt="alternative text"
+        loading="lazy"
+        onLoad={[Function]}
+        sizes="(max-width: 700px) 100vw, 700px"
+        src="/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg"
+        srcSet="/static/23dfe93a995f5f55eba116c48f5c3232/e52aa/pamela.jpg 175w,
+/static/23dfe93a995f5f55eba116c48f5c3232/70ebb/pamela.jpg 350w,
+/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg 700w"
+        style={
+          Object {
+            "height": "100%",
+            "left": 0,
+            "objectFit": "cover",
+            "objectPosition": "center",
+            "opacity": 0,
+            "position": "absolute",
+            "top": 0,
+            "transition": "opacity 500ms",
+            "width": "100%",
+          }
+        }
+      />
+    </picture>
+    <noscript
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<picture><source type='image/webp' srcset=\\"/static/23dfe93a995f5f55eba116c48f5c3232/c54d4/pamela.webp 175w,
+/static/23dfe93a995f5f55eba116c48f5c3232/a3432/pamela.webp 350w,
+/static/23dfe93a995f5f55eba116c48f5c3232/426ac/pamela.webp 700w\\" sizes=\\"(max-width: 700px) 100vw, 700px\\" /><source srcset=\\"/static/23dfe93a995f5f55eba116c48f5c3232/e52aa/pamela.jpg 175w,
+/static/23dfe93a995f5f55eba116c48f5c3232/70ebb/pamela.jpg 350w,
+/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg 700w\\" sizes=\\"(max-width: 700px) 100vw, 700px\\" /><img loading=\\"lazy\\" sizes=\\"(max-width: 700px) 100vw, 700px\\" srcset=\\"/static/23dfe93a995f5f55eba116c48f5c3232/e52aa/pamela.jpg 175w,
+/static/23dfe93a995f5f55eba116c48f5c3232/70ebb/pamela.jpg 350w,
+/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg 700w\\" src=\\"/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg\\" alt=\\"alternative text\\" style=\\"position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center\\"/></picture>",
+        }
+      }
+    />
+  </div>,
+]
 `;

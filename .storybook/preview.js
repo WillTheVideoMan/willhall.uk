@@ -1,9 +1,9 @@
+import React from "react"
 import { action } from "@storybook/addon-actions"
 import { addDecorator } from "@storybook/react"
 import "@storybook/addon-console"
 import { withA11y } from "@storybook/addon-a11y"
-import React from "react"
-import { Normalize } from "styled-normalize"
+import GlobalStyle from "../src/styles/GlobalStyle"
 
 // Add A11y accessibility to all stories.
 addDecorator(withA11y)
@@ -11,10 +11,10 @@ addDecorator(withA11y)
 addDecorator(s => (
   <>
     <link
-      href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono&display=swap"
       rel="stylesheet"
     />
-    <Normalize />
+    <GlobalStyle />
     {s()}
   </>
 ))

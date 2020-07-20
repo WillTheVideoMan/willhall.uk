@@ -1,7 +1,6 @@
 import React from "react"
 import Article from "../src/components/Article"
 import { withKnobs } from "@storybook/addon-knobs"
-import { loremIpsum } from "lorem-ipsum"
 
 export default {
   component: Article,
@@ -19,7 +18,7 @@ const htmlAst = {
       children: [
         {
           type: "text",
-          value: loremIpsum({ count: 1 }),
+          value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         },
       ],
     },
@@ -30,7 +29,8 @@ const htmlAst = {
       children: [
         {
           type: "text",
-          value: loremIpsum({ count: 10 }),
+          value:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque non arcu eu efficitur. Aliquam non convallis quam. Donec a pretium velit, non congue magna. Maecenas tempor lectus id tempus lobortis. Curabitur in vestibulum nunc. Suspendisse vitae posuere eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut gravida, odio at interdum fermentum, justo nibh varius enim, vitae pulvinar est mauris quis purus. Donec scelerisque sapien a congue luctus. Maecenas suscipit lacinia pretium. Maecenas sed suscipit augue. ",
         },
       ],
     },
@@ -41,7 +41,8 @@ const htmlAst = {
       children: [
         {
           type: "text",
-          value: loremIpsum({ count: 10 }),
+          value:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque non arcu eu efficitur. Aliquam non convallis quam. Donec a pretium velit, non congue magna. Maecenas tempor lectus id tempus lobortis. Curabitur in vestibulum nunc. Suspendisse vitae posuere eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut gravida, odio at interdum fermentum, justo nibh varius enim, vitae pulvinar est mauris quis purus. Donec scelerisque sapien a congue luctus. Maecenas suscipit lacinia pretium. Maecenas sed suscipit augue. ",
         },
       ],
     },
@@ -57,7 +58,7 @@ const htmlAst = {
           children: [
             {
               type: "text",
-              value: loremIpsum({ count: 1 }),
+              value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             },
           ],
         },
@@ -79,7 +80,7 @@ const htmlAst = {
           children: [
             {
               type: "text",
-              value: loremIpsum({ count: 1 }),
+              value: "Sed pellentesque non arcu eu efficitur.",
             },
           ],
         },
@@ -94,7 +95,7 @@ const htmlAst = {
           children: [
             {
               type: "text",
-              value: loremIpsum({ count: 1 }),
+              value: "Aliquam non convallis quam.",
             },
           ],
         },
@@ -109,7 +110,7 @@ const htmlAst = {
           children: [
             {
               type: "text",
-              value: loremIpsum({ count: 1 }),
+              value: "Donec a pretium velit, non congue magna.",
             },
           ],
         },
@@ -156,7 +157,28 @@ const htmlAst = {
           children: [
             {
               type: "text",
-              value: loremIpsum({ count: 1 }),
+              value: "Curabitur in vestibulum nunc. ",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      type: "element",
+      tagName: "pre",
+      properties: {},
+      children: [
+        {
+          type: "element",
+          tagName: "code",
+          properties: {
+            className: ["language-javascript"],
+          },
+          children: [
+            {
+              type: "text",
+              value:
+                "import { Greeting } from './Greeting';\n\nexport default {\n  title: 'Default Greeting',\n  // Pass the component to allow the docs addon access to the metadata!\n  component: Greeting,\n};\n",
             },
           ],
         },
@@ -165,12 +187,4 @@ const htmlAst = {
   ],
 }
 
-export const defaultArticle = () => (
-  <div
-    style={{
-      marginLeft: "1em",
-    }}
-  >
-    <Article htmlAst={htmlAst} />
-  </div>
-)
+export const defaultArticle = () => <Article htmlAst={htmlAst} />

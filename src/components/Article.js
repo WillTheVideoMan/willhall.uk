@@ -7,23 +7,41 @@ import InlineSharpImage from "../components/InlineSharpImage"
 const Container = styled.div`
   max-width: 36rem;
 
+  img {
+    max-width: 36rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    margin-left: 8.333%;
+  }
+
   p,
-  h2,
   ul,
   ol,
-  li,
   blockquote,
-  figure {
+  figure,
+  pre,
+  .gatsby-image-wrapper {
     margin-top: 0;
+    margin-bottom: 1.15rem;
+    line-height: 1.65em;
     font-family: "Lora", serif;
-    line-height: 1.5rem;
-    margin-bottom: 1.5rem;
+  }
+
+  h2,
+  h3 {
+    margin-top: 2.75rem;
+    margin-bottom: 1.05rem;
+    line-height: 1.35em;
+    font-family: "Playfair Display", serif;
   }
 
   h2 {
-    font-size: 1.563rem;
-    font-family: "Playfair Display", serif;
-    margin-top: 4.5rem;
+    font-size: 1.44em;
+  }
+
+  h3 {
+    font-size: 1.2em;
   }
 
   ul,
@@ -34,7 +52,7 @@ const Container = styled.div`
 
   blockquote {
     margin-left: 0;
-    text-indent: -0.45rem;
+    text-indent: -0.4rem;
     font-style: italic;
     ::before {
       content: '"';
@@ -45,6 +63,17 @@ const Container = styled.div`
     margin-left: 0;
     margin-right: 0;
     font-size: 0.8rem;
+  }
+
+  pre,
+  code {
+    background: #eee;
+    font-family: "IBM Plex Mono", monospace;
+  }
+
+  pre {
+    padding: 1.15rem 1.05rem;
+    overflow-x: scroll;
   }
 `
 const renderAst = new rehypeReact({
