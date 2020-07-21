@@ -1,10 +1,24 @@
+import React from "react"
 import { action } from "@storybook/addon-actions"
 import { addDecorator } from "@storybook/react"
 import "@storybook/addon-console"
 import { withA11y } from "@storybook/addon-a11y"
+import GlobalStyle from "../src/styles/GlobalStyle"
 
 // Add A11y accessibility to all stories.
 addDecorator(withA11y)
+
+// Include global styles with each story.
+addDecorator(s => (
+  <>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <GlobalStyle />
+    {s()}
+  </>
+))
 
 // Gatsby's Link overrides:
 // Gatsby Link calls the `enqueue` & `hovering` methods on the global variable ___loader.

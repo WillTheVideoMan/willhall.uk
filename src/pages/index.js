@@ -1,16 +1,13 @@
 import React from "react"
 import Layout from "../components/Layout"
-import Greeting from "../components/Greeting"
 import SEO from "../components/SEO"
 import { Link, graphql } from "gatsby"
 
 const Index = ({ data }) => (
   <Layout>
     <SEO title="Welcome" route="/" />
-    <Greeting
-      headline="willhall.uk"
-      message="Under construction and coming soon."
-    />
+    <h1>willhall.uk</h1>
+    <h2>Under construction and coming soon.</h2>
     <ul>
       {data.allGhostPost.edges.map(({ node }) => (
         <li>
