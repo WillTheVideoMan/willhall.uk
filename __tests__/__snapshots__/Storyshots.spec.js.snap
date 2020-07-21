@@ -146,7 +146,6 @@ https://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg 700w\\" src=\\"htt
     </figure>
     <pre
       className="sc-AxjAm TOBCr"
-      data-test-id="codeblock-pre"
       tabIndex="0"
     >
       <code
@@ -188,7 +187,6 @@ Array [
   />,
   <pre
     className="sc-AxjAm TOBCr"
-    data-test-id="codeblock-pre"
     tabIndex="0"
   >
     <code
