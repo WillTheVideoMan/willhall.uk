@@ -18,10 +18,10 @@ const Pre = styled.pre`
  *
  * This block is a drop-in replacement for `<pre>`, and so it accepts children of `<code>`.
  */
-const CodeBlock = ({ children }) => <Pre tabIndex="0" data-test-id="codeblock-pre">{children}</Pre>
+const CodeBlock = ({ children }) => <Pre tabIndex="0">{children}</Pre>
 
 export default CodeBlock
 
 CodeBlock.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.array,
 }

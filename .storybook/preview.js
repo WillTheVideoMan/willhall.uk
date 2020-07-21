@@ -8,6 +8,7 @@ import GlobalStyle from "../src/styles/GlobalStyle"
 // Add A11y accessibility to all stories.
 addDecorator(withA11y)
 
+// Include global styles with each story.
 addDecorator(s => (
   <>
     <link
