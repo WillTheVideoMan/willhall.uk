@@ -142,7 +142,7 @@ const htmlAst = {
             alt: "alt text for pamela",
             htmlTag: "img",
             fluidImg:
-              '{"base64":"data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAIFAQME/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAABvefbXFqDEQkD/8QAGxAAAwACAwAAAAAAAAAAAAAAAQIDEBEABBL/2gAIAQEAAQUCY+VnZaNyg3LrTZKnGgMf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAGhAAAgMBAQAAAAAAAAAAAAAAAREAEDFRAv/aAAgBAQAGPwInkQr0OiMrFeV//8QAGRABAQEBAQEAAAAAAAAAAAAAAQARMSFB/9oACAEBAAE/IQR4Nt565s2QdQIR4vk3U++JCNBdv//aAAwDAQACAAMAAAAQAAc8/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPxAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPxAf/8QAHRABAAICAgMAAAAAAAAAAAAAAQARITFBYVFxsf/aAAgBAQABPxCmmwr6lP1nHxMXEarZIaLSHUTqVuzifCICBOyVAH1F2Z//2Q==","aspectRatio":1,"src":"/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg","srcSet":"/static/23dfe93a995f5f55eba116c48f5c3232/e52aa/pamela.jpg 175w,\\n/static/23dfe93a995f5f55eba116c48f5c3232/70ebb/pamela.jpg 350w,\\n/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg 700w","srcSetType":"image/jpeg","sizes":"(max-width: 700px) 100vw, 700px","originalImg":"/static/23dfe93a995f5f55eba116c48f5c3232/29d31/pamela.jpg","originalName":"pamela.jpg","density":72,"presentationWidth":700,"presentationHeight":700,"srcSetWebp":"/static/23dfe93a995f5f55eba116c48f5c3232/c54d4/pamela.webp 175w,\\n/static/23dfe93a995f5f55eba116c48f5c3232/a3432/pamela.webp 350w,\\n/static/23dfe93a995f5f55eba116c48f5c3232/426ac/pamela.webp 700w"}',
+              '{"base64":"data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAIFAQME/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/aAAwDAQACEAMQAAABvefbXFqDEQkD/8QAGxAAAwACAwAAAAAAAAAAAAAAAQIDEBEABBL/2gAIAQEAAQUCY+VnZaNyg3LrTZKnGgMf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPwEf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPwEf/8QAGhAAAgMBAQAAAAAAAAAAAAAAAREAEDFRAv/aAAgBAQAGPwInkQr0OiMrFeV//8QAGRABAQEBAQEAAAAAAAAAAAAAAQARMSFB/9oACAEBAAE/IQR4Nt565s2QdQIR4vk3U++JCNBdv//aAAwDAQACAAMAAAAQAAc8/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAwEBPxAf/8QAFBEBAAAAAAAAAAAAAAAAAAAAIP/aAAgBAgEBPxAf/8QAHRABAAICAgMAAAAAAAAAAAAAAQARITFBYVFxsf/aAAgBAQABPxCmmwr6lP1nHxMXEarZIaLSHUTqVuzifCICBOyVAH1F2Z//2Q==","aspectRatio":1,"src":"https://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg","srcSet":"https://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg 175w,\\nhttps://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg 350w,\\nhttps://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg 700w","srcSetType":"image/jpeg","sizes":"(max-width: 700px) 100vw, 700px","originalImg":"https://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg","originalName":"pamela.jpg","density":72,"presentationWidth":700,"presentationHeight":700,"srcSetWebp":"https://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg 175w,\\nhttps://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg 350w,\\nhttps://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg 700w"}',
             maxWidth: "700",
             parentClassName:
               "kg-card kg-image-card kg-card-hascaption fluid-image",
@@ -181,6 +181,39 @@ const htmlAst = {
                 "import { Greeting } from './Greeting';\n\nexport default {\n  title: 'Default Greeting',\n  // Pass the component to allow the docs addon access to the metadata!\n  component: Greeting,\n};\n",
             },
           ],
+        },
+      ],
+    },
+    {
+      type: "element",
+      tagName: "h3",
+      properties: {
+        id: "image-sizes",
+      },
+      children: [
+        {
+          type: "text",
+          value: "Here is a smaller heading. It is not a sharp image.",
+        },
+      ],
+    },
+    {
+      type: "element",
+      tagName: "figure",
+      properties: {
+        className: ["kg-card", "kg-image-card"],
+      },
+      children: [
+        {
+          type: "element",
+          tagName: "img",
+          properties: {
+            src:
+              "https://upload.wikimedia.org/wikipedia/commons/9/93/Denali_National_Park_Polychrome_Mountains_Wide_17350px.jpg",
+            className: ["kg-image"],
+            alt: "a scenic view of a landscape.",
+          },
+          children: [],
         },
       ],
     },

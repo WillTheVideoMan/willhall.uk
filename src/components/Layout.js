@@ -4,8 +4,7 @@ import styled from "styled-components"
 import GlobalStyle from "../styles/GlobalStyle"
 
 const App = styled.main`
-  margin-left: 1.5em;
-  margin-right: 1.5em;
+  margin: 0 var(--main-spacing-major);
 `
 const Link = styled.p`
   text-decoration: underline;
@@ -14,8 +13,8 @@ const Link = styled.p`
 `
 const Footer = styled.footer`
   display: flex;
-  font-family: Playfair Display;
-  font-size: 0.8em;
+  font-family: var(--heading-font-family);
+  font-size: var(--small-body-size);
 `
 
 export default ({ children }) => (

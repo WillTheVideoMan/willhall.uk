@@ -16,3 +16,4 @@ jobs:
         with:
           browser: chrome
           start: npm run start
+          wait-on: "http://localhost:8000"

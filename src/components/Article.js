@@ -3,15 +3,16 @@ import rehypeReact from "rehype-react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import InlineSharpImage from "../components/InlineSharpImage"
+import CodeBlock from "./CodeBlock"
 
-const Container = styled.div`
+const Container = styled.article`
   max-width: 36rem;
 
-  img {
-    max-width: 36rem;
+  * {
+    max-width: 100%;
   }
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 36rem) {
     margin-left: 8.333%;
   }
 
@@ -22,26 +23,26 @@ const Container = styled.div`
   figure,
   pre,
   .gatsby-image-wrapper {
-    margin-top: 0;
-    margin-bottom: 1.15rem;
-    line-height: 1.65em;
-    font-family: "Lora", serif;
+    margin-top: var(--main-spacing-minor);
+    margin-bottom: var(--main-spacing-major);
+    line-height: var(--body-line-height);
+    font-family: var(--body-font-family);
   }
 
   h2,
   h3 {
-    margin-top: 2.75rem;
-    margin-bottom: 1.05rem;
-    line-height: 1.35em;
-    font-family: "Playfair Display", serif;
+    margin-top: var(--accent-spacing-major);
+    margin-bottom: var(--accent-spacing-minor);
+    line-height: var(--heading-line-height);
+    font-family: var(--heading-font-family);
   }
 
   h2 {
-    font-size: 1.44em;
+    font-size: var(--secondary-heading-size);
   }
 
   h3 {
-    font-size: 1.2em;
+    font-size: var(--tertiary-heading-size);
   }
 
   ul,
@@ -60,30 +61,33 @@ const Container = styled.div`
   }
 
   figure {
-    margin-left: 0;
-    margin-right: 0;
-    font-size: 0.8rem;
+    margin: var(--accent-spacing-major) 0;
+    font-size: var(--small-body-size);
+    text-align: center;
   }
 
-  pre,
   code {
     background: #eee;
-    font-family: "IBM Plex Mono", monospace;
-  }
-
-  pre {
-    padding: 1.15rem 1.05rem;
-    overflow-x: scroll;
+    font-family: var(--monospace-font-family);
   }
 `
+
 const renderAst = new rehypeReact({
   Fragment: React.Fragment,
   createElement: React.createElement,
   components: {
     "img-sharp-inline": InlineSharpImage,
+    pre: CodeBlock,
   },
 }).Compiler
 
+/**
+ * The body of an article rendered from an object containing rehyped HTML elements.
+ *
+ * This components accepts a HTMLAst object, which can be generated through the use of `gatsby-transformer-rehype`.
+ *
+ * Check the `gatsby-config.js` to see how to configure Gatsby and Ghost for article re-hyping.
+ */
 const Article = ({ htmlAst }) => {
   return <Container>{renderAst(htmlAst)}</Container>
 }
@@ -91,7 +95,8 @@ const Article = ({ htmlAst }) => {
 export default Article
 
 Article.propTypes = {
-  htmlAst: PropTypes.object,
+  /**
+   * The HTMLAst tree to traverse, containing all elements from the rehyped HTML.
+   */
+  htmlAst: PropTypes.object.isRequired,
 }
-
-Article.defaultProps = {}
