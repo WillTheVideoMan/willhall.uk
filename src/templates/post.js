@@ -10,6 +10,7 @@ const Post = ({ data }) => {
     <Layout>
       <SEO title={post.title} route={"/" + post.slug} />
       <h1>{post.title}</h1>
+      <p>{post.custom_excerpt}</p>
       <Article htmlAst={post.childHtmlRehype.htmlAst} />
     </Layout>
   )
@@ -25,6 +26,7 @@ export const postQuery = graphql`
       childHtmlRehype {
         htmlAst
       }
+      custom_excerpt
     }
   }
 `

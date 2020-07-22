@@ -18,7 +18,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-ghost`,
+      resolve: `@willthevideoman/gatsby-source-ghost`,
       options: {
         apiUrl: process.env.GHOST_API_URL,
         contentApiKey: process.env.GHOST_CONTENT_API_KEY,

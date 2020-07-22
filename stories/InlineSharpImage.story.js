@@ -4,7 +4,7 @@ import { withKnobs, text } from "@storybook/addon-knobs"
 
 export default {
   component: InlineSharpImage,
-  title: "Simple / Inline Sharp Image",
+  title: "Article / Inline Sharp Image",
   decorators: [withKnobs],
 }
 

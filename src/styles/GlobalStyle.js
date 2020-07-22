@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components"
 /**
  * The base line height, units in em;
  */
-const baseLineHeight = 1.65
+const baseLineHeight = 1.55
 
 /**
  * The font scaling parameter. The size of each font is based from the root font size, multiplied by the scaling factor.
@@ -14,10 +14,14 @@ const GlobalStyle = createGlobalStyle`
 
     /* Define global style variables. */
     :root{
+
+        font-size: 18px;
+
         --heading-font-family: "Playfair Display", serif;
         --body-font-family: "Lora", serif;
         --monospace-font-family: "IBM Plex Mono", monospace;
 
+        --massive-heading-size: ${Math.pow(fontScale, 4)}rem;    
         --primary-heading-size: ${Math.pow(fontScale, 3)}rem;
         --secondary-heading-size: ${Math.pow(fontScale, 2)}rem;
         --tertiary-heading-size: ${Math.pow(fontScale, 1)}rem;

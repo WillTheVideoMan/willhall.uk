@@ -4,7 +4,7 @@ import styled from "styled-components"
 import GlobalStyle from "../styles/GlobalStyle"
 
 const App = styled.main`
-  margin: 0 var(--main-spacing-major);
+  margin: 0 var(--accent-spacing-major);
 `
 const Link = styled.p`
   text-decoration: underline;
@@ -21,7 +21,7 @@ export default ({ children }) => (
   <App>
     <Helmet>
       <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
         rel="stylesheet"
       />
     </Helmet>

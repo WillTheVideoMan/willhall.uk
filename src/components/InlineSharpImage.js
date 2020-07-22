@@ -4,9 +4,15 @@ import PropTypes from "prop-types"
 
 /**
  * Returns a sharp image managed by the Gatsby image toolchain. Pass in a fluidImg JSON string and some alternative text, and `gatsby-image` handles the rest!
+ *
+ * The component also forwards the classname for proper style targets.
  */
-const InlineSharpImage = ({ fluidImg, alt }) => (
-  <Img fluid={fluidImg && JSON.parse(fluidImg)} alt={alt} />
+const InlineSharpImage = ({ className, fluidImg, alt }) => (
+  <Img
+    className={className}
+    fluid={fluidImg && JSON.parse(fluidImg)}
+    alt={alt}
+  />
 )
 
 export default InlineSharpImage

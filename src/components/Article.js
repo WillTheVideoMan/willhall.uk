@@ -35,6 +35,7 @@ const Container = styled.article`
     margin-bottom: var(--accent-spacing-minor);
     line-height: var(--heading-line-height);
     font-family: var(--heading-font-family);
+    font-weight: 600;
   }
 
   h2 {

@@ -29,6 +29,10 @@ const SEO = ({ lang, title, description, route }) => {
             siteUrl
           }
         }
+        ghostTag {
+          id
+          description
+        }
       }
     `
   )
