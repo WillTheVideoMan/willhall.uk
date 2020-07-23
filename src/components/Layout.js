@@ -2,9 +2,10 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import GlobalStyle from "../styles/GlobalStyle"
+import Header from "./Header"
 
 const App = styled.main`
-  margin: 0 var(--accent-spacing-major);
+  margin: 0 var(--main-spacing-major);
 `
 const Link = styled.p`
   text-decoration: underline;
@@ -26,6 +27,7 @@ export default ({ children }) => (
       />
     </Helmet>
     <GlobalStyle />
+    <Header />
     {children}
     <Footer>
       <p>© Will Hall 2020</p>

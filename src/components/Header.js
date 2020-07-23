@@ -19,6 +19,9 @@ const NavLink = styled(Link)`
 
 const NavSlash = styled.div`
   margin: 0 0.3rem;
+  ::before {
+    content: "/";
+  }
 `
 
 const Tag = styled.div`
@@ -29,6 +32,7 @@ const Tag = styled.div`
 
 const Container = styled.header`
   font-family: var(--heading-font-family);
+  margin-bottom: var(--main-spacing-major);
 `
 const Title = styled.h1`
   font-size: var(--massive-heading-size);
@@ -41,7 +45,7 @@ const Title = styled.h1`
 const Subtitle = styled.p`
   font-size: 1em;
   margin-top: var(--main-spacing-minor);
-  margin-bottom: var(--main-spacing-major);
+  margin-bottom: var(--accent-spacing-minor);
 `
 
 const Header = ({ links, tag }) => {
@@ -56,7 +60,7 @@ const Header = ({ links, tag }) => {
               <NavLink to={`/${link.slug}`} active={link.isActive}>
                 {link.title}
               </NavLink>
-              {index === links.length - 1 ? null : <NavSlash>/</NavSlash>}
+              {index === links.length - 1 ? null : <NavSlash />}
             </>
           )
         })}
@@ -69,3 +73,13 @@ const Header = ({ links, tag }) => {
 export default Header
 
 Header.propTypes = {}
+
+Header.defaultProps = {
+  links: [
+    {
+      title: "writing",
+      slug: "",
+      isActive: true,
+    },
+  ],
+}

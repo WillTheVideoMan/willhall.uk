@@ -12,10 +12,6 @@ const Container = styled.article`
     max-width: 100%;
   }
 
-  @media only screen and (min-width: 36rem) {
-    margin-left: 8.333%;
-  }
-
   p,
   ul,
   ol,
@@ -44,12 +40,6 @@ const Container = styled.article`
 
   h3 {
     font-size: var(--tertiary-heading-size);
-  }
-
-  ul,
-  ol {
-    padding-left: 0;
-    list-style-position: outside;
   }
 
   blockquote {
@@ -90,7 +80,11 @@ const renderAst = new rehypeReact({
  * Check the `gatsby-config.js` to see how to configure Gatsby and Ghost for article re-hyping.
  */
 const Article = ({ htmlAst }) => {
-  return <Container>{renderAst(htmlAst)}</Container>
+  return (
+    <Container>
+      {htmlAst ? renderAst(htmlAst) : "Nothing to see here."}
+    </Container>
+  )
 }
 
 export default Article

@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components"
 /**
  * The base line height, units in em;
  */
-const baseLineHeight = 1.55
+const baseLineHeight = 1.5
 
 /**
  * The font scaling parameter. The size of each font is based from the root font size, multiplied by the scaling factor.
@@ -15,7 +15,12 @@ const GlobalStyle = createGlobalStyle`
     /* Define global style variables. */
     :root{
 
-        font-size: 18px;
+        max-width: 64rem;
+        margin: auto;
+
+        @media only screen and (min-width: 36rem) {
+            font-size: 18px;
+        }
 
         --heading-font-family: "Playfair Display", serif;
         --body-font-family: "Lora", serif;
@@ -45,12 +50,10 @@ const GlobalStyle = createGlobalStyle`
     ========================================================================== */
 
     /**
-    * 1. Correct the line height in all browsers.
     * 2. Prevent adjustments of font size after orientation changes in iOS.
     */
 
     html {
-    line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
     }
 

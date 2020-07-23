@@ -1,27 +1,23 @@
 import React from "react"
-import Article from "../src/components/Article"
-import { withKnobs } from "@storybook/addon-knobs"
+import Post from "../src/components/Post"
+import {
+  withKnobs,
+  text,
+  object,
+  date,
+  number,
+  boolean,
+} from "@storybook/addon-knobs"
 
 export default {
-  component: Article,
-  title: "Article",
+  component: Post,
+  title: "Post",
   decorators: [withKnobs],
 }
 
 const htmlAst = {
   type: "root",
   children: [
-    {
-      type: "element",
-      tagName: "h2",
-      properties: {},
-      children: [
-        {
-          type: "text",
-          value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        },
-      ],
-    },
     {
       type: "element",
       tagName: "p",
@@ -220,6 +216,13 @@ const htmlAst = {
   ],
 }
 
-export const defaultArticle = () => <Article htmlAst={htmlAst} />
-
-export const emptyArticle = () => <Article htmlAst={null} />
+export const defaultPost = () => (
+  <Post
+    title={text("title", "Post title")}
+    published_at={new Date(0)}
+    reading_time={number("reading time", 3)}
+    featured={boolean("featured", false)}
+    primary_tag={object("primary tag", { name: "Tag", slug: "tag" })}
+    htmlAst={htmlAst}
+  />
+)

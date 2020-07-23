@@ -6,7 +6,6 @@ import { Link, graphql } from "gatsby"
 const Index = ({ data }) => (
   <Layout>
     <SEO title="Welcome" route="/" />
-    <h1>willhall.uk</h1>
     <h2>Under construction and coming soon.</h2>
     <ul>
       {data.allGhostPost.edges.map(({ node }) => (
