@@ -132,7 +132,7 @@ Array [
     rel="stylesheet"
   />,
   <article
-    className="sc-AxirZ iYUqAw"
+    className="sc-AxirZ eRmnLY"
   >
     <h2>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -311,7 +311,7 @@ Array [
     rel="stylesheet"
   />,
   <article
-    className="sc-AxirZ iYUqAw"
+    className="sc-AxirZ eRmnLY"
   >
     Nothing to see here.
   </article>,
@@ -521,7 +521,7 @@ Array [
           className="sc-AxhCb hrRqtu"
           href="/"
         >
-          home
+          writing
         </a>
         <div
           className="sc-AxgMl dkyOnO"
@@ -585,7 +585,7 @@ Array [
       </div>
     </div>
     <article
-      className="sc-AxirZ iYUqAw"
+      className="sc-AxirZ eRmnLY"
     >
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque non arcu eu efficitur. Aliquam non convallis quam. Donec a pretium velit, non congue magna. Maecenas tempor lectus id tempus lobortis. Curabitur in vestibulum nunc. Suspendisse vitae posuere eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut gravida, odio at interdum fermentum, justo nibh varius enim, vitae pulvinar est mauris quis purus. Donec scelerisque sapien a congue luctus. Maecenas suscipit lacinia pretium. Maecenas sed suscipit augue. 

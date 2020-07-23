@@ -12,6 +12,10 @@ const Container = styled.article`
     max-width: 100%;
   }
 
+  p:first-child {
+    margin-top: var(--accent-spacing-major);
+  }
+
   p,
   ul,
   ol,
@@ -40,6 +44,11 @@ const Container = styled.article`
 
   h3 {
     font-size: var(--tertiary-heading-size);
+  }
+
+  ul,
+  ol {
+    padding-left: var(--accent-spacing-minor);
   }
 
   blockquote {
