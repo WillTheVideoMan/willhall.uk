@@ -72,7 +72,14 @@ const Header = ({ links, tag }) => {
 
 export default Header
 
-Header.propTypes = {}
+Header.propTypes = {
+  links: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    slug: PropTypes.string.isRequired,
+    isActive: PropTypes.bool.isRequired,
+  }).isRequired,
+  tag: PropTypes.string,
+}
 
 Header.defaultProps = {
   links: [

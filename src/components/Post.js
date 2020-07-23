@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import Article from "./Article"
+import DottedWrapper from "./DottedWrapper"
 import { Link } from "gatsby"
 
 const Title = styled.h1`
@@ -17,19 +18,9 @@ const Container = styled.article`
 
   margin-left: auto;
   margin-right: auto;
+`
 
-  background-image: linear-gradient(
-      to right,
-      black 10%,
-      rgba(255, 255, 255, 0) 0%
-    ),
-    linear-gradient(black 10%, rgba(255, 255, 255, 0) 0%),
-    linear-gradient(to right, black 10%, rgba(255, 255, 255, 0) 0%),
-    linear-gradient(black 10%, rgba(255, 255, 255, 0) 0%);
-  background-position: top, right, bottom, left;
-  background-size: 10px 1px, 1px 10px;
-  background-repeat: repeat-x, repeat-y;
-
+const PaddedDottedWrapper = styled(DottedWrapper)`
   padding: var(--main-spacing-major);
 `
 
@@ -67,24 +58,26 @@ const Post = ({
 }) => {
   return (
     <Container>
-      <Title>{title}</Title>
-      <InfoRow>
-        {primary_tag ? (
-          <>
-            <Link to={"/tag/" + primary_tag.slug}>{primary_tag.name}</Link>
-            <Slash />
-          </>
-        ) : null}
-        {published_at.toString()}
-      </InfoRow>
-      <InfoRow>
-        <div>
-          {reading_time}
-          {Math.abs(reading_time) < 2 ? " min" : " mins"}
-        </div>
-        {featured ? <FeatureStar /> : null}
-      </InfoRow>
-      <Article htmlAst={htmlAst} />
+      <PaddedDottedWrapper>
+        <Title>{title}</Title>
+        <InfoRow>
+          {primary_tag ? (
+            <>
+              <Link to={"/tag/" + primary_tag.slug}>{primary_tag.name}</Link>
+              <Slash />
+            </>
+          ) : null}
+          {published_at.toLocaleString()}
+        </InfoRow>
+        <InfoRow>
+          <div>
+            {reading_time}
+            {Math.abs(reading_time) < 2 ? " min" : " mins"}
+          </div>
+          {featured ? <FeatureStar /> : null}
+        </InfoRow>
+        <Article htmlAst={htmlAst} />
+      </PaddedDottedWrapper>
     </Container>
   )
 }

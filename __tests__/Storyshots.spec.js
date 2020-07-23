@@ -1,3 +1,6 @@
 import initStoryshots from "@storybook/addon-storyshots"
 
-initStoryshots()
+/** HOTFIX: Exclude SEO from testing. */
+initStoryshots({
+  storyNameRegex: /^((?!.*?(SEO)).)*$/,
+})

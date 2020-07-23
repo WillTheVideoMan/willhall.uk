@@ -48,7 +48,7 @@ const Container = styled.article`
 
   ul,
   ol {
-    padding-left: var(--accent-spacing-minor);
+    padding-left: var(--main-spacing-major);
   }
 
   blockquote {
