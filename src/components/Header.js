@@ -34,19 +34,33 @@ const Container = styled.header`
   font-family: ${props => props.theme.typography.fontFamily.heading}, serif;
   margin-bottom: ${props => props.theme.spacing.main.major};
 `
-const Title = styled.h1`
+const Title = styled.div`
   font-size: ${props => props.theme.typography.fontSize.heading.massive};
+  line-height: ${props => props.theme.typography.lineHeight.heading};
   font-weight: 900;
+`
+
+const Subtitle = styled.p`
+  margin-top: ${props => props.theme.spacing.main.minor};
+  margin-bottom: ${props => props.theme.spacing.accent.minor};
+  line-height: ${props => props.theme.typography.lineHeight.body};
+`
+
+const Headline = styled.div`
+  display: flex;
+  align-items: flex-start;
   margin-top: ${props => props.theme.spacing.main.major};
   margin-bottom: ${props => props.theme.spacing.main.minor};
 `
 
-const Subtitle = styled.p`
-  font-size: 1em;
-  margin-top: ${props => props.theme.spacing.main.minor};
-  margin-bottom: ${props => props.theme.spacing.accent.minor};
+const ThemeIcon = styled.div`
+  margin-left: auto;
+  font-size: ${props => props.theme.typography.fontSize.heading.secondary};
+  cursor: pointer;
+  user-select: none;
 `
-const Header = ({ currentRoute, tag }) => {
+
+const Header = ({ currentRoute, tag, isDark, handleClick }) => {
   const { ghostSettings } = useStaticQuery(graphql`
     query {
       ghostSettings {
@@ -60,7 +74,13 @@ const Header = ({ currentRoute, tag }) => {
 
   return (
     <Container>
-      <Title>Will Hall's</Title>
+      <Headline>
+        <Title>Will Hall's</Title>
+        <ThemeIcon onClick={() => handleClick()}>
+          {isDark ? "☾" : "☼"}
+        </ThemeIcon>
+      </Headline>
+
       <Subtitle>journey through everything</Subtitle>
       <Navigation>
         {ghostSettings.navigation.map((link, index) => {
@@ -89,8 +109,11 @@ export default Header
 Header.propTypes = {
   currentRoute: PropTypes.string,
   tag: PropTypes.string,
+  isDark: PropTypes.bool.isRequired,
+  handleClick: PropTypes.func.isRequired,
 }
 
 Header.defaultProps = {
   currentRoute: "/",
+  isDark: false,
 }

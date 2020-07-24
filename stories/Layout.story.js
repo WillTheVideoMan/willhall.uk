@@ -14,7 +14,7 @@ export default {
 }
 
 export const defaultLayout = () => (
-  <Layout theme={{}}>
+  <Layout>
     <Text>Content Goes Here</Text>
   </Layout>
 )

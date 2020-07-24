@@ -11,7 +11,7 @@ const fontScale = 1.2
 const light = {
   colours: {
     primary: "black",
-    accent: "#eee",
+    accent: "#ddd",
     background: "white",
   },
   typography: {
@@ -53,8 +53,8 @@ const dark = {
   ...light,
   colours: {
     primary: "white",
-    accent: "#444",
-    background: "black",
+    accent: "#333",
+    background: "#111",
   },
 }
 
