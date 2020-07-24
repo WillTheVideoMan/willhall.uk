@@ -20,7 +20,7 @@
     "build-storybook": "NODE_ENV=test build-storybook -s ./public"
   },
   "dependencies": {
-    "@willthevideoman/gatsby-source-ghost": "^1.0.0",
+    "@willthevideoman/gatsby-source-ghost": "1.0.0",
     "babel-plugin-styled-components": "1.10.7",
     "gatsby": "2.24.11",
     "gatsby-image": "2.4.13",
@@ -67,7 +67,7 @@
     "prettier": "2.0.5",
     "react-test-renderer": "16.13.1",
     "start-server-and-test": "1.11.2",
-    "themeprovider-storybook": "^1.5.1"
+    "themeprovider-storybook": "1.5.1"
   },
   "repository": {
     "type": "git",
