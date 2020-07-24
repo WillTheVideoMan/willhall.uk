@@ -4,9 +4,11 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
 /**
- * Inserts proper SEO tags into the document head.
+ * You may notice that nothing visible renders with this component.
  *
- * @param {*} props - title is the only required prop. Route is recommended where possible.
+ * That is because it deals only with adding meta tags to the document head.
+ *
+ * This ensures that the site is fully SEO-ed.
  */
 const SEO = ({ lang, title, description, route }) => {
   /**

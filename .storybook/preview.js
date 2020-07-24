@@ -3,19 +3,37 @@ import { action } from "@storybook/addon-actions"
 import { addDecorator } from "@storybook/react"
 import "@storybook/addon-console"
 import { withA11y } from "@storybook/addon-a11y"
-import GlobalStyle from "../src/styles/GlobalStyle"
+import Normalise from "../src/styles/Normalise"
+import { withThemesProvider } from "themeprovider-storybook"
+import themes from "../src/styles/themes"
+
+const styledThemes = [
+  {
+    ...themes.light,
+    name: "light",
+    backgroundColor: themes.light.colours.background,
+  },
+  {
+    ...themes.dark,
+    name: "dark",
+    backgroundColor: themes.dark.colours.background,
+  },
+]
 
 // Add A11y accessibility to all stories.
 addDecorator(withA11y)
+
+// Provide the styled-components themes to each component.
+addDecorator(withThemesProvider(styledThemes))
 
 // Include global styles with each story.
 addDecorator(s => (
   <>
     <link
-      href="https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
       rel="stylesheet"
     />
-    <GlobalStyle />
+    <Normalise />
     {s()}
   </>
 ))

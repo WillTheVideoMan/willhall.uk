@@ -1,27 +1,40 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Article from "../components/Article"
+import Post from "../components/Post"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
-const Post = ({ data }) => {
+const PostPage = ({ data }) => {
   const post = data.ghostPost
   return (
-    <Layout>
+    <Layout route="/">
       <SEO title={post.title} route={"/" + post.slug} />
-      <h1>{post.title}</h1>
-      <Article htmlAst={post.childHtmlRehype.htmlAst} />
+      <Post
+        title={post.title}
+        published_at={new Date(post.published_at)}
+        reading_time={post.reading_time}
+        featured={post.featured}
+        primary_tag={post.primary_tag}
+        htmlAst={post.childHtmlRehype.htmlAst}
+      />
     </Layout>
   )
 }
 
-export default Post
+export default PostPage
 
-export const postQuery = graphql`
+export const postPageQuery = graphql`
   query($slug: String!) {
     ghostPost(slug: { eq: $slug }) {
       title
       slug
+      published_at
+      reading_time
+      featured
+      primary_tag {
+        name
+        slug
+      }
       childHtmlRehype {
         htmlAst
       }

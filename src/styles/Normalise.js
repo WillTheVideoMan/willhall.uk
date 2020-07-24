@@ -1,52 +1,16 @@
 import { createGlobalStyle } from "styled-components"
 
-/**
- * The base line height, units in em;
- */
-const baseLineHeight = 1.65
-
-/**
- * The font scaling parameter. The size of each font is based from the root font size, multiplied by the scaling factor.
- */
-const fontScale = 1.2
-
-const GlobalStyle = createGlobalStyle`
-
-    /* Define global style variables. */
-    :root{
-        --heading-font-family: "Playfair Display", serif;
-        --body-font-family: "Lora", serif;
-        --monospace-font-family: "IBM Plex Mono", monospace;
-
-        --primary-heading-size: ${Math.pow(fontScale, 3)}rem;
-        --secondary-heading-size: ${Math.pow(fontScale, 2)}rem;
-        --tertiary-heading-size: ${Math.pow(fontScale, 1)}rem;
-
-        --small-body-size: ${Math.pow(fontScale, -1)}rem;
-
-        --heading-line-height: ${baseLineHeight - 0.3};
-        --body-line-height: ${baseLineHeight};
-
-        --main-spacing-major: ${baseLineHeight - 0.5}rem;
-        --main-spacing-minor: 0;
-        --accent-spacing-major: ${(baseLineHeight - 0.5 - 0.3) * 3}rem;
-        --accent-spacing-minor: ${baseLineHeight - 0.5 - 0.3}rem;
-
-    }
-
-
+const Normalise = createGlobalStyle`
     /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
     /* Document
     ========================================================================== */
 
     /**
-    * 1. Correct the line height in all browsers.
     * 2. Prevent adjustments of font size after orientation changes in iOS.
     */
 
     html {
-    line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
     }
 
@@ -386,4 +350,4 @@ const GlobalStyle = createGlobalStyle`
     }
 `
 
-export default GlobalStyle
+export default Normalise

@@ -2,12 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 
-const Pre = styled.pre`
+const Code = styled.code`
   color: ${props => props.theme.colours.primary};
-  font-size: ${props => props.theme.typography.fontSize.body.small};
   background: ${props => props.theme.colours.accent};
-  padding: ${props => props.theme.spacing.main.major};
-  overflow-x: scroll;
+  font-family: ${props => props.theme.typography.fontFamily.monospace};
 `
 
 /**
@@ -15,10 +13,10 @@ const Pre = styled.pre`
  *
  * This block is a drop-in replacement for `<pre>`, and so it accepts children of `<code>`.
  */
-const CodeBlock = ({ children }) => <Pre tabIndex="0">{children}</Pre>
+const InlineCode = ({ children }) => <Code>{children}</Code>
 
-export default CodeBlock
+export default InlineCode
 
-CodeBlock.propTypes = {
+InlineCode.propTypes = {
   children: PropTypes.array,
 }

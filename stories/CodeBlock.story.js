@@ -4,7 +4,7 @@ import { withKnobs, text } from "@storybook/addon-knobs"
 
 export default {
   component: CodeBlock,
-  title: "Simple / Code Block",
+  title: "Article / Code Block",
   decorators: [withKnobs],
 }
 
