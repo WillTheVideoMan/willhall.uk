@@ -54,15 +54,28 @@ const GlobalStyle = createGlobalStyle`
  * The layout adds global styles and themes, navigation, and footer.
  */
 const Layout = ({ route, children }) => {
-  if (!localStorage.getItem("isDark")) localStorage.setItem("isDark", false)
+  /**
+   * Check to see if we are rendering in the browser (not server-side).
+   *
+   * If so, ensures the local storage item exists.
+   */
+  if (typeof window !== "undefined" && !localStorage.getItem("isDark"))
+    localStorage.setItem("isDark", false)
 
+  /**
+   * Ensure the window exists before getting from the local store.
+   *
+   * This allows for one pass of SSR, then when the window exists after the first client render, the local store takes over.
+   */
   const [isDark, setIsDark] = useState(
-    localStorage.getItem("isDark") === "false" ? false : true
+    typeof window !== "undefined"
+      ? localStorage.getItem("isDark") === "false"
+        ? false
+        : true
+      : false
   )
 
-  useEffect(() => {
-    localStorage.setItem("isDark", isDark)
-  }, [isDark])
+  useEffect(() => localStorage.setItem("isDark", isDark), [isDark])
 
   return (
     <ThemeProvider theme={isDark ? themes.dark : themes.light}>
