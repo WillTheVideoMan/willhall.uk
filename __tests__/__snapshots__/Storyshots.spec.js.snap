@@ -7,7 +7,7 @@ Array [
     rel="stylesheet"
   />,
   <pre
-    className="sc-AxgMl jdQkdf"
+    className="sc-AxgMl kUecHS"
     tabIndex="0"
   >
     <code
@@ -33,7 +33,7 @@ Array [
     rel="stylesheet"
   />,
   <code
-    className="sc-AxheI hLvSCD"
+    className="sc-AxheI hLmjmS"
   >
     import { Greeting } from './Greeting';
   </code>,
@@ -284,11 +284,11 @@ https://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg 700w\\" src=\\"htt
       </figcaption>
     </figure>
     <pre
-      className="sc-AxgMl jdQkdf"
+      className="sc-AxgMl kUecHS"
       tabIndex="0"
     >
       <code
-        className="sc-AxheI hLvSCD"
+        className="sc-AxheI hLmjmS"
       >
         import { Greeting } from './Greeting';
 
@@ -351,6 +351,53 @@ Array [
 ]
 `;
 
+exports[`Storyshots Layout / Header Dark Theme Icon 1`] = `
+Array [
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+    rel="stylesheet"
+  />,
+  <header
+    className="sc-fznKkj hlWdTI"
+  >
+    <div
+      className="sc-fzqBZW cSSpHg"
+    >
+      <div
+        className="sc-fznZeY dDkIRu"
+      >
+        Will Hall's
+      </div>
+      <div
+        className="sc-fzqNJr vcQPy"
+        onClick={[Function]}
+      >
+        ☾
+      </div>
+    </div>
+    <p
+      className="sc-fzokOt hAeZqm"
+    >
+      journey through everything
+    </p>
+    <nav
+      className="sc-fzoLsD iwKFen"
+    >
+      <a
+        active={false}
+        className="sc-fzpans dTgMXs"
+        href="url"
+      >
+        label
+      </a>
+      <div
+        className="sc-fznyAO equZwR"
+      />
+    </nav>
+  </header>,
+]
+`;
+
 exports[`Storyshots Layout / Header Default Header 1`] = `
 Array [
   <link
@@ -360,13 +407,23 @@ Array [
   <header
     className="sc-fznKkj hlWdTI"
   >
-    <h1
-      className="sc-fznZeY hUdchk"
+    <div
+      className="sc-fzqBZW cSSpHg"
     >
-      Will Hall's
-    </h1>
+      <div
+        className="sc-fznZeY dDkIRu"
+      >
+        Will Hall's
+      </div>
+      <div
+        className="sc-fzqNJr vcQPy"
+        onClick={[Function]}
+      >
+        ☼
+      </div>
+    </div>
     <p
-      className="sc-fzokOt idGhAt"
+      className="sc-fzokOt hAeZqm"
     >
       journey through everything
     </p>
@@ -397,13 +454,23 @@ Array [
   <header
     className="sc-fznKkj hlWdTI"
   >
-    <h1
-      className="sc-fznZeY hUdchk"
+    <div
+      className="sc-fzqBZW cSSpHg"
     >
-      Will Hall's
-    </h1>
+      <div
+        className="sc-fznZeY dDkIRu"
+      >
+        Will Hall's
+      </div>
+      <div
+        className="sc-fzqNJr vcQPy"
+        onClick={[Function]}
+      >
+        ☼
+      </div>
+    </div>
     <p
-      className="sc-fzokOt idGhAt"
+      className="sc-fzokOt hAeZqm"
     >
       journey through everything
     </p>
@@ -441,18 +508,28 @@ Array [
     rel="stylesheet"
   />,
   <main
-    className="sc-fzqBZW cOsaTP"
+    className="sc-fzoyAV fQLoFM"
   >
     <header
       className="sc-fznKkj hlWdTI"
     >
-      <h1
-        className="sc-fznZeY hUdchk"
+      <div
+        className="sc-fzqBZW cSSpHg"
       >
-        Will Hall's
-      </h1>
+        <div
+          className="sc-fznZeY dDkIRu"
+        >
+          Will Hall's
+        </div>
+        <div
+          className="sc-fzqNJr vcQPy"
+          onClick={[Function]}
+        >
+          ☼
+        </div>
+      </div>
       <p
-        className="sc-fzokOt idGhAt"
+        className="sc-fzokOt hAeZqm"
       >
         journey through everything
       </p>
@@ -472,18 +549,18 @@ Array [
       </nav>
     </header>
     <h1
-      className="sc-fzoLag khjHwb"
+      className="sc-fzpjYC hoGGby"
     >
       Content Goes Here
     </h1>
     <footer
-      className="sc-fzoyAV hnsko"
+      className="sc-fzoXzr kCVjXK"
     >
       <p>
         © Will Hall 2020
       </p>
       <p
-        className="sc-fzqNJr epOUDT"
+        className="sc-fzoLag bOWdhx"
         data-testid="cookie-manager"
         onClick={[Function]}
       >
@@ -501,22 +578,22 @@ Array [
     rel="stylesheet"
   />,
   <article
-    className="sc-fzpjYC hPfwxy"
+    className="sc-fznJRM cJegtd"
   >
     <div
-      className="sc-AxmLO kSHOrf sc-fznxsB cSyywt"
+      className="sc-AxmLO kSHOrf sc-fznWqX hjIkge"
       spacing={10}
     >
       <div
-        className="sc-fznJRM gkmUNp"
+        className="sc-fzoiQi einKuo"
       >
         <h1
-          className="sc-fzoXzr jGDTqG"
+          className="sc-fznxsB esASVC"
         >
           Post title
         </h1>
         <div
-          className="sc-fznWqX IIijf"
+          className="sc-fzqARJ eGKEOH"
         >
           <a
             href="/tag/tag"
@@ -524,12 +601,12 @@ Array [
             Tag
           </a>
           <div
-            className="sc-fzoiQi iKVEwO"
+            className="sc-fzqNqU frJuBj"
           />
           Thu, 01 Jan 1970 00:00:00 GMT
         </div>
         <div
-          className="sc-fznWqX IIijf"
+          className="sc-fzqARJ eGKEOH"
         >
           <div>
             3
@@ -673,11 +750,11 @@ https://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg 700w\\" src=\\"htt
           </figcaption>
         </figure>
         <pre
-          className="sc-AxgMl jdQkdf"
+          className="sc-AxgMl kUecHS"
           tabIndex="0"
         >
           <code
-            className="sc-AxheI hLvSCD"
+            className="sc-AxheI hLmjmS"
           >
             import { Greeting } from './Greeting';
 
