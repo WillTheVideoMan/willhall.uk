@@ -9,68 +9,9 @@ export default {
 }
 
 export const defaultHeader = () => (
-  <Header
-    links={object("links", [
-      {
-        title: "writing",
-        slug: "",
-        isActive: true,
-      },
-      {
-        title: "about",
-        slug: "about",
-        isActive: false,
-      },
-    ])}
-  />
+  <Header currentRoute={text("active slug", "/")} />
 )
 
 export const withTag = () => (
-  <Header
-    links={object("links", [
-      {
-        title: "writing",
-        slug: "",
-        isActive: true,
-      },
-      {
-        title: "about",
-        slug: "about",
-        isActive: false,
-      },
-    ])}
-    tag={text("tag", "code")}
-  />
-)
-
-export const wrappingLinks = () => (
-  <Header
-    links={object("links", [
-      {
-        title: "writing",
-        slug: "",
-        isActive: true,
-      },
-      {
-        title: "about",
-        slug: "about",
-        isActive: false,
-      },
-      {
-        title: "projects",
-        slug: "projects",
-        isActive: false,
-      },
-      {
-        title: "news",
-        slug: "news",
-        isActive: false,
-      },
-      {
-        title: "more",
-        slug: "fun",
-        isActive: false,
-      },
-    ])}
-  />
+  <Header currentRoute={text("active slug", "/")} tag={text("tag", "code")} />
 )

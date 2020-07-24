@@ -66,7 +66,8 @@
     "lorem-ipsum": "2.0.3",
     "prettier": "2.0.5",
     "react-test-renderer": "16.13.1",
-    "start-server-and-test": "1.11.2"
+    "start-server-and-test": "1.11.2",
+    "themeprovider-storybook": "^1.5.1"
   },
   "repository": {
     "type": "git",

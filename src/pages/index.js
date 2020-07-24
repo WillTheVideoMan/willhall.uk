@@ -4,7 +4,7 @@ import SEO from "../components/SEO"
 import { Link, graphql } from "gatsby"
 
 const Index = ({ data }) => (
-  <Layout>
+  <Layout route="/">
     <SEO title="Welcome" route="/" />
     <h2>Under construction and coming soon.</h2>
     <ul>

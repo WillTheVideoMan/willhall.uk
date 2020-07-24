@@ -6,11 +6,10 @@ import DottedWrapper from "./DottedWrapper"
 import { Link } from "gatsby"
 
 const Title = styled.h1`
-  font-size: var(--primary-heading-size);
-  font-family: var(--heading-font-family);
-  margin-top: var(--main-spacing-minor);
-  margin-bottom: var(--accent-spacing-minor);
-  text-decoration-line: underline;
+  font-size: ${props => props.theme.typography.fontSize.heading.primary};
+  font-family: ${props => props.theme.typography.fontFamily.heading};
+  margin-top: ${props => props.theme.spacing.main.minor};
+  margin-bottom: ${props => props.theme.spacing.accent.minor};
 `
 
 const Container = styled.article`
@@ -21,17 +20,23 @@ const Container = styled.article`
 `
 
 const PaddedDottedWrapper = styled(DottedWrapper)`
-  padding: var(--main-spacing-major);
+  padding: ${props => props.theme.spacing.main.major};
+`
+
+const TitleWrapper = styled.div`
+  * {
+    color: ${props => props.theme.colours.primary};
+  }
 `
 
 const InfoRow = styled.div`
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  margin-top: var(--main-spacing-minor);
-  margin-bottom: var(--accent-spacing-minor);
-  font-family: var(--heading-font-family);
-  font-size: var(--small-body-size);
+  margin-top: ${props => props.theme.spacing.main.minor};
+  margin-bottom: ${props => props.theme.spacing.accent.minor};
+  font-family: ${props => props.theme.typography.fontFamily.heading};
+  font-size: ${props => props.theme.typography.fontSize.body.small};
 `
 
 const Slash = styled.div`
@@ -59,23 +64,25 @@ const Post = ({
   return (
     <Container>
       <PaddedDottedWrapper>
-        <Title>{title}</Title>
-        <InfoRow>
-          {primary_tag ? (
-            <>
-              <Link to={"/tag/" + primary_tag.slug}>{primary_tag.name}</Link>
-              <Slash />
-            </>
-          ) : null}
-          {published_at.toLocaleString()}
-        </InfoRow>
-        <InfoRow>
-          <div>
-            {reading_time}
-            {Math.abs(reading_time) < 2 ? " min" : " mins"}
-          </div>
-          {featured ? <FeatureStar /> : null}
-        </InfoRow>
+        <TitleWrapper>
+          <Title>{title}</Title>
+          <InfoRow>
+            {primary_tag ? (
+              <>
+                <Link to={"/tag/" + primary_tag.slug}>{primary_tag.name}</Link>
+                <Slash />
+              </>
+            ) : null}
+            {published_at.toLocaleString("en-GB")}
+          </InfoRow>
+          <InfoRow>
+            <div>
+              {reading_time}
+              {Math.abs(reading_time) < 2 ? " min" : " mins"}
+            </div>
+            {featured ? <FeatureStar /> : null}
+          </InfoRow>
+        </TitleWrapper>
         <Article htmlAst={htmlAst} />
       </PaddedDottedWrapper>
     </Container>

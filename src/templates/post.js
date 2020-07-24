@@ -7,7 +7,7 @@ import SEO from "../components/SEO"
 const PostPage = ({ data }) => {
   const post = data.ghostPost
   return (
-    <Layout>
+    <Layout route="/">
       <SEO title={post.title} route={"/" + post.slug} />
       <Post
         title={post.title}

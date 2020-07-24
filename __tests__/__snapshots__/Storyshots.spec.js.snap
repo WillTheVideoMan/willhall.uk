@@ -7,7 +7,7 @@ Array [
     rel="stylesheet"
   />,
   <pre
-    className="sc-AxjAm TOBCr"
+    className="sc-AxgMl jdQkdf"
     tabIndex="0"
   >
     <code
@@ -23,6 +23,20 @@ export default {
 
     </code>
   </pre>,
+]
+`;
+
+exports[`Storyshots Article / Inline Code Default Inline Code 1`] = `
+Array [
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+    rel="stylesheet"
+  />,
+  <code
+    className="sc-AxheI hLvSCD"
+  >
+    import { Greeting } from './Greeting';
+  </code>,
 ]
 `;
 
@@ -132,7 +146,7 @@ Array [
     rel="stylesheet"
   />,
   <article
-    className="sc-AxirZ iWZnVd"
+    className="sc-Axmtr gVGSkj"
   >
     <h2>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -270,11 +284,11 @@ https://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg 700w\\" src=\\"htt
       </figcaption>
     </figure>
     <pre
-      className="sc-AxjAm TOBCr"
+      className="sc-AxgMl jdQkdf"
       tabIndex="0"
     >
       <code
-        className="language-javascript"
+        className="sc-AxheI hLvSCD"
       >
         import { Greeting } from './Greeting';
 
@@ -311,7 +325,7 @@ Array [
     rel="stylesheet"
   />,
   <article
-    className="sc-AxirZ iWZnVd"
+    className="sc-Axmtr gVGSkj"
   >
     Nothing to see here.
   </article>,
@@ -325,10 +339,14 @@ Array [
     rel="stylesheet"
   />,
   <div
-    className="sc-AxiKw hJBSrV"
+    className="sc-AxmLO kSHOrf"
     spacing={10}
   >
-    Here is some text with a dotted border!
+    <div
+      className="sc-fzozJi fnhECQ"
+    >
+      Here is some text with a dotted border!
+    </div>
   </div>,
 ]
 `;
@@ -340,40 +358,30 @@ Array [
     rel="stylesheet"
   />,
   <header
-    className="sc-Axmtr fxiCcq"
+    className="sc-fznKkj hlWdTI"
   >
     <h1
-      className="sc-AxmLO fKlHLG"
+      className="sc-fznZeY hUdchk"
     >
       Will Hall's
     </h1>
     <p
-      className="sc-fzozJi ejdCYO"
+      className="sc-fzokOt idGhAt"
     >
       journey through everything
     </p>
     <nav
-      className="sc-AxhCb fAIqMK"
+      className="sc-fzoLsD iwKFen"
     >
       <a
-        active={true}
-        className="sc-AxhUy bSKdTP"
-        href="/"
-      >
-        writing
-      </a>
-      <div
-        className="sc-AxgMl kdVUKT"
-      />
-      <a
         active={false}
-        className="sc-AxhUy bSJESV"
-        href="/about"
+        className="sc-fzpans dTgMXs"
+        href="url"
       >
-        about
+        label
       </a>
       <div
-        className="sc-AxheI kdZzgg"
+        className="sc-fznyAO equZwR"
       />
     </nav>
   </header>,
@@ -387,40 +395,30 @@ Array [
     rel="stylesheet"
   />,
   <header
-    className="sc-Axmtr fxiCcq"
+    className="sc-fznKkj hlWdTI"
   >
     <h1
-      className="sc-AxmLO fKlHLG"
+      className="sc-fznZeY hUdchk"
     >
       Will Hall's
     </h1>
     <p
-      className="sc-fzozJi ejdCYO"
+      className="sc-fzokOt idGhAt"
     >
       journey through everything
     </p>
     <nav
-      className="sc-AxhCb fAIqMK"
+      className="sc-fzoLsD iwKFen"
     >
       <a
-        active={true}
-        className="sc-AxhUy bSKdTP"
-        href="/"
-      >
-        writing
-      </a>
-      <div
-        className="sc-AxgMl kdVUKT"
-      />
-      <a
         active={false}
-        className="sc-AxhUy bSJESV"
-        href="/about"
+        className="sc-fzpans dTgMXs"
+        href="url"
       >
-        about
+        label
       </a>
       <div
-        className="sc-AxheI kdZzgg"
+        className="sc-fznyAO equZwR"
       >
         code
       </div>
@@ -429,81 +427,11 @@ Array [
 ]
 `;
 
-exports[`Storyshots Layout / Header Wrapping Links 1`] = `
-Array [
-  <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
-    rel="stylesheet"
-  />,
-  <header
-    className="sc-Axmtr fxiCcq"
-  >
-    <h1
-      className="sc-AxmLO fKlHLG"
-    >
-      Will Hall's
-    </h1>
-    <p
-      className="sc-fzozJi ejdCYO"
-    >
-      journey through everything
-    </p>
-    <nav
-      className="sc-AxhCb fAIqMK"
-    >
-      <a
-        active={true}
-        className="sc-AxhUy bSKdTP"
-        href="/"
-      >
-        writing
-      </a>
-      <div
-        className="sc-AxgMl kdVUKT"
-      />
-      <a
-        active={false}
-        className="sc-AxhUy bSJESV"
-        href="/about"
-      >
-        about
-      </a>
-      <div
-        className="sc-AxgMl kdVUKT"
-      />
-      <a
-        active={false}
-        className="sc-AxhUy bSJESV"
-        href="/projects"
-      >
-        projects
-      </a>
-      <div
-        className="sc-AxgMl kdVUKT"
-      />
-      <a
-        active={false}
-        className="sc-AxhUy bSJESV"
-        href="/news"
-      >
-        news
-      </a>
-      <div
-        className="sc-AxgMl kdVUKT"
-      />
-      <a
-        active={false}
-        className="sc-AxhUy bSJESV"
-        href="/fun"
-      >
-        more
-      </a>
-      <div
-        className="sc-AxheI kdZzgg"
-      />
-    </nav>
-  </header>,
-]
+exports[`Storyshots Layout / SEO Default SEO 1`] = `
+<link
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+  rel="stylesheet"
+/>
 `;
 
 exports[`Storyshots Layout Default Layout 1`] = `
@@ -513,47 +441,49 @@ Array [
     rel="stylesheet"
   />,
   <main
-    className="sc-fzoLsD kmTNTM"
+    className="sc-fzqBZW cOsaTP"
   >
     <header
-      className="sc-Axmtr fxiCcq"
+      className="sc-fznKkj hlWdTI"
     >
       <h1
-        className="sc-AxmLO fKlHLG"
+        className="sc-fznZeY hUdchk"
       >
         Will Hall's
       </h1>
       <p
-        className="sc-fzozJi ejdCYO"
+        className="sc-fzokOt idGhAt"
       >
         journey through everything
       </p>
       <nav
-        className="sc-AxhCb fAIqMK"
+        className="sc-fzoLsD iwKFen"
       >
         <a
-          active={true}
-          className="sc-AxhUy bSKdTP"
-          href="/"
+          active={false}
+          className="sc-fzpans dTgMXs"
+          href="url"
         >
-          writing
+          label
         </a>
         <div
-          className="sc-AxheI kdZzgg"
+          className="sc-fznyAO equZwR"
         />
       </nav>
     </header>
-    <h1>
+    <h1
+      className="sc-fzoLag khjHwb"
+    >
       Content Goes Here
     </h1>
     <footer
-      className="sc-fzplWN gDYTbf"
+      className="sc-fzoyAV hnsko"
     >
       <p>
         © Will Hall 2020
       </p>
       <p
-        className="sc-fzpans hqcdSA"
+        className="sc-fzqNJr epOUDT"
         data-testid="cookie-manager"
         onClick={[Function]}
       >
@@ -571,40 +501,44 @@ Array [
     rel="stylesheet"
   />,
   <article
-    className="sc-fznKkj dwhNSG"
+    className="sc-fzpjYC hPfwxy"
   >
     <div
-      className="sc-AxiKw hJBSrV sc-fznZeY dAhBff"
+      className="sc-AxmLO kSHOrf sc-fznxsB cSyywt"
       spacing={10}
     >
-      <h1
-        className="sc-fznyAO eCjWOv"
-      >
-        Post title
-      </h1>
       <div
-        className="sc-fzokOt fApyfH"
+        className="sc-fznJRM gkmUNp"
       >
-        <a
-          href="/tag/tag"
+        <h1
+          className="sc-fzoXzr jGDTqG"
         >
-          Tag
-        </a>
+          Post title
+        </h1>
         <div
-          className="sc-fzqBZW hSWgKW"
-        />
-        1/1/1970, 01:00:00
-      </div>
-      <div
-        className="sc-fzokOt fApyfH"
-      >
-        <div>
-          3
-           mins
+          className="sc-fznWqX IIijf"
+        >
+          <a
+            href="/tag/tag"
+          >
+            Tag
+          </a>
+          <div
+            className="sc-fzoiQi iKVEwO"
+          />
+          1/1/1970, 1:00:00 AM
+        </div>
+        <div
+          className="sc-fznWqX IIijf"
+        >
+          <div>
+            3
+             mins
+          </div>
         </div>
       </div>
       <article
-        className="sc-AxirZ iWZnVd"
+        className="sc-Axmtr gVGSkj"
       >
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque non arcu eu efficitur. Aliquam non convallis quam. Donec a pretium velit, non congue magna. Maecenas tempor lectus id tempus lobortis. Curabitur in vestibulum nunc. Suspendisse vitae posuere eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut gravida, odio at interdum fermentum, justo nibh varius enim, vitae pulvinar est mauris quis purus. Donec scelerisque sapien a congue luctus. Maecenas suscipit lacinia pretium. Maecenas sed suscipit augue. 
@@ -739,11 +673,11 @@ https://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg 700w\\" src=\\"htt
           </figcaption>
         </figure>
         <pre
-          className="sc-AxjAm TOBCr"
+          className="sc-AxgMl jdQkdf"
           tabIndex="0"
         >
           <code
-            className="language-javascript"
+            className="sc-AxheI hLvSCD"
           >
             import { Greeting } from './Greeting';
 

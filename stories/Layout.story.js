@@ -1,6 +1,11 @@
 import React from "react"
 import Layout from "../src/components/Layout"
 import { withKnobs } from "@storybook/addon-knobs"
+import styled from "styled-components"
+
+const Text = styled.h1`
+  color: ${props => props.theme.colours.primary};
+`
 
 export default {
   component: Layout,
@@ -9,7 +14,7 @@ export default {
 }
 
 export const defaultLayout = () => (
-  <Layout>
-    <h1>Content Goes Here</h1>
+  <Layout theme={{}}>
+    <Text>Content Goes Here</Text>
   </Layout>
 )

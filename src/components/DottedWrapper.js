@@ -6,16 +6,22 @@ const Wrapper = styled.div`
   /** Generates a linear gradient on each axis within a background image */
   background-image: linear-gradient(
       to right,
-      black ${props => props.length}%,
+      ${props => props.theme.colours.primary} ${props => props.length}%,
       rgba(255, 255, 255, 0) 0%
     ),
-    linear-gradient(black ${props => props.length}%, rgba(255, 255, 255, 0) 0%),
+    linear-gradient(
+      ${props => props.theme.colours.primary} ${props => props.length}%,
+      rgba(255, 255, 255, 0) 0%
+    ),
     linear-gradient(
       to right,
-      black ${props => props.length}%,
+      ${props => props.theme.colours.primary} ${props => props.length}%,
       rgba(255, 255, 255, 0) 0%
     ),
-    linear-gradient(black ${props => props.length}%, rgba(255, 255, 255, 0) 0%);
+    linear-gradient(
+      ${props => props.theme.colours.primary} ${props => props.length}%,
+      rgba(255, 255, 255, 0) 0%
+    );
 
   /** Position each gradient along each edge of the division. */
   background-position: top, right, bottom, left;

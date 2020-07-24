@@ -1,20 +1,19 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 const Navigation = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   flex-wrap: wrap;
-  font-size: var(--tertiary-heading-size);
+  font-size: ${props => props.theme.typography.fontSize.heading.tertiary};
 `
 
 const NavLink = styled(Link)`
-  text-decoration: none;
-  color: black;
   font-weight: ${props => (props.active ? 600 : 400)};
+  color: ${props => props.theme.colours.primary};
 `
 
 const NavSlash = styled.div`
@@ -26,41 +25,56 @@ const NavSlash = styled.div`
 
 const Tag = styled.div`
   margin-left: auto;
-  font-size: var(--small-body-size);
+  font-size: ${props => props.theme.typography.fontSize.body.small};
   font-weight: 600;
 `
 
 const Container = styled.header`
-  font-family: var(--heading-font-family);
-  margin-bottom: var(--main-spacing-major);
+  color: ${props => props.theme.colours.primary};
+  font-family: ${props => props.theme.typography.fontFamily.heading}, serif;
+  margin-bottom: ${props => props.theme.spacing.main.major};
 `
 const Title = styled.h1`
-  font-size: var(--massive-heading-size);
+  font-size: ${props => props.theme.typography.fontSize.heading.massive};
   font-weight: 900;
-
-  margin-top: var(--main-spacing-major);
-  margin-bottom: var(--main-spacing-minor);
+  margin-top: ${props => props.theme.spacing.main.major};
+  margin-bottom: ${props => props.theme.spacing.main.minor};
 `
 
 const Subtitle = styled.p`
   font-size: 1em;
-  margin-top: var(--main-spacing-minor);
-  margin-bottom: var(--accent-spacing-minor);
+  margin-top: ${props => props.theme.spacing.main.minor};
+  margin-bottom: ${props => props.theme.spacing.accent.minor};
 `
+const Header = ({ currentRoute, tag }) => {
+  const { ghostSettings } = useStaticQuery(graphql`
+    query {
+      ghostSettings {
+        navigation {
+          label
+          url
+        }
+      }
+    }
+  `)
 
-const Header = ({ links, tag }) => {
   return (
     <Container>
       <Title>Will Hall's</Title>
       <Subtitle>journey through everything</Subtitle>
       <Navigation>
-        {links.map((link, index) => {
+        {ghostSettings.navigation.map((link, index) => {
           return (
             <>
-              <NavLink to={`/${link.slug}`} active={link.isActive}>
-                {link.title}
+              <NavLink
+                to={link.url}
+                active={currentRoute === link.url ? true : false}
+              >
+                {link.label}
               </NavLink>
-              {index === links.length - 1 ? null : <NavSlash />}
+              {index === ghostSettings.navigation.length - 1 ? null : (
+                <NavSlash />
+              )}
             </>
           )
         })}
@@ -73,20 +87,10 @@ const Header = ({ links, tag }) => {
 export default Header
 
 Header.propTypes = {
-  links: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    slug: PropTypes.string.isRequired,
-    isActive: PropTypes.bool.isRequired,
-  }).isRequired,
+  currentRoute: PropTypes.string,
   tag: PropTypes.string,
 }
 
 Header.defaultProps = {
-  links: [
-    {
-      title: "writing",
-      slug: "",
-      isActive: true,
-    },
-  ],
+  currentRoute: "/",
 }
