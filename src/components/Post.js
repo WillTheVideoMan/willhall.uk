@@ -73,7 +73,7 @@ const Post = ({
                 <Slash />
               </>
             ) : null}
-            {published_at.toLocaleString("en-GB")}
+            {published_at.toUTCString()}
           </InfoRow>
           <InfoRow>
             <div>
