@@ -31,6 +31,7 @@
     "gatsby-plugin-sharp": "2.6.22",
     "gatsby-plugin-sitemap": "2.4.11",
     "gatsby-plugin-styled-components": "3.3.10",
+    "gatsby-plugin-use-dark-mode": "1.1.2",
     "gatsby-rehype-ghost-images": "1.0.0",
     "gatsby-rehype-ghost-links": "1.5.1",
     "gatsby-rehype-inline-images": "1.6.0",
@@ -39,7 +40,8 @@
     "react-dom": "16.13.1",
     "react-helmet": "6.1.0",
     "rehype-react": "6.1.0",
-    "styled-components": "5.1.1"
+    "styled-components": "5.1.1",
+    "use-dark-mode": "2.3.1"
   },
   "devDependencies": {
     "@babel/core": "7.10.5",

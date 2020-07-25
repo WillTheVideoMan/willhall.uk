@@ -5,6 +5,7 @@ import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
 import themes from "../styles/themes"
 import GlobalStyle from "../styles/GlobalStyle"
 import Header from "./Header"
+import useDarkMode from "use-dark-mode"
 
 const App = styled.main`
   margin: 0 ${props => props.theme.spacing.main.major};
@@ -47,31 +48,9 @@ const LayoutStyle = createGlobalStyle`
  * The layout adds global styles and themes, navigation, and footer.
  */
 const Layout = ({ route, children }) => {
-  /**
-   * Check to see if we are rendering in the browser (not server-side).
-   *
-   * If so, ensures the local storage item exists.
-   */
-  if (typeof window !== "undefined" && !localStorage.getItem("isDark"))
-    localStorage.setItem("isDark", false)
-
-  /**
-   * Ensure the window exists before getting from the local store.
-   *
-   * This allows for one pass of SSR, then when the window exists after the first client render, the local store takes over.
-   */
-  const [isDark, setIsDark] = useState(
-    typeof window !== "undefined"
-      ? localStorage.getItem("isDark") === "false"
-        ? false
-        : true
-      : false
-  )
-
-  useEffect(() => localStorage.setItem("isDark", isDark), [isDark])
-
+  const darkMode = useDarkMode(false)
   return (
-    <ThemeProvider theme={isDark ? themes.dark : themes.light}>
+    <ThemeProvider theme={darkMode.value ? themes.dark : themes.light}>
       <App>
         <Helmet>
           <link
@@ -83,8 +62,8 @@ const Layout = ({ route, children }) => {
         <LayoutStyle />
         <Header
           currentRoute={route}
-          isDark={isDark}
-          handleClick={() => setIsDark(!isDark)}
+          isDark={darkMode.value}
+          handleClick={darkMode.toggle}
         />
         {children}
         <Footer>
