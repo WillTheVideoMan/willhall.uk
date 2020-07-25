@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
 import themes from "../styles/themes"
-import Normalise from "../styles/Normalise"
+import GlobalStyle from "../styles/GlobalStyle"
 import Header from "./Header"
 
 const App = styled.main`
@@ -21,10 +21,8 @@ const Footer = styled.footer`
   font-size: ${props => props.theme.typography.fontSize.body.small};
 `
 
-const GlobalStyle = createGlobalStyle`
+const LayoutStyle = createGlobalStyle`
  :root{
-    max-width: 64rem;
-    margin: auto;
     background-color: ${props => props.theme.colours.background};
 
     scrollbar-color:
@@ -40,11 +38,6 @@ const GlobalStyle = createGlobalStyle`
     *::-webkit-scrollbar-thumb {
       background-color: ${props => props.theme.colours.accent}
     }
-
-    @media only screen and (min-width: 36rem) {
-        font-size: 18px;
-    }
-   
  }
 `
 
@@ -86,8 +79,8 @@ const Layout = ({ route, children }) => {
             rel="stylesheet"
           />
         </Helmet>
-        <Normalise />
         <GlobalStyle />
+        <LayoutStyle />
         <Header
           currentRoute={route}
           isDark={isDark}

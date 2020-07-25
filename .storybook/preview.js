@@ -3,7 +3,7 @@ import { action } from "@storybook/addon-actions"
 import { addDecorator } from "@storybook/react"
 import "@storybook/addon-console"
 import { withA11y } from "@storybook/addon-a11y"
-import Normalise from "../src/styles/Normalise"
+import GlobalStyle from "../src/styles/GlobalStyle"
 import { withThemesProvider } from "themeprovider-storybook"
 import themes from "../src/styles/themes"
 
@@ -33,7 +33,7 @@ addDecorator(s => (
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
       rel="stylesheet"
     />
-    <Normalise />
+    <GlobalStyle />
     {s()}
   </>
 ))

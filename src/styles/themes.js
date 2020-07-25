@@ -11,7 +11,7 @@ const fontScale = 1.2
 const light = {
   colours: {
     primary: "black",
-    accent: "#ddd",
+    accent: "#eee",
     background: "white",
   },
   typography: {

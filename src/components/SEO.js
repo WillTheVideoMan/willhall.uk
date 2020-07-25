@@ -39,14 +39,14 @@ const SEO = ({ lang, title, description, route }) => {
    * Set the language from props, then from Ghost, then from Gatsby config.
    */
   const metaLang =
-    lang || (ghostSettings ? ghostSettings.lang : site.siteMetadata.lang)
+    lang || (ghostSettings.lang ? ghostSettings.lang : site.siteMetadata.lang)
 
   /**
    * The site title does not change between routes.
    *
    * Set the site tail from Ghost, then from Gatsby config.
    */
-  const metaSiteTitle = ghostSettings
+  const metaSiteTitle = ghostSettings.title
     ? ghostSettings.title
     : site.siteMetadata.title
 
