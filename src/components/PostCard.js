@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import DottedWrapper from "./DottedWrapper"
 import PostInfo from "./PostInfo"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 const PaddedDottedWrapper = styled(DottedWrapper)`
   flex-grow: 1;
@@ -57,3 +57,18 @@ PostCard.propTypes = {
     slug: PropTypes.string.isRequired,
   }),
 }
+
+export const postCardContentFragment = graphql`
+  fragment PostCardContent on GhostPost {
+    title
+    slug
+    excerpt
+    published_at
+    reading_time
+    featured
+    primary_tag {
+      name
+      slug
+    }
+  }
+`

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
@@ -54,7 +54,7 @@ const Layout = ({ route, children }) => {
       <App>
         <Helmet>
           <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
             rel="stylesheet"
           />
         </Helmet>

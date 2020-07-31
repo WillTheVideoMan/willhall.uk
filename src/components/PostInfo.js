@@ -26,8 +26,9 @@ const Title = styled.h1`
 `
 
 const Excerpt = styled.div`
-  text-indent: -0.4rem;
-  font-style: italic;
+  text-indent: -0.35rem;
+  font-family: ${props => props.theme.typography.fontFamily.body};
+  font-size: ${props => props.theme.typography.fontSize.body.regular};
   ::before {
     content: '"';
   }

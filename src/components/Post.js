@@ -4,6 +4,7 @@ import PropTypes from "prop-types"
 import Article from "./Article"
 import DottedWrapper from "./DottedWrapper"
 import PostInfo from "./PostInfo"
+import { graphql } from "gatsby"
 
 const Container = styled.article`
   max-width: 36rem;
@@ -69,3 +70,20 @@ Post.defaultProps = {
     slug: "tag",
   }),
 }
+
+export const postContentFragment = graphql`
+  fragment PostContent on GhostPost {
+    title
+    slug
+    published_at
+    reading_time
+    featured
+    primary_tag {
+      name
+      slug
+    }
+    childHtmlRehype {
+      htmlAst
+    }
+  }
+`

@@ -38,16 +38,7 @@ export const indexQuery = graphql`
     allGhostPost(sort: { fields: featured, order: DESC }) {
       edges {
         node {
-          title
-          slug
-          excerpt
-          published_at
-          reading_time
-          featured
-          primary_tag {
-            name
-            slug
-          }
+          ...PostCardContent
         }
       }
     }
