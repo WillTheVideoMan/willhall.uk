@@ -42,6 +42,7 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-use-dark-mode`,
     {
       resolve: `gatsby-plugin-metomic`,
       options: {

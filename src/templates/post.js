@@ -3,9 +3,18 @@ import { graphql } from "gatsby"
 import Post from "../components/Post"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import PostCardContainer from "../components/PostCardContainer"
 
 const PostPage = ({ data }) => {
   const post = data.ghostPost
+  const next =
+    data.next_of_tag.edges.length > 0
+      ? data.next_of_tag.edges.map(({ node }) => node)
+      : data.next_of_all.edges.length > 0
+      ? data.next_of_all.edges.map(({ node }) => node)
+      : null
+
+  console.log(next)
   return (
     <Layout route="/">
       <SEO title={post.title} route={"/" + post.slug} />
@@ -17,6 +26,9 @@ const PostPage = ({ data }) => {
         primary_tag={post.primary_tag}
         htmlAst={post.childHtmlRehype.htmlAst}
       />
+      {next ? (
+        <PostCardContainer title={"you might like"} postcards={next} />
+      ) : null}
     </Layout>
   )
 }
@@ -24,19 +36,33 @@ const PostPage = ({ data }) => {
 export default PostPage
 
 export const postPageQuery = graphql`
-  query($slug: String!) {
-    ghostPost(slug: { eq: $slug }) {
-      title
-      slug
-      published_at
-      reading_time
-      featured
-      primary_tag {
-        name
-        slug
+  query($post_slug: String!, $primary_tag_slug: String) {
+    ghostPost(slug: { eq: $post_slug }) {
+      ...PostContent
+    }
+    next_of_tag: allGhostPost(
+      filter: {
+        primary_tag: { slug: { eq: $primary_tag_slug } }
+        slug: { ne: $post_slug }
       }
-      childHtmlRehype {
-        htmlAst
+      sort: { fields: featured, order: DESC }
+      limit: 3
+    ) {
+      edges {
+        node {
+          ...PostCardContent
+        }
+      }
+    }
+    next_of_all: allGhostPost(
+      filter: { slug: { ne: $post_slug } }
+      limit: 3
+      sort: { order: DESC, fields: featured }
+    ) {
+      edges {
+        node {
+          ...PostCardContent
+        }
       }
     }
   }

@@ -3,14 +3,8 @@ import styled from "styled-components"
 import PropTypes from "prop-types"
 import Article from "./Article"
 import DottedWrapper from "./DottedWrapper"
-import { Link } from "gatsby"
-
-const Title = styled.h1`
-  font-size: ${props => props.theme.typography.fontSize.heading.primary};
-  font-family: ${props => props.theme.typography.fontFamily.heading};
-  margin-top: ${props => props.theme.spacing.main.minor};
-  margin-bottom: ${props => props.theme.spacing.accent.minor};
-`
+import PostInfo from "./PostInfo"
+import { graphql } from "gatsby"
 
 const Container = styled.article`
   max-width: 36rem;
@@ -22,37 +16,6 @@ const Container = styled.article`
 const PaddedDottedWrapper = styled(DottedWrapper)`
   padding: ${props => props.theme.spacing.main.major};
 `
-
-const TitleWrapper = styled.div`
-  * {
-    color: ${props => props.theme.colours.primary};
-  }
-`
-
-const InfoRow = styled.div`
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  margin-top: ${props => props.theme.spacing.main.minor};
-  margin-bottom: ${props => props.theme.spacing.accent.minor};
-  font-family: ${props => props.theme.typography.fontFamily.heading};
-  font-size: ${props => props.theme.typography.fontSize.body.small};
-`
-
-const Slash = styled.div`
-  margin: 0 0.3rem;
-  ::before {
-    content: "/";
-  }
-`
-
-const FeatureStar = styled.div`
-  margin-left: auto;
-  ::before {
-    content: "★";
-  }
-`
-
 const Post = ({
   title,
   published_at,
@@ -64,25 +27,13 @@ const Post = ({
   return (
     <Container>
       <PaddedDottedWrapper>
-        <TitleWrapper>
-          <Title>{title}</Title>
-          <InfoRow>
-            {primary_tag ? (
-              <>
-                <Link to={"/tag/" + primary_tag.slug}>{primary_tag.name}</Link>
-                <Slash />
-              </>
-            ) : null}
-            {published_at.toUTCString()}
-          </InfoRow>
-          <InfoRow>
-            <div>
-              {reading_time}
-              {Math.abs(reading_time) < 2 ? " min" : " mins"}
-            </div>
-            {featured ? <FeatureStar /> : null}
-          </InfoRow>
-        </TitleWrapper>
+        <PostInfo
+          title={title}
+          published_at={published_at}
+          reading_time={reading_time}
+          featured={featured}
+          primary_tag={primary_tag}
+        />
         <Article htmlAst={htmlAst} />
       </PaddedDottedWrapper>
     </Container>
@@ -119,3 +70,20 @@ Post.defaultProps = {
     slug: "tag",
   }),
 }
+
+export const postContentFragment = graphql`
+  fragment PostContent on GhostPost {
+    title
+    slug
+    published_at
+    reading_time
+    featured
+    primary_tag {
+      name
+      slug
+    }
+    childHtmlRehype {
+      htmlAst
+    }
+  }
+`

@@ -9,6 +9,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         edges {
           node {
             slug
+            primary_tag {
+              slug
+            }
           }
         }
       }
@@ -32,7 +35,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: node.url,
       component: postTemplate,
       context: {
-        slug: node.slug,
+        post_slug: node.slug,
+        primary_tag_slug: node.primary_tag ? node.primary_tag.slug : null,
       },
     })
   })

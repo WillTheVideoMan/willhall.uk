@@ -11,7 +11,7 @@ const fontScale = 1.2
 const light = {
   colours: {
     primary: "black",
-    accent: "#ddd",
+    accent: "#eee",
     background: "white",
   },
   typography: {
@@ -43,8 +43,8 @@ const light = {
       minor: 0,
     },
     accent: {
-      major: `${(baseLineHeight - 0.5 - 0.3) * 3}rem`,
-      minor: `${baseLineHeight - 0.5 - 0.3}rem`,
+      major: `${(baseLineHeight - 0.5) * 3}rem`,
+      minor: `${baseLineHeight - 0.5}rem`,
     },
   },
 }

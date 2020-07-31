@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
 import themes from "../styles/themes"
-import Normalise from "../styles/Normalise"
+import GlobalStyle from "../styles/GlobalStyle"
 import Header from "./Header"
+import useDarkMode from "use-dark-mode"
 
 const App = styled.main`
   margin: 0 ${props => props.theme.spacing.main.major};
@@ -21,10 +22,8 @@ const Footer = styled.footer`
   font-size: ${props => props.theme.typography.fontSize.body.small};
 `
 
-const GlobalStyle = createGlobalStyle`
+const LayoutStyle = createGlobalStyle`
  :root{
-    max-width: 64rem;
-    margin: auto;
     background-color: ${props => props.theme.colours.background};
 
     scrollbar-color:
@@ -40,11 +39,6 @@ const GlobalStyle = createGlobalStyle`
     *::-webkit-scrollbar-thumb {
       background-color: ${props => props.theme.colours.accent}
     }
-
-    @media only screen and (min-width: 36rem) {
-        font-size: 18px;
-    }
-   
  }
 `
 
@@ -54,44 +48,22 @@ const GlobalStyle = createGlobalStyle`
  * The layout adds global styles and themes, navigation, and footer.
  */
 const Layout = ({ route, children }) => {
-  /**
-   * Check to see if we are rendering in the browser (not server-side).
-   *
-   * If so, ensures the local storage item exists.
-   */
-  if (typeof window !== "undefined" && !localStorage.getItem("isDark"))
-    localStorage.setItem("isDark", false)
-
-  /**
-   * Ensure the window exists before getting from the local store.
-   *
-   * This allows for one pass of SSR, then when the window exists after the first client render, the local store takes over.
-   */
-  const [isDark, setIsDark] = useState(
-    typeof window !== "undefined"
-      ? localStorage.getItem("isDark") === "false"
-        ? false
-        : true
-      : false
-  )
-
-  useEffect(() => localStorage.setItem("isDark", isDark), [isDark])
-
+  const darkMode = useDarkMode(false)
   return (
-    <ThemeProvider theme={isDark ? themes.dark : themes.light}>
+    <ThemeProvider theme={darkMode.value ? themes.dark : themes.light}>
       <App>
         <Helmet>
           <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
             rel="stylesheet"
           />
         </Helmet>
-        <Normalise />
         <GlobalStyle />
+        <LayoutStyle />
         <Header
           currentRoute={route}
-          isDark={isDark}
-          handleClick={() => setIsDark(!isDark)}
+          isDark={darkMode.value}
+          handleClick={darkMode.toggle}
         />
         {children}
         <Footer>

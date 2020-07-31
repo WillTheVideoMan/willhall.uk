@@ -1,37 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-
+/**
+ * Use an SVG to generate a custom spaced dotted wrapper.
+ */
 const Wrapper = styled.div`
-  /** Generates a linear gradient on each axis within a background image */
-  background-image: linear-gradient(
-      to right,
-      ${props => props.theme.colours.primary} ${props => props.length}%,
-      rgba(255, 255, 255, 0) 0%
-    ),
-    linear-gradient(
-      ${props => props.theme.colours.primary} ${props => props.length}%,
-      rgba(255, 255, 255, 0) 0%
-    ),
-    linear-gradient(
-      to right,
-      ${props => props.theme.colours.primary} ${props => props.length}%,
-      rgba(255, 255, 255, 0) 0%
-    ),
-    linear-gradient(
-      ${props => props.theme.colours.primary} ${props => props.length}%,
-      rgba(255, 255, 255, 0) 0%
-    );
-
-  /** Position each gradient along each edge of the division. */
-  background-position: top, right, bottom, left;
-
-  /** The size of the background defines how long each repeated gradient is. */
-  background-size: ${props => props.spacing}px 1px,
-    1px ${props => props.spacing}px;
-
-  /** Repeat the gradient along each axis. */
-  background-repeat: repeat-x, repeat-y;
+  background-image: url("data:image/svg+xml,%3csvg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='${props =>
+    props.theme.colours
+      .primary}' stroke-width='2' stroke-dasharray='1 16' stroke-dashoffset='4' stroke-linecap='butt'/%3e%3c/svg%3e");
 `
 
 /**

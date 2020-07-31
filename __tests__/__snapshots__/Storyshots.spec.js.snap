@@ -3,11 +3,11 @@
 exports[`Storyshots Article / Code Block Default Code Block 1`] = `
 Array [
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
     rel="stylesheet"
   />,
   <pre
-    className="sc-AxgMl kUecHS"
+    className="sc-AxgMl jdQkdf"
     tabIndex="0"
   >
     <code
@@ -29,11 +29,11 @@ export default {
 exports[`Storyshots Article / Inline Code Default Inline Code 1`] = `
 Array [
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
     rel="stylesheet"
   />,
   <code
-    className="sc-AxheI hLmjmS"
+    className="sc-AxheI hLvSCD"
   >
     import { Greeting } from './Greeting';
   </code>,
@@ -43,7 +43,7 @@ Array [
 exports[`Storyshots Article / Inline Sharp Image Default Inline Sharp Image 1`] = `
 Array [
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
     rel="stylesheet"
   />,
   <div
@@ -142,11 +142,11 @@ https://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg 700w\\" src=\\"htt
 exports[`Storyshots Article Default Article 1`] = `
 Array [
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
     rel="stylesheet"
   />,
   <article
-    className="sc-Axmtr gVGSkj"
+    className="sc-Axmtr cAbpGW"
   >
     <h2>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -284,11 +284,11 @@ https://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg 700w\\" src=\\"htt
       </figcaption>
     </figure>
     <pre
-      className="sc-AxgMl kUecHS"
+      className="sc-AxgMl jdQkdf"
       tabIndex="0"
     >
       <code
-        className="sc-AxheI hLmjmS"
+        className="sc-AxheI hLvSCD"
       >
         import { Greeting } from './Greeting';
 
@@ -321,11 +321,11 @@ export default {
 exports[`Storyshots Article Empty Article 1`] = `
 Array [
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
     rel="stylesheet"
   />,
   <article
-    className="sc-Axmtr gVGSkj"
+    className="sc-Axmtr cAbpGW"
   >
     Nothing to see here.
   </article>,
@@ -335,11 +335,11 @@ Array [
 exports[`Storyshots DottedWrapper Default Dotted Wrapper 1`] = `
 Array [
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
     rel="stylesheet"
   />,
   <div
-    className="sc-AxmLO kSHOrf"
+    className="sc-AxmLO iNeMGg"
     spacing={10}
   >
     <div
@@ -354,7 +354,7 @@ Array [
 exports[`Storyshots Layout / Header Dark Theme Icon 1`] = `
 Array [
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
     rel="stylesheet"
   />,
   <header
@@ -376,7 +376,7 @@ Array [
       </div>
     </div>
     <p
-      className="sc-fzokOt hAeZqm"
+      className="sc-fzokOt fFyPLq"
     >
       journey through everything
     </p>
@@ -401,7 +401,7 @@ Array [
 exports[`Storyshots Layout / Header Default Header 1`] = `
 Array [
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
     rel="stylesheet"
   />,
   <header
@@ -423,7 +423,7 @@ Array [
       </div>
     </div>
     <p
-      className="sc-fzokOt hAeZqm"
+      className="sc-fzokOt fFyPLq"
     >
       journey through everything
     </p>
@@ -448,7 +448,7 @@ Array [
 exports[`Storyshots Layout / Header With Tag 1`] = `
 Array [
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
     rel="stylesheet"
   />,
   <header
@@ -470,7 +470,7 @@ Array [
       </div>
     </div>
     <p
-      className="sc-fzokOt hAeZqm"
+      className="sc-fzokOt fFyPLq"
     >
       journey through everything
     </p>
@@ -496,7 +496,7 @@ Array [
 
 exports[`Storyshots Layout / SEO Default SEO 1`] = `
 <link
-  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
   rel="stylesheet"
 />
 `;
@@ -504,7 +504,7 @@ exports[`Storyshots Layout / SEO Default SEO 1`] = `
 exports[`Storyshots Layout Default Layout 1`] = `
 Array [
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
     rel="stylesheet"
   />,
   <main
@@ -529,7 +529,7 @@ Array [
         </div>
       </div>
       <p
-        className="sc-fzokOt hAeZqm"
+        className="sc-fzokOt fFyPLq"
       >
         journey through everything
       </p>
@@ -571,29 +571,44 @@ Array [
 ]
 `;
 
-exports[`Storyshots Post Default Post 1`] = `
+exports[`Storyshots Post / PostCard Default Post Card 1`] = `
 Array [
   <link
-    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:wght@400;600;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
     rel="stylesheet"
   />,
-  <article
-    className="sc-fznJRM cJegtd"
+  <div
+    className="sc-AxmLO iNeMGg sc-fzoXWK jqqEOk"
+    spacing={10}
   >
-    <div
-      className="sc-AxmLO kSHOrf sc-fznWqX hjIkge"
-      spacing={10}
+    <a
+      aria-label="This post is pretty cool and also epic."
+      className="sc-fzpmMD kfYypo"
+      href="/post-title"
     >
       <div
-        className="sc-fzoiQi einKuo"
+        className="sc-fznxsB kImwrM"
       >
-        <h1
-          className="sc-fznxsB esASVC"
-        >
-          Post title
-        </h1>
         <div
-          className="sc-fzqARJ eGKEOH"
+          className="sc-fznJRM jueHNJ"
+        >
+          <h1
+            className="sc-fznWqX nAaoJ"
+          >
+            Post title
+          </h1>
+        </div>
+        <div
+          className="sc-fznJRM jueHNJ"
+        >
+          <div
+            className="sc-fzoiQi lcPKQt"
+          >
+            This post is pretty cool and also epic.
+          </div>
+        </div>
+        <div
+          className="sc-fznJRM jueHNJ"
         >
           <a
             href="/tag/tag"
@@ -601,12 +616,301 @@ Array [
             Tag
           </a>
           <div
-            className="sc-fzqNqU frJuBj"
+            className="sc-fzqARJ kLGNDI"
           />
           Thu, 01 Jan 1970 00:00:00 GMT
         </div>
         <div
-          className="sc-fzqARJ eGKEOH"
+          className="sc-fznJRM jueHNJ"
+        >
+          <div>
+            3
+             mins
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>,
+]
+`;
+
+exports[`Storyshots Post / PostCardContainer Default Post Card Container 1`] = `
+Array [
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
+    rel="stylesheet"
+  />,
+  <div>
+    <div
+      className="sc-fznMAR kVlgsn"
+    >
+      Post Cards Yo!
+    </div>
+    <div
+      className="sc-fznxKY gzCDtn"
+    >
+      <div
+        className="sc-AxmLO iNeMGg sc-fzoXWK imsyeB"
+        spacing={10}
+      >
+        <a
+          aria-label="This post is pretty cool and also epic."
+          className="sc-fzpmMD kfYypo"
+          href="/post-title"
+        >
+          <div
+            className="sc-fznxsB kImwrM"
+          >
+            <div
+              className="sc-fznJRM jueHNJ"
+            >
+              <h1
+                className="sc-fznWqX nAaoJ"
+              >
+                Post Title
+              </h1>
+            </div>
+            <div
+              className="sc-fznJRM jueHNJ"
+            >
+              <div
+                className="sc-fzoiQi lcPKQt"
+              >
+                This post is pretty cool and also epic.
+              </div>
+            </div>
+            <div
+              className="sc-fznJRM jueHNJ"
+            >
+              <a
+                href="/tag/tag"
+              >
+                Tag
+              </a>
+              <div
+                className="sc-fzqARJ kLGNDI"
+              />
+              Thu, 01 Jan 1970 00:00:00 GMT
+            </div>
+            <div
+              className="sc-fznJRM jueHNJ"
+            >
+              <div>
+                3
+                 mins
+              </div>
+              <div
+                className="sc-fzqNqU fkvxpv"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        className="sc-AxmLO iNeMGg sc-fzoXWK jqqEOk"
+        spacing={10}
+      >
+        <a
+          aria-label="This post is pretty cool and also epic."
+          className="sc-fzpmMD kfYypo"
+          href="/post-title"
+        >
+          <div
+            className="sc-fznxsB kImwrM"
+          >
+            <div
+              className="sc-fznJRM jueHNJ"
+            >
+              <h1
+                className="sc-fznWqX nAaoJ"
+              >
+                Post Title 2
+              </h1>
+            </div>
+            <div
+              className="sc-fznJRM jueHNJ"
+            >
+              <div
+                className="sc-fzoiQi lcPKQt"
+              >
+                This post is pretty cool and also epic.
+              </div>
+            </div>
+            <div
+              className="sc-fznJRM jueHNJ"
+            >
+              <a
+                href="/tag/tag"
+              >
+                Tag
+              </a>
+              <div
+                className="sc-fzqARJ kLGNDI"
+              />
+              Thu, 01 Jan 1970 00:00:00 GMT
+            </div>
+            <div
+              className="sc-fznJRM jueHNJ"
+            >
+              <div>
+                3
+                 mins
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div
+        className="sc-AxmLO iNeMGg sc-fzoXWK jqqEOk"
+        spacing={10}
+      >
+        <a
+          aria-label="This post is pretty cool and also epic."
+          className="sc-fzpmMD kfYypo"
+          href="/post-title"
+        >
+          <div
+            className="sc-fznxsB kImwrM"
+          >
+            <div
+              className="sc-fznJRM jueHNJ"
+            >
+              <h1
+                className="sc-fznWqX nAaoJ"
+              >
+                Post Title 3
+              </h1>
+            </div>
+            <div
+              className="sc-fznJRM jueHNJ"
+            >
+              <div
+                className="sc-fzoiQi lcPKQt"
+              >
+                This post is pretty cool and also epic.
+              </div>
+            </div>
+            <div
+              className="sc-fznJRM jueHNJ"
+            >
+              <a
+                href="/tag/tag"
+              >
+                Tag
+              </a>
+              <div
+                className="sc-fzqARJ kLGNDI"
+              />
+              Thu, 01 Jan 1970 00:00:00 GMT
+            </div>
+            <div
+              className="sc-fznJRM jueHNJ"
+            >
+              <div>
+                3
+                 mins
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Post / PostInfo Default Post Info 1`] = `
+Array [
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
+    rel="stylesheet"
+  />,
+  <div
+    className="sc-fznxsB kImwrM"
+  >
+    <div
+      className="sc-fznJRM jueHNJ"
+    >
+      <h1
+        className="sc-fznWqX nAaoJ"
+      >
+        Post title
+      </h1>
+    </div>
+    <div
+      className="sc-fznJRM jueHNJ"
+    >
+      <div
+        className="sc-fzoiQi lcPKQt"
+      >
+        This post is pretty cool and also epic.
+      </div>
+    </div>
+    <div
+      className="sc-fznJRM jueHNJ"
+    >
+      <a
+        href="/tag/tag"
+      >
+        Tag
+      </a>
+      <div
+        className="sc-fzqARJ kLGNDI"
+      />
+      Thu, 01 Jan 1970 00:00:00 GMT
+    </div>
+    <div
+      className="sc-fznJRM jueHNJ"
+    >
+      <div>
+        3
+         mins
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Post Default Post 1`] = `
+Array [
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
+    rel="stylesheet"
+  />,
+  <article
+    className="sc-fzoyTs hqbvsD"
+  >
+    <div
+      className="sc-AxmLO iNeMGg sc-fzoNJl iEeaeB"
+      spacing={10}
+    >
+      <div
+        className="sc-fznxsB kImwrM"
+      >
+        <div
+          className="sc-fznJRM jueHNJ"
+        >
+          <h1
+            className="sc-fznWqX nAaoJ"
+          >
+            Post title
+          </h1>
+        </div>
+        <div
+          className="sc-fznJRM jueHNJ"
+        >
+          <a
+            href="/tag/tag"
+          >
+            Tag
+          </a>
+          <div
+            className="sc-fzqARJ kLGNDI"
+          />
+          Thu, 01 Jan 1970 00:00:00 GMT
+        </div>
+        <div
+          className="sc-fznJRM jueHNJ"
         >
           <div>
             3
@@ -615,7 +919,7 @@ Array [
         </div>
       </div>
       <article
-        className="sc-Axmtr gVGSkj"
+        className="sc-Axmtr cAbpGW"
       >
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed pellentesque non arcu eu efficitur. Aliquam non convallis quam. Donec a pretium velit, non congue magna. Maecenas tempor lectus id tempus lobortis. Curabitur in vestibulum nunc. Suspendisse vitae posuere eros. Interdum et malesuada fames ac ante ipsum primis in faucibus. Ut gravida, odio at interdum fermentum, justo nibh varius enim, vitae pulvinar est mauris quis purus. Donec scelerisque sapien a congue luctus. Maecenas suscipit lacinia pretium. Maecenas sed suscipit augue. 
@@ -750,11 +1054,11 @@ https://s9.limitedrun.com/images/1417418/v600_pamela_1500.jpg 700w\\" src=\\"htt
           </figcaption>
         </figure>
         <pre
-          className="sc-AxgMl kUecHS"
+          className="sc-AxgMl jdQkdf"
           tabIndex="0"
         >
           <code
-            className="sc-AxheI hLmjmS"
+            className="sc-AxheI hLvSCD"
           >
             import { Greeting } from './Greeting';
 
