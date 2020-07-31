@@ -1,11 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { TYPOGRAPHY } from "../styles/constants"
 
 const Code = styled.code`
-  color: ${props => props.theme.colours.primary};
-  background: ${props => props.theme.colours.accent};
-  font-family: ${props => props.theme.typography.fontFamily.monospace};
+  color: var(--colour-primary);
+  background: var(--colour-accent);
+  font-family: ${TYPOGRAPHY.fontFamily.monospace};
 `
 
 /**

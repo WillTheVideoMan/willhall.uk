@@ -1,12 +1,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
+import { TYPOGRAPHY, SPACING } from "../styles/constants"
 
 const Pre = styled.pre`
-  color: ${props => props.theme.colours.primary};
-  font-size: ${props => props.theme.typography.fontSize.body.small};
-  background: ${props => props.theme.colours.accent};
-  padding: ${props => props.theme.spacing.main.major};
+  color: var(--colour-primary);
+  font-size: ${TYPOGRAPHY.fontSize.body.small};
+  background: var(--colour-accent);
+  padding: ${SPACING.main.major};
   overflow-x: scroll;
 `
 

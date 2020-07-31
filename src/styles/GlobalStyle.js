@@ -1,15 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
 const Normalise = createGlobalStyle`
-
-    :root{
-      max-width: 64rem;
-      margin: auto;
-      @media only screen and (min-width: 36rem) {
-        font-size: 18px;
-      }
-    }
-
     /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
     /* Document

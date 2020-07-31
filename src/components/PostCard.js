@@ -4,14 +4,15 @@ import styled from "styled-components"
 import DottedWrapper from "./DottedWrapper"
 import PostInfo from "./PostInfo"
 import { Link, graphql } from "gatsby"
+import { SPACING, TYPOGRAPHY } from "../styles/constants"
 
 const PaddedDottedWrapper = styled(DottedWrapper)`
   flex-grow: 1;
   flex-basis: ${props => (props.featured ? 24 : 16)}rem;
-  margin-left: ${props => props.theme.spacing.main.major};
-  margin-bottom: ${props => props.theme.spacing.main.major};
-  padding: ${props => props.theme.spacing.main.major};
-  font-family: ${props => props.theme.typography.fontFamily.heading};
+  margin-left: ${SPACING.main.major};
+  margin-bottom: ${SPACING.main.major};
+  padding: ${SPACING.main.major};
+  font-family: ${TYPOGRAPHY.fontFamily.heading};
 `
 
 const Card = styled(Link)`

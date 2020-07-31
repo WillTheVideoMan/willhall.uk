@@ -4,27 +4,9 @@ import { addDecorator } from "@storybook/react"
 import "@storybook/addon-console"
 import { withA11y } from "@storybook/addon-a11y"
 import GlobalStyle from "../src/styles/GlobalStyle"
-import { withThemesProvider } from "themeprovider-storybook"
-import themes from "../src/styles/themes"
-
-const styledThemes = [
-  {
-    ...themes.light,
-    name: "light",
-    backgroundColor: themes.light.colours.background,
-  },
-  {
-    ...themes.dark,
-    name: "dark",
-    backgroundColor: themes.dark.colours.background,
-  },
-]
 
 // Add A11y accessibility to all stories.
 addDecorator(withA11y)
-
-// Provide the styled-components themes to each component.
-addDecorator(withThemesProvider(styledThemes))
 
 // Include global styles with each story.
 addDecorator(s => (

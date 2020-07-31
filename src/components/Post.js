@@ -5,6 +5,7 @@ import Article from "./Article"
 import DottedWrapper from "./DottedWrapper"
 import PostInfo from "./PostInfo"
 import { graphql } from "gatsby"
+import { SPACING } from "../styles/constants"
 
 const Container = styled.article`
   max-width: 36rem;
@@ -14,7 +15,7 @@ const Container = styled.article`
 `
 
 const PaddedDottedWrapper = styled(DottedWrapper)`
-  padding: ${props => props.theme.spacing.main.major};
+  padding: ${SPACING.main.major};
 `
 const Post = ({
   title,
