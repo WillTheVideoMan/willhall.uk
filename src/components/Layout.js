@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import styled, { createGlobalStyle } from "styled-components"
-import GlobalStyle from "../styles/GlobalStyle"
+import Normalise from "../styles/Normalise"
 import Header from "./Header"
 import { TYPOGRAPHY, SPACING } from "../styles/constants"
 import { ThemeContext } from "../styles/ThemeProvider"
@@ -35,7 +35,7 @@ const LayoutStyle = createGlobalStyle`
     scrollbar-color:
       var(--colour-accent)
       var(--colour-background);
-    
+    GlobalStyle
     *::-webkit-scrollbar {
       width: 12px;
     }
@@ -63,7 +63,7 @@ const Layout = ({ route, children }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <GlobalStyle />
+      <Normalise />
       <LayoutStyle />
       <Header
         currentRoute={route}

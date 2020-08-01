@@ -3,7 +3,18 @@ import { action } from "@storybook/addon-actions"
 import { addDecorator } from "@storybook/react"
 import "@storybook/addon-console"
 import { withA11y } from "@storybook/addon-a11y"
-import GlobalStyle from "../src/styles/GlobalStyle"
+import Normalise from "../src/styles/Normalise"
+import { createGlobalStyle } from "styled-components"
+import { COLOURS } from "../src/styles/constants"
+import { ThemeProvider } from "../src/styles/ThemeProvider"
+
+const CSSVars = createGlobalStyle`
+:root{
+  --colour-primary: ${COLOURS.primary.light};
+  --colour-accent: ${COLOURS.accent.light};
+  --colour-background: ${COLOURS.background.light};
+}
+`
 
 // Add A11y accessibility to all stories.
 addDecorator(withA11y)
@@ -15,8 +26,9 @@ addDecorator(s => (
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
       rel="stylesheet"
     />
-    <GlobalStyle />
-    {s()}
+    <Normalise />
+    <CSSVars />
+    <ThemeProvider>{s()}</ThemeProvider>
   </>
 ))
 
