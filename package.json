@@ -31,8 +31,6 @@
     "gatsby-plugin-sharp": "2.6.24",
     "gatsby-plugin-sitemap": "2.4.11",
     "gatsby-plugin-styled-components": "3.3.10",
-    "gatsby-rehype-ghost-images": "1.0.0",
-    "gatsby-rehype-ghost-links": "1.5.1",
     "gatsby-rehype-inline-images": "1.6.0",
     "gatsby-transformer-rehype": "1.8.0",
     "react": "16.13.1",
