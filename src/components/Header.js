@@ -69,8 +69,6 @@ const Header = ({ currentRoute, tag, isDark, handleClick }) => {
           label
           url
         }
-        meta_title
-        meta_description
         title
         description
       }
@@ -84,16 +82,12 @@ const Header = ({ currentRoute, tag, isDark, handleClick }) => {
   `)
 
   const siteTitle =
-    ghostSettings && ghostSettings.meta_title
-      ? ghostSettings.meta_title
-      : ghostSettings.title
+    ghostSettings && ghostSettings.title
       ? ghostSettings.title
       : site.siteMetadata.title
 
   const description =
-    ghostSettings && ghostSettings.meta_description
-      ? ghostSettings.meta_description
-      : ghostSettings.description
+    ghostSettings && ghostSettings.description
       ? ghostSettings.description
       : site.siteMetadata.description
 
