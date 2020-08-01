@@ -33,8 +33,6 @@ module.exports = {
         source: node => node.html,
         plugins: [
           {
-            resolve: `gatsby-rehype-ghost-links`,
-            resolve: `gatsby-rehype-ghost-images`,
             resolve: `gatsby-rehype-inline-images`,
           },
         ],
