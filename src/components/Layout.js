@@ -53,7 +53,7 @@ const LayoutStyle = createGlobalStyle`
  *
  * The layout adds global styles and themes, navigation, and footer.
  */
-const Layout = ({ route, children }) => {
+const Layout = ({ route, tag, children }) => {
   const { colourScheme, setColourScheme } = useContext(ThemeContext)
   return (
     <App>
@@ -71,6 +71,7 @@ const Layout = ({ route, children }) => {
         handleClick={() =>
           setColourScheme(colourScheme === "dark" ? "light" : "dark")
         }
+        tag={tag}
       />
       {children}
       <Footer>

@@ -50,6 +50,7 @@ PostCard.propTypes = {
   published_at: PropTypes.instanceOf(Date).isRequired,
   reading_time: PropTypes.number.isRequired,
   featured: PropTypes.bool.isRequired,
+  slug: PropTypes.string.isRequired,
   /**
    * If the post has any tags, this object should hold the primary tag object.
    */

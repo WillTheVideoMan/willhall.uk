@@ -14,10 +14,6 @@ const Container = styled.article`
     max-width: 100%;
   }
 
-  p:first-child {
-    margin-top: ${SPACING.accent.major};
-  }
-
   p,
   ul,
   ol,

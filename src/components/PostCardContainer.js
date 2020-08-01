@@ -24,19 +24,23 @@ const Title = styled.div`
 const PostCardContainer = ({ title, postcards }) => (
   <div>
     {title ? <Title>{title}</Title> : null}
-    <Container>
-      {postcards.map(postcard => (
-        <PostCard
-          title={postcard.title}
-          excerpt={postcard.excerpt}
-          published_at={new Date(postcard.published_at)}
-          reading_time={postcard.reading_time}
-          featured={postcard.featured}
-          primary_tag={postcard.primary_tag}
-          slug={postcard.slug}
-        />
-      ))}
-    </Container>
+    {postcards && postcards.length > 0 ? (
+      <Container>
+        {postcards.map(postcard => (
+          <PostCard
+            title={postcard.title}
+            excerpt={postcard.excerpt}
+            published_at={new Date(postcard.published_at)}
+            reading_time={postcard.reading_time}
+            featured={postcard.featured}
+            primary_tag={postcard.primary_tag}
+            slug={postcard.slug}
+          />
+        ))}
+      </Container>
+    ) : (
+      <Title>There are no posts to show.</Title>
+    )}
   </div>
 )
 

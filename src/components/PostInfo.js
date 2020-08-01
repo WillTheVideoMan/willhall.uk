@@ -59,30 +59,38 @@ const PostInfo = ({
 }) => {
   return (
     <InfoWrapper>
-      <InfoRow>
-        <Title>{title}</Title>
-      </InfoRow>
+      {title ? (
+        <InfoRow>
+          <Title>{title}</Title>
+        </InfoRow>
+      ) : null}
       {excerpt ? (
         <InfoRow>
           <Excerpt>{excerpt}</Excerpt>
         </InfoRow>
       ) : null}
-      <InfoRow>
-        {primary_tag ? (
-          <>
-            <Link to={"/tag/" + primary_tag.slug}>{primary_tag.name}</Link>
-            <Slash />
-          </>
-        ) : null}
-        {published_at.toUTCString()}
-      </InfoRow>
-      <InfoRow>
-        <div>
-          {reading_time}
-          {Math.abs(reading_time) < 2 ? " min" : " mins"}
-        </div>
-        {featured ? <FeatureStar /> : null}
-      </InfoRow>
+      {primary_tag || published_at ? (
+        <InfoRow>
+          {primary_tag ? (
+            <>
+              <Link to={"/tag/" + primary_tag.slug}>{primary_tag.name}</Link>
+              <Slash />
+            </>
+          ) : null}
+          {published_at ? published_at.toUTCString() : null}
+        </InfoRow>
+      ) : null}
+      {reading_time || featured ? (
+        <InfoRow>
+          {typeof reading_time === "number" ? (
+            <div>
+              {reading_time}
+              {Math.abs(reading_time) < 2 ? " min" : " mins"}
+            </div>
+          ) : null}
+          {featured ? <FeatureStar /> : null}
+        </InfoRow>
+      ) : null}
     </InfoWrapper>
   )
 }

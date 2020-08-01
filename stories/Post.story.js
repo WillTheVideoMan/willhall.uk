@@ -223,6 +223,11 @@ export const defaultPost = () => (
     reading_time={number("reading time", 3)}
     featured={boolean("featured", false)}
     primary_tag={object("primary tag", { name: "Tag", slug: "tag" })}
+    tags={object("tags", [
+      { name: "Tag", slug: "tag" },
+      { name: "Tag 2", slug: "tag-2" },
+      { name: "Tag 3", slug: "tag-3" },
+    ])}
     htmlAst={htmlAst}
   />
 )

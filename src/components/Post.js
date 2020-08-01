@@ -4,8 +4,8 @@ import PropTypes from "prop-types"
 import Article from "./Article"
 import DottedWrapper from "./DottedWrapper"
 import PostInfo from "./PostInfo"
-import { graphql } from "gatsby"
-import { SPACING } from "../styles/constants"
+import { graphql, Link } from "gatsby"
+import { SPACING, TYPOGRAPHY } from "../styles/constants"
 
 const Container = styled.article`
   max-width: 36rem;
@@ -17,12 +17,35 @@ const Container = styled.article`
 const PaddedDottedWrapper = styled(DottedWrapper)`
   padding: ${SPACING.main.major};
 `
+
+const Tags = styled.div`
+  margin-top: ${SPACING.main.major};
+  display: flex;
+  font-family: ${TYPOGRAPHY.fontFamily.heading};
+
+  * {
+    color: var(--colour-primary);
+  }
+`
+
+const TagLink = styled(Link)`
+  font-weight: 400;
+`
+
+const TagSlash = styled.div`
+  margin: 0 0.3rem;
+  ::before {
+    content: "/";
+  }
+`
+
 const Post = ({
   title,
   published_at,
   reading_time,
   featured,
   primary_tag,
+  tags,
   htmlAst,
 }) => {
   return (
@@ -37,6 +60,16 @@ const Post = ({
         />
         <Article htmlAst={htmlAst} />
       </PaddedDottedWrapper>
+      {tags && tags.length > 0 ? (
+        <Tags>
+          {tags.map((tag, index) => (
+            <>
+              <TagLink to={"/tag/" + tag.slug + "/"}>{tag.name}</TagLink>
+              {index === tags.length - 1 ? null : <TagSlash />}
+            </>
+          ))}
+        </Tags>
+      ) : null}
     </Container>
   )
 }
@@ -45,9 +78,9 @@ export default Post
 
 Post.propTypes = {
   title: PropTypes.string.isRequired,
-  published_at: PropTypes.instanceOf(Date).isRequired,
-  reading_time: PropTypes.number.isRequired,
-  featured: PropTypes.bool.isRequired,
+  published_at: PropTypes.instanceOf(Date),
+  reading_time: PropTypes.number,
+  featured: PropTypes.bool,
   /**
    * If the post has any tags, this object should hold the primary tag object.
    */
@@ -55,21 +88,16 @@ Post.propTypes = {
     name: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
   }),
+  tags: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+    })
+  ),
   /**
    * The HTMLAst tree to traverse, containing all elements from the rehyped HTML.
    */
   htmlAst: PropTypes.object.isRequired,
-}
-
-Post.defaultProps = {
-  title: "Post",
-  published_at: new Date(0),
-  reading_time: 1,
-  featured: false,
-  primary_tag: PropTypes.shape({
-    name: "Tag",
-    slug: "tag",
-  }),
 }
 
 export const postContentFragment = graphql`
@@ -80,6 +108,10 @@ export const postContentFragment = graphql`
     reading_time
     featured
     primary_tag {
+      name
+      slug
+    }
+    tags {
       name
       slug
     }

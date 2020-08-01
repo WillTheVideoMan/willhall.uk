@@ -27,7 +27,9 @@ module.exports = {
     {
       resolve: `gatsby-transformer-rehype`,
       options: {
-        filter: node => node.internal.type === `GhostPost`,
+        filter: node =>
+          node.internal.type === `GhostPost` ||
+          node.internal.type === `GhostPage`,
         source: node => node.html,
         plugins: [
           {
