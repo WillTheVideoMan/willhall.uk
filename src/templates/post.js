@@ -5,7 +5,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import PostCardContainer from "../components/PostCardContainer"
 
-const PostPage = ({ data }) => {
+const PostTemplate = ({ data }) => {
   const post = data.ghostPost
   const next =
     data.next_of_tag.edges.length > 0
@@ -23,6 +23,7 @@ const PostPage = ({ data }) => {
         reading_time={post.reading_time}
         featured={post.featured}
         primary_tag={post.primary_tag}
+        tags={post.tags}
         htmlAst={post.childHtmlRehype.htmlAst}
       />
       {next ? (
@@ -32,9 +33,9 @@ const PostPage = ({ data }) => {
   )
 }
 
-export default PostPage
+export default PostTemplate
 
-export const postPageQuery = graphql`
+export const postTemplateQuery = graphql`
   query($post_slug: String!, $primary_tag_slug: String) {
     ghostPost(slug: { eq: $post_slug }) {
       ...PostContent

@@ -5,7 +5,7 @@ import SEO from "../components/SEO"
 import { graphql } from "gatsby"
 
 const Index = ({ data }) => {
-  const next =
+  const posts =
     data.allGhostPost.edges.length > 0
       ? data.allGhostPost.edges.map(({ node }) => node)
       : null
@@ -13,7 +13,7 @@ const Index = ({ data }) => {
   return (
     <Layout route="/">
       <SEO title="Welcome" route="/" />
-      <PostCardContainer postcards={next} />
+      <PostCardContainer postcards={posts} />
     </Layout>
   )
 }

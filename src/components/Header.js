@@ -62,27 +62,50 @@ const ThemeIcon = styled.div`
 `
 
 const Header = ({ currentRoute, tag, isDark, handleClick }) => {
-  const { ghostSettings } = useStaticQuery(graphql`
+  const { ghostSettings, site } = useStaticQuery(graphql`
     query {
       ghostSettings {
         navigation {
           label
           url
         }
+        meta_title
+        meta_description
+        title
+        description
+      }
+      site {
+        siteMetadata {
+          title
+          description
+        }
       }
     }
   `)
 
+  const siteTitle =
+    ghostSettings && ghostSettings.meta_title
+      ? ghostSettings.meta_title
+      : ghostSettings.title
+      ? ghostSettings.title
+      : site.siteMetadata.title
+
+  const description =
+    ghostSettings && ghostSettings.meta_description
+      ? ghostSettings.meta_description
+      : ghostSettings.description
+      ? ghostSettings.description
+      : site.siteMetadata.description
+
   return (
     <Container>
       <Headline>
-        <Title>Will Hall's</Title>
+        <Title>{siteTitle}</Title>
         <ThemeIcon onClick={() => handleClick()}>
           {isDark ? "☾" : "☼"}
         </ThemeIcon>
       </Headline>
-
-      <Subtitle>journey through everything</Subtitle>
+      <Subtitle>{description}</Subtitle>
       <Navigation>
         {ghostSettings.navigation.map((link, index) => {
           return (
