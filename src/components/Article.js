@@ -5,6 +5,7 @@ import PropTypes from "prop-types"
 import InlineSharpImage from "../components/InlineSharpImage"
 import CodeBlock from "./CodeBlock"
 import InlineCode from "./InlineCode"
+import { TYPOGRAPHY, SPACING } from "../styles/constants"
 
 const Container = styled.article`
   max-width: 36rem;
@@ -14,7 +15,7 @@ const Container = styled.article`
   }
 
   p:first-child {
-    margin-top: ${props => props.theme.spacing.accent.major};
+    margin-top: ${SPACING.accent.major};
   }
 
   p,
@@ -24,10 +25,10 @@ const Container = styled.article`
   figure,
   pre,
   .gatsby-image-wrapper {
-    margin-top: ${props => props.theme.spacing.main.minor};
-    margin-bottom: ${props => props.theme.spacing.main.major};
-    line-height: ${props => props.theme.typography.lineHeight.body};
-    font-family: ${props => props.theme.typography.fontFamily.body};
+    margin-top: ${SPACING.main.minor};
+    margin-bottom: ${SPACING.main.major};
+    line-height: ${TYPOGRAPHY.lineHeight.body};
+    font-family: ${TYPOGRAPHY.fontFamily.body};
   }
 
   p,
@@ -38,29 +39,29 @@ const Container = styled.article`
   ol,
   blockquote,
   figure {
-    color: ${props => props.theme.colours.primary};
+    color: var(--colour-primary);
   }
 
   h2,
   h3 {
-    margin-top: ${props => props.theme.spacing.accent.major};
-    margin-bottom: ${props => props.theme.spacing.accent.minor};
-    line-height: ${props => props.theme.typography.lineHeight.heading};
-    font-family: ${props => props.theme.typography.fontFamily.heading};
+    margin-top: ${SPACING.accent.major};
+    margin-bottom: ${SPACING.accent.minor};
+    line-height: ${TYPOGRAPHY.lineHeight.heading};
+    font-family: ${TYPOGRAPHY.fontFamily.heading};
     font-weight: 600;
   }
 
   h2 {
-    font-size: ${props => props.theme.typography.fontSize.heading.secondary};
+    font-size: ${TYPOGRAPHY.fontSize.heading.secondary};
   }
 
   h3 {
-    font-size: ${props => props.theme.typography.fontSize.heading.tertiary};
+    font-size: ${TYPOGRAPHY.fontSize.heading.tertiary};
   }
 
   ul,
   ol {
-    padding-left: ${props => props.theme.spacing.main.major};
+    padding-left: ${SPACING.main.major};
   }
 
   blockquote {
@@ -73,8 +74,8 @@ const Container = styled.article`
   }
 
   figure {
-    margin: ${props => props.theme.spacing.accent.major} 0;
-    font-size: ${props => props.theme.typography.fontSize.body.small};
+    margin: ${SPACING.accent.major} 0;
+    font-size: ${TYPOGRAPHY.fontSize.body.small};
     text-align: center;
   }
 `

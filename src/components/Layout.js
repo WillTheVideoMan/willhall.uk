@@ -1,14 +1,14 @@
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
-import themes from "../styles/themes"
-import GlobalStyle from "../styles/GlobalStyle"
+import styled, { createGlobalStyle } from "styled-components"
+import Normalise from "../styles/Normalise"
 import Header from "./Header"
-import useDarkMode from "use-dark-mode"
+import { TYPOGRAPHY, SPACING } from "../styles/constants"
+import { ThemeContext } from "../styles/ThemeProvider"
 
 const App = styled.main`
-  margin: 0 ${props => props.theme.spacing.main.major};
+  margin: 0 ${SPACING.main.major};
 `
 const Link = styled.p`
   text-decoration: underline;
@@ -17,27 +17,33 @@ const Link = styled.p`
 `
 const Footer = styled.footer`
   display: flex;
-  color: ${props => props.theme.colours.primary};
-  font-family: ${props => props.theme.typography.fontFamily.heading};
-  font-size: ${props => props.theme.typography.fontSize.body.small};
+  color: var(--colour-primary);
+  font-family: ${TYPOGRAPHY.fontFamily.heading};
+  font-size: ${TYPOGRAPHY.fontSize.body.small};
 `
 
 const LayoutStyle = createGlobalStyle`
  :root{
-    background-color: ${props => props.theme.colours.background};
+    background-color: var(--colour-background);
+    max-width: 64rem;
+    margin: auto;
+
+    @media only screen and (min-width: 36rem) {
+      font-size: 18px;
+    }
 
     scrollbar-color:
-      ${props => props.theme.colours.accent}
-      ${props => props.theme.colours.background};
-    
+      var(--colour-accent)
+      var(--colour-background);
+    GlobalStyle
     *::-webkit-scrollbar {
       width: 12px;
     }
     *::-webkit-scrollbar-track {
-      background-color: ${props => props.theme.colours.background};
+      background-color: var(--colour-background);
     }
     *::-webkit-scrollbar-thumb {
-      background-color: ${props => props.theme.colours.accent}
+      background-color: var(--colour-accent)
     }
  }
 `
@@ -48,35 +54,35 @@ const LayoutStyle = createGlobalStyle`
  * The layout adds global styles and themes, navigation, and footer.
  */
 const Layout = ({ route, children }) => {
-  const darkMode = useDarkMode(false)
+  const { colourScheme, setColourScheme } = useContext(ThemeContext)
   return (
-    <ThemeProvider theme={darkMode.value ? themes.dark : themes.light}>
-      <App>
-        <Helmet>
-          <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
-            rel="stylesheet"
-          />
-        </Helmet>
-        <GlobalStyle />
-        <LayoutStyle />
-        <Header
-          currentRoute={route}
-          isDark={darkMode.value}
-          handleClick={darkMode.toggle}
+    <App>
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400&display=swap"
+          rel="stylesheet"
         />
-        {children}
-        <Footer>
-          <p>© Will Hall 2020</p>
-          <Link
-            onClick={() => window.Metomic("ConsentManager:show")}
-            data-testid="cookie-manager"
-          >
-            Manage Cookies
-          </Link>
-        </Footer>
-      </App>
-    </ThemeProvider>
+      </Helmet>
+      <Normalise />
+      <LayoutStyle />
+      <Header
+        currentRoute={route}
+        isDark={colourScheme === "dark" ? true : false}
+        handleClick={() =>
+          setColourScheme(colourScheme === "dark" ? "light" : "dark")
+        }
+      />
+      {children}
+      <Footer>
+        <p>© Will Hall 2020</p>
+        <Link
+          onClick={() => window.Metomic("ConsentManager:show")}
+          data-testid="cookie-manager"
+        >
+          Manage Cookies
+        </Link>
+      </Footer>
+    </App>
   )
 }
 

@@ -14,7 +14,6 @@ const PostPage = ({ data }) => {
       ? data.next_of_all.edges.map(({ node }) => node)
       : null
 
-  console.log(next)
   return (
     <Layout route="/">
       <SEO title={post.title} route={"/" + post.slug} />

@@ -2,12 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import { TYPOGRAPHY, SPACING } from "../styles/constants"
 
 const InfoWrapper = styled.div`
-  font-size: ${props => props.theme.typography.fontSize.body.small};
-  font-family: ${props => props.theme.typography.fontFamily.heading};
+  font-size: ${TYPOGRAPHY.fontSize.body.small};
+  font-family: ${TYPOGRAPHY.fontFamily.heading};
   * {
-    color: ${props => props.theme.colours.primary};
+    color: var(--colour-primary);
   }
 `
 
@@ -15,20 +16,20 @@ const InfoRow = styled.div`
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  margin-top: ${props => props.theme.spacing.main.minor};
-  margin-bottom: ${props => props.theme.spacing.accent.minor};
+  margin-top: ${SPACING.main.minor};
+  margin-bottom: ${SPACING.accent.minor};
 `
 
 const Title = styled.h1`
   margin: 0;
-  font-size: ${props => props.theme.typography.fontSize.heading.primary};
+  font-size: ${TYPOGRAPHY.fontSize.heading.primary};
   font-weight: 900;
 `
 
 const Excerpt = styled.div`
   text-indent: -0.35rem;
-  font-family: ${props => props.theme.typography.fontFamily.body};
-  font-size: ${props => props.theme.typography.fontSize.body.regular};
+  font-family: ${TYPOGRAPHY.fontFamily.body};
+  font-size: ${TYPOGRAPHY.fontSize.body.regular};
   ::before {
     content: '"';
   }

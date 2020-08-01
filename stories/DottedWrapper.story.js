@@ -4,7 +4,7 @@ import { withKnobs, number } from "@storybook/addon-knobs"
 import styled from "styled-components"
 
 const Text = styled.div`
-  color: ${props => props.theme.colours.primary};
+  color: var(--colour-primary);
 `
 
 export default {

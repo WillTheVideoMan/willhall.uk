@@ -2,22 +2,23 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import PostCard from "../components/PostCard"
+import { TYPOGRAPHY, SPACING } from "../styles/constants"
 
 const Container = styled.div`
   display: inline-flex;
   flex-wrap: wrap;
-  margin-left: -${props => props.theme.spacing.main.major};
-  margin-bottom: -${props => props.theme.spacing.main.major};
+  margin-left: -${SPACING.main.major};
+  margin-bottom: -${SPACING.main.major};
 `
 
 const Title = styled.div`
-  font-size: ${props => props.theme.typography.fontSize.heading.tertiary};
-  margin-top: ${props => props.theme.spacing.accent.major};
-  margin-bottom: ${props => props.theme.spacing.accent.minor};
-  line-height: ${props => props.theme.typography.lineHeight.heading};
-  font-family: ${props => props.theme.typography.fontFamily.heading};
+  font-size: ${TYPOGRAPHY.fontSize.heading.tertiary};
+  margin-top: ${SPACING.accent.major};
+  margin-bottom: ${SPACING.accent.minor};
+  line-height: ${TYPOGRAPHY.lineHeight.heading};
+  font-family: ${TYPOGRAPHY.fontFamily.heading};
   font-weight: 600;
-  color: ${props => props.theme.colours.primary};
+  color: var(--colour-primary);
 `
 
 const PostCardContainer = ({ title, postcards }) => (
