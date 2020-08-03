@@ -35,7 +35,7 @@ const LayoutStyle = createGlobalStyle`
     scrollbar-color:
       var(--colour-accent)
       var(--colour-background);
-    GlobalStyle
+
     *::-webkit-scrollbar {
       width: 12px;
     }
