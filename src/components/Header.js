@@ -101,21 +101,23 @@ const Header = ({ currentRoute, tag, isDark, handleClick }) => {
       </Headline>
       <Subtitle>{description}</Subtitle>
       <Navigation>
-        {ghostSettings.navigation.map((link, index) => {
-          return (
-            <>
-              <NavLink
-                to={link.url}
-                active={currentRoute === link.url ? true : false}
-              >
-                {link.label}
-              </NavLink>
-              {index === ghostSettings.navigation.length - 1 ? null : (
-                <NavSlash />
-              )}
-            </>
-          )
-        })}
+        {ghostSettings
+          ? ghostSettings.navigation.map((link, index) => {
+              return (
+                <>
+                  <NavLink
+                    to={link.url}
+                    active={currentRoute === link.url ? true : false}
+                  >
+                    {link.label}
+                  </NavLink>
+                  {index === ghostSettings.navigation.length - 1 ? null : (
+                    <NavSlash />
+                  )}
+                </>
+              )
+            })
+          : null}
         <Tag>{tag}</Tag>
       </Navigation>
     </Container>

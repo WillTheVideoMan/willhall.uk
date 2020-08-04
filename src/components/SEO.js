@@ -42,8 +42,10 @@ const SEO = ({ lang, title, description, route }) => {
    */
   const metaLang =
     lang ||
-    (ghostSettings && ghostSettings.lang
+    (ghostSettings
       ? ghostSettings.lang
+        ? ghostSettings.lang
+        : site.siteMetadata.lang
       : site.siteMetadata.lang)
 
   /**
@@ -51,21 +53,25 @@ const SEO = ({ lang, title, description, route }) => {
    *
    * Set the site tail from Ghost, then from Gatsby config.
    */
-  const metaSiteTitle =
-    ghostSettings && ghostSettings.meta_title
+  const metaSiteTitle = ghostSettings
+    ? ghostSettings.meta_title
       ? ghostSettings.meta_title
       : ghostSettings.title
       ? ghostSettings.title
       : site.siteMetadata.title
+    : site.siteMetadata.title
   /**
    * Set the description from props, then from Ghost, then from Gatbsy config.
    */
   const metaDescription =
-    description || (ghostSettings && ghostSettings.meta_description)
+    description ||
+    (ghostSettings
       ? ghostSettings.meta_description
-      : ghostSettings.description
-      ? ghostSettings.description
-      : site.siteMetadata.description
+        ? ghostSettings.meta_description
+        : ghostSettings.description
+        ? ghostSettings.description
+        : site.siteMetadata.description
+      : site.siteMetadata.description)
 
   /**
    * If a route is passed in props, set absolute canonical URL of the current route.
