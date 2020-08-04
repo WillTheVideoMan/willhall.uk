@@ -21,6 +21,7 @@ const PaddedDottedWrapper = styled(DottedWrapper)`
 const Tags = styled.div`
   margin-top: ${SPACING.main.major};
   display: flex;
+  flex-wrap: flex;
   font-family: ${TYPOGRAPHY.fontFamily.heading};
 
   * {
