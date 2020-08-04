@@ -110,5 +110,4 @@ PostInfo.propTypes = {
     name: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
   }),
-  slug: PropTypes.string.isRequired,
 }

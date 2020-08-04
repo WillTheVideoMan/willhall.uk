@@ -51,8 +51,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Will Hall`,
-        short_name: `Will Hall`,
+        name: `Will Hall's Journey Through Everything.`,
+        short_name: `Will Hall Blog`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#fff`,
