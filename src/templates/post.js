@@ -17,16 +17,34 @@ const PostTemplate = ({ data }) => {
   return (
     <Layout route="/">
       <SEO
-        route={{ title: post.title, path: "/" + post.slug }}
         meta={{
+          title: post.title,
+          description: post.custom_excerpt,
+          path: `/${post.slug}`,
+          author: post.primary_author.name,
+          image: post.featureImageSharp
+            ? post.featureImageSharp.childImageSharp.resize
+            : null,
+        }}
+        alt={{
           title: post.meta_title,
           description: post.meta_description,
-          primary_author: post.primary_author.name,
+          canonical_url: post.canonical_url,
         }}
-        og={{ title: post.og_title, description: post.og_description }}
-        twitter={{
+        og={{
+          title: post.og_title,
+          description: post.og_description,
+          type: "article",
+          image: post.ogImageSharp
+            ? post.ogImageSharp.childImageSharp.resize
+            : null,
+        }}
+        twt={{
           title: post.twitter_title,
           description: post.twitter_description,
+          image: post.twitterImageSharp
+            ? post.twitterImageSharp.childImageSharp.resize
+            : null,
         }}
       />
       <Post

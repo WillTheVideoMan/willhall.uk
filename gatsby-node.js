@@ -105,6 +105,10 @@ exports.createSchemaCustomization = ({ actions }) => {
       ogImageSharp: File @link
     }
 
+    type GhostTag implements Node {
+      featureImageSharp: File @link
+    }
+
     type GhostSettings implements Node {
       coverImageSharp: File @link
       twitterImageSharp: File @link

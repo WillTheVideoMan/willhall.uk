@@ -45,7 +45,9 @@ const AssertColourScheme = () => {
 }
 
 export const onRenderBody = ({ setPreBodyComponents }) =>
-  setPreBodyComponents(<AssertColourScheme />)
+  setPreBodyComponents(
+    <AssertColourScheme key={"script_assert_colour_scheme"} />
+  )
 
 export const wrapRootElement = ({ element }) => (
   <ThemeProvider>{element}</ThemeProvider>

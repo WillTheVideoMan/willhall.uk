@@ -10,16 +10,34 @@ const PageTemplate = ({ data }) => {
   return (
     <Layout route={"/" + page.slug + "/"}>
       <SEO
-        route={{ title: page.title, path: "/" + page.slug }}
         meta={{
+          title: page.title,
+          description: page.custom_excerpt,
+          path: `/${page.slug}`,
+          author: page.primary_author.name,
+          image: page.featureImageSharp
+            ? page.featureImageSharp.childImageSharp.resize
+            : null,
+        }}
+        alt={{
           title: page.meta_title,
           description: page.meta_description,
-          primary_author: page.primary_author.name,
+          canonical_url: page.canonical_url,
         }}
-        og={{ title: page.og_title, description: page.og_description }}
-        twitter={{
+        og={{
+          title: page.og_title,
+          description: page.og_description,
+          type: "article",
+          image: page.ogImageSharp
+            ? page.ogImageSharp.childImageSharp.resize
+            : null,
+        }}
+        twt={{
           title: page.twitter_title,
           description: page.twitter_description,
+          image: page.twitterImageSharp
+            ? page.twitterImageSharp.childImageSharp.resize
+            : null,
         }}
       />
       <Post title={page.title} htmlAst={page.childHtmlRehype.htmlAst} />
@@ -32,20 +50,7 @@ export default PageTemplate
 export const pageTemplateQuery = graphql`
   query($page_slug: String!) {
     ghostPage(slug: { eq: $page_slug }) {
-      slug
-      title
-      meta_title
-      meta_description
-      og_title
-      og_description
-      twitter_title
-      twitter_description
-      primary_author {
-        name
-      }
-      childHtmlRehype {
-        htmlAst
-      }
+      ...PageContent
     }
   }
 `

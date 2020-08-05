@@ -53,6 +53,10 @@ module.exports = {
             imgTags: [`feature_image`, `twitter_image`, `og_image`],
           },
           {
+            type: `GhostTag`,
+            imgTags: [`feature_image`],
+          },
+          {
             type: `GhostSettings`,
             imgTags: [
               `cover_image`,

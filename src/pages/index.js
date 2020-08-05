@@ -12,7 +12,12 @@ const Index = ({ data }) => {
 
   return (
     <Layout route="/">
-      <SEO route={{ title: "Welcome", path: "/" }} />
+      <SEO
+        meta={{
+          title: "Welcome",
+          path: "/",
+        }}
+      />
       <PostCardContainer postcards={posts} />
     </Layout>
   )

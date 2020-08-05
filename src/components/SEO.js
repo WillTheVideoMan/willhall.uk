@@ -9,8 +9,11 @@ import { useStaticQuery, graphql } from "gatsby"
  * That is because it deals only with adding meta tags to the document head.
  *
  * This ensures that the site is fully SEO-ed.
+ *
+ * The only truly required props are meta.title and meta.path. THe rest are all optional, and the component
+ * will try its best to fill in all the gaps.
  */
-const SEO = ({ lang, route, meta, og, twitter }) => {
+const SEO = ({ meta, alt, og, twt }) => {
   /**
    * Query the site metadata from the Gatsby configuration and from Ghost.
    */
@@ -23,18 +26,41 @@ const SEO = ({ lang, route, meta, og, twitter }) => {
           description
           meta_title
           meta_description
-          og_title
-          og_description
-          twitter_title
-          twitter_description
+          coverImageSharp {
+            childImageSharp {
+              resize(width: 1080) {
+                src
+                width
+                height
+              }
+            }
+          }
+          ogImageSharp {
+            childImageSharp {
+              resize(width: 1080) {
+                src
+                width
+                height
+              }
+            }
+          }
+          twitterImageSharp {
+            childImageSharp {
+              resize(width: 1080) {
+                src
+                width
+                height
+              }
+            }
+          }
         }
         site {
           siteMetadata {
             lang
+            siteUrl
+            author
             title
             description
-            author
-            siteUrl
           }
         }
       }
@@ -42,22 +68,21 @@ const SEO = ({ lang, route, meta, og, twitter }) => {
   )
 
   /**
-   * Set the language from props, then from Ghost, then from Gatsby config.
+   * Site tag values.
    */
-  const metaLang =
-    lang ||
-    (ghostSettings
+  const lang = ghostSettings
+    ? ghostSettings.lang
       ? ghostSettings.lang
-        ? ghostSettings.lang
-        : site.siteMetadata.lang
-      : site.siteMetadata.lang)
+      : site.siteMetadata.lang
+    : site.siteMetadata.lang
 
-  /**
-   * The site title does not change between routes.
-   *
-   * Set the site tail from Ghost, then from Gatsby config.
-   */
-  const metaSiteTitle = ghostSettings
+  const canonical = alt
+    ? alt.canonical_url
+      ? alt.canonical_url
+      : `${site.siteMetadata.siteUrl}${meta.path}`
+    : `${site.siteMetadata.siteUrl}${meta.path}`
+
+  const globalTitle = ghostSettings
     ? ghostSettings.meta_title
       ? ghostSettings.meta_title
       : ghostSettings.title
@@ -65,127 +90,219 @@ const SEO = ({ lang, route, meta, og, twitter }) => {
       : site.siteMetadata.title
     : site.siteMetadata.title
 
-  /**
-   * Set the description from props, then from Ghost, then from Gatbsy config.
-   */
-  const metaSiteDescription = ghostSettings
-    ? ghostSettings.meta_description
+  const title = alt ? (alt.title ? alt.title : meta.title) : meta.title
+
+  const description = alt
+    ? alt.description
+      ? alt.description
+      : meta.description
+      ? meta.description
+      : ghostSettings
       ? ghostSettings.meta_description
-      : ghostSettings.description
-      ? ghostSettings.description
+        ? ghostSettings.meta_description
+        : ghostSettings.description
+        ? ghostSettings.description
+        : site.siteMetadata.description
       : site.siteMetadata.description
     : site.siteMetadata.description
 
-  /**
-   * If a route path is passed in props, set absolute canonical URL of the current route.
-   */
-  const canonical = route.path
-    ? `${site.siteMetadata.siteUrl}${route.path}`
+  const siteImage = ghostSettings
+    ? ghostSettings.coverImageSharp
+      ? ghostSettings.coverImageSharp.childImageSharp.resize
+      : null
     : null
+
+  const ogSiteImage = ghostSettings
+    ? ghostSettings.ogImageSharp
+      ? ghostSettings.ogImageSharp.childImageSharp.resize
+      : siteImage
+    : siteImage
+
+  const twitterSiteImage = ghostSettings
+    ? ghostSettings.twitterImageSharp
+      ? ghostSettings.twitterImageSharp.childImageSharp.resize
+      : siteImage
+    : siteImage
+
+  /**
+   * Open Graph tag values.
+   */
+  const ogTitle = og ? (og.title ? og.title : title) : title
+
+  const ogDescription = og
+    ? og.description
+      ? og.description
+      : description
+    : description
+
+  const ogType = og ? (og.type ? og.type : "website") : "website"
+
+  const ogImage = og
+    ? og.image
+      ? og.image
+      : meta.image
+      ? meta.image
+      : ogSiteImage
+    : ogSiteImage
+
+  /**
+   * Twitter tag values.
+   */
+  const twitterTitle = twt ? (twt.title ? twt.title : title) : title
+
+  const twitterCreator = meta.author ? meta.author : site.siteMetadata.author
+
+  const twitterDescription = twt
+    ? twt.description
+      ? twt.description
+      : description
+    : description
+
+  const twitterImage = twt
+    ? twt.image
+      ? twt.image
+      : meta.image
+      ? meta.image
+      : twitterSiteImage
+    : twitterSiteImage
 
   return (
     <Helmet
-      htmlAttributes={{ lang: metaLang }}
-      title={meta ? (meta.title ? meta.title : route.title) : route.title}
-      titleTemplate={`%s | ${metaSiteTitle}`}
-      link={canonical ? [{ rel: `canonical`, href: canonical }] : []}
+      htmlAttributes={{ lang: lang }}
+      title={title}
+      titleTemplate={`%s | ${globalTitle}`}
+      link={[{ rel: "canonical", href: canonical }]}
       meta={[
         {
           name: `description`,
-          content: meta
-            ? meta.description
-              ? meta.description
-              : metaSiteDescription
-            : metaSiteDescription,
+          content: description,
         },
         {
           property: `og:title`,
-          content: og.title
-            ? og.title
-            : meta.title
-            ? meta.title
-            : ghostSettings
-            ? ghostSettings.og_title
-              ? ghostSettings.og_title
-              : metaSiteTitle
-            : metaSiteTitle,
+          content: ogTitle,
+        },
+        {
+          property: `og:url`,
+          content: canonical,
         },
         {
           property: `og:description`,
-          content: og.description
-            ? og.description
-            : meta.description
-            ? meta.description
-            : ghostSettings
-            ? ghostSettings.og_description
-              ? ghostSettings.og_description
-              : metaSiteDescription
-            : metaSiteDescription,
+          content: ogDescription,
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: ogType,
+        },
+        {
+          property: `og:site_name`,
+          content: globalTitle,
+        },
+        {
+          name: `twitter:site`,
+          content: globalTitle,
         },
         {
           name: `twitter:creator`,
-          content: meta.primary_author
-            ? meta.primary_author
-            : site.siteMetadata.author,
+          content: twitterCreator,
         },
         {
           name: `twitter:title`,
-          content: twitter.title
-            ? twitter.title
-            : meta.title
-            ? meta.title
-            : ghostSettings
-            ? ghostSettings.twitter_title
-              ? ghostSettings.twitter_title
-              : metaSiteTitle
-            : metaSiteTitle,
+          content: twitterTitle,
         },
         {
           name: `twitter:description`,
-          content: twitter.description
-            ? twitter.description
-            : meta.description
-            ? meta.description
-            : ghostSettings
-            ? ghostSettings.twitter_description
-              ? ghostSettings.twitter_description
-              : metaSiteDescription
-            : metaSiteDescription,
+          content: twitterDescription,
         },
-      ]}
+      ]
+        .concat(
+          ogImage || twitterImage
+            ? [
+                {
+                  name: "twitter:card",
+                  content: "summary_large_image",
+                },
+              ]
+            : [
+                {
+                  name: "twitter:card",
+                  content: "summary",
+                },
+              ]
+        )
+        .concat(
+          ogImage
+            ? [
+                {
+                  property: "og:image",
+                  content: `${site.siteMetadata.siteUrl}${ogImage.src}`,
+                },
+                {
+                  property: "og:image:width",
+                  content: ogImage.width,
+                },
+                {
+                  property: "og:image:height",
+                  content: ogImage.height,
+                },
+              ]
+            : []
+        )
+        .concat(
+          twitterImage
+            ? [
+                {
+                  property: "twitter:image",
+                  content: `${site.siteMetadata.siteUrl}${twitterImage.src}`,
+                },
+              ]
+            : []
+        )}
     />
   )
 }
 
-SEO.defaultProps = {
-  meta: {},
-  og: {},
-  twitter: {},
-}
+SEO.defaultProps = {}
 
 SEO.propTypes = {
-  lang: PropTypes.string,
-  route: PropTypes.shape({
+  /**
+   * The main metadata for the route. The only truly required values are
+   * meta.title and meta.path.
+   */
+  meta: PropTypes.shape({
     title: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    author: PropTypes.string,
+    image: PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      width: PropTypes.number.isRequired,
+      height: PropTypes.number.isRequired,
+    }),
   }).isRequired,
-  meta: PropTypes.shape({
+  alt: PropTypes.shape({
     title: PropTypes.string,
     description: PropTypes.string,
-    primary_author: PropTypes.string,
-  }).isRequired,
+    canonical_url: PropTypes.string,
+  }),
   og: PropTypes.shape({
     title: PropTypes.string,
     description: PropTypes.string,
-  }).isRequired,
-  twitter: PropTypes.shape({
+    type: PropTypes.oneOf(["website", "article"]),
+    image: PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      width: PropTypes.number.isRequired,
+      height: PropTypes.number.isRequired,
+    }),
+  }),
+  twt: PropTypes.shape({
     title: PropTypes.string,
     description: PropTypes.string,
-  }).isRequired,
+    image: PropTypes.shape({
+      src: PropTypes.string.isRequired,
+      width: PropTypes.number.isRequired,
+      height: PropTypes.number.isRequired,
+    }),
+  }),
 }
 
 export default SEO
