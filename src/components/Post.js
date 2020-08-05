@@ -119,5 +119,14 @@ export const postContentFragment = graphql`
     childHtmlRehype {
       htmlAst
     }
+    meta_title
+    meta_description
+    og_title
+    og_description
+    twitter_title
+    twitter_description
+    primary_author {
+      name
+    }
   }
 `

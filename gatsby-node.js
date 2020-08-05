@@ -93,10 +93,24 @@ exports.createSchemaCustomization = ({ actions }) => {
   createTypes(`
     type GhostPage implements Node {
       childHtmlRehype: HTMLRehype
+      featureImageSharp: File @link
+      twitterImageSharp: File @link
+      ogImageSharp: File @link
     }
 
     type GhostPost implements Node {
       childHtmlRehype: HTMLRehype
+      featureImageSharp: File @link
+      twitterImageSharp: File @link
+      ogImageSharp: File @link
+    }
+
+    type GhostSettings implements Node {
+      coverImageSharp: File @link
+      twitterImageSharp: File @link
+      ogImageSharp: File @link
+      logoSharp: File @link
+      iconSharp: File @link
     }
 
     type HTMLRehype implements Node {
