@@ -21,7 +21,6 @@ const PostTemplate = ({ data }) => {
           title: post.title,
           description: post.custom_excerpt,
           path: `/${post.slug}`,
-          author: post.primary_author.name,
           image: post.featureImageSharp
             ? post.featureImageSharp.childImageSharp.resize
             : null,
@@ -42,6 +41,7 @@ const PostTemplate = ({ data }) => {
         twt={{
           title: post.twitter_title,
           description: post.twitter_description,
+          author: post.primary_author.name,
           image: post.twitterImageSharp
             ? post.twitterImageSharp.childImageSharp.resize
             : null,

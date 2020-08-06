@@ -14,7 +14,6 @@ const PageTemplate = ({ data }) => {
           title: page.title,
           description: page.custom_excerpt,
           path: `/${page.slug}`,
-          author: page.primary_author.name,
           image: page.featureImageSharp
             ? page.featureImageSharp.childImageSharp.resize
             : null,
@@ -35,6 +34,7 @@ const PageTemplate = ({ data }) => {
         twt={{
           title: page.twitter_title,
           description: page.twitter_description,
+          author: page.primary_author.name,
           image: page.twitterImageSharp
             ? page.twitterImageSharp.childImageSharp.resize
             : null,
