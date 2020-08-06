@@ -142,21 +142,26 @@ const SEO = ({ meta, alt, og, twt }) => {
   const title = alt ? (alt.title ? alt.title : meta.title) : meta.title
 
   /**
-   * alt.description > meta.description > ghostSettings.meta_description > ghostSettings.description > site.siteMetadata.description
+   * ghostSettings.meta_description > ghostSettings.description > site.siteMetadata.description
+   */
+  const globalDescription = ghostSettings
+    ? ghostSettings.meta_description
+      ? ghostSettings.meta_description
+      : ghostSettings.description
+      ? ghostSettings.description
+      : site.siteMetadata.description
+    : site.siteMetadata.description
+
+  /**
+   * alt.description > meta.description > globalDescription
    */
   const description = alt
     ? alt.description
       ? alt.description
       : meta.description
       ? meta.description
-      : ghostSettings
-      ? ghostSettings.meta_description
-        ? ghostSettings.meta_description
-        : ghostSettings.description
-        ? ghostSettings.description
-        : site.siteMetadata.description
-      : site.siteMetadata.description
-    : site.siteMetadata.description
+      : globalDescription
+    : globalDescription
 
   /**
    * ghostSettings.coverImageSharp > null
