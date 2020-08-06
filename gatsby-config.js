@@ -18,10 +18,12 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `@willthevideoman/gatsby-source-ghost`,
+      resolve: `jamify-source-ghost`,
       options: {
-        apiUrl: process.env.GHOST_API_URL,
-        contentApiKey: process.env.GHOST_CONTENT_API_KEY,
+        ghostConfig: {
+          apiUrl: process.env.GHOST_API_URL,
+          contentApiKey: process.env.GHOST_CONTENT_API_KEY,
+        },
       },
     },
     {
