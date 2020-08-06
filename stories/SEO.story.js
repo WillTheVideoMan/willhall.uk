@@ -9,5 +9,5 @@ export default {
 }
 
 export const defaultSEO = () => (
-  <SEO meta={{ title: text("title", "welcome"), path: text("path", "/") }} />
+  <SEO meta={{ title: text("title", "Welcome"), path: text("path", "/") }} />
 )

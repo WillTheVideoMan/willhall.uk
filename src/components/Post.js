@@ -106,6 +106,7 @@ export const postContentFragment = graphql`
     title
     slug
     published_at
+    custom_excerpt
     reading_time
     featured
     primary_tag {
@@ -159,6 +160,7 @@ export const postContentFragment = graphql`
   fragment PageContent on GhostPage {
     title
     slug
+    custom_excerpt
     primary_author {
       name
     }

@@ -11,9 +11,9 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     lang: `en`,
-    title: `CONFIG TITLE`,
-    description: `CONFIG DESCRIPTION`,
-    author: `CONFIG AUTHOR`,
+    title: `Will Hall's Journey Through Everything.`,
+    description: `Writings, musings and tantalising tutorials. Indulge, if you dare.`,
+    author: `Will Hall`,
     siteUrl: process.env.SITE_URL,
   },
   plugins: [
