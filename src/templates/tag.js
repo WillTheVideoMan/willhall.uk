@@ -11,9 +11,24 @@ const TagTemplate = ({ data }) => {
       ? data.allGhostPost.edges.map(({ node }) => node)
       : null
 
+  console.log(data.ghostTag)
+
   return (
     <Layout route="/" tag={tag.name}>
-      <SEO title={tag.name} route={"/tag" + tag.slug} />
+      <SEO
+        meta={{
+          title: tag.name,
+          description: tag.description,
+          path: `/tag/${tag.slug}`,
+          image: tag.featureImageSharp
+            ? tag.featureImageSharp.childImageSharp.resize
+            : null,
+        }}
+        alt={{
+          title: tag.meta_title,
+          description: tag.meta_description,
+        }}
+      />
       <PostCardContainer postcards={posts} />
     </Layout>
   )
@@ -36,6 +51,18 @@ export const tagTemplateQuery = graphql`
     ghostTag(slug: { eq: $tag_slug }) {
       slug
       name
+      meta_description
+      meta_title
+      description
+      featureImageSharp {
+        childImageSharp {
+          resize(width: 1080) {
+            src
+            width
+            height
+          }
+        }
+      }
     }
   }
 `

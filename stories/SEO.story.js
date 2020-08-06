@@ -8,4 +8,6 @@ export default {
   decorators: [withKnobs],
 }
 
-export const defaultSEO = () => <SEO title="Welcome" route="/" />
+export const defaultSEO = () => (
+  <SEO meta={{ title: text("title", "Welcome"), path: text("path", "/") }} />
+)

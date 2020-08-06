@@ -106,11 +106,15 @@ export const postContentFragment = graphql`
     title
     slug
     published_at
+    custom_excerpt
     reading_time
     featured
     primary_tag {
       name
       slug
+    }
+    primary_author {
+      name
     }
     tags {
       name
@@ -118,6 +122,83 @@ export const postContentFragment = graphql`
     }
     childHtmlRehype {
       htmlAst
+    }
+    meta_title
+    meta_description
+    featureImageSharp {
+      childImageSharp {
+        resize(width: 1080) {
+          src
+          width
+          height
+        }
+      }
+    }
+    og_title
+    og_description
+    ogImageSharp {
+      childImageSharp {
+        resize(width: 1080) {
+          src
+          width
+          height
+        }
+      }
+    }
+    twitter_title
+    twitter_description
+    twitterImageSharp {
+      childImageSharp {
+        resize(width: 1080) {
+          src
+          width
+          height
+        }
+      }
+    }
+  }
+  fragment PageContent on GhostPage {
+    title
+    slug
+    custom_excerpt
+    primary_author {
+      name
+    }
+    childHtmlRehype {
+      htmlAst
+    }
+    meta_title
+    meta_description
+    featureImageSharp {
+      childImageSharp {
+        resize(width: 1080) {
+          src
+          width
+          height
+        }
+      }
+    }
+    og_title
+    og_description
+    ogImageSharp {
+      childImageSharp {
+        resize(width: 1080) {
+          src
+          width
+          height
+        }
+      }
+    }
+    twitter_title
+    twitter_description
+    twitterImageSharp {
+      childImageSharp {
+        resize(width: 1080) {
+          src
+          width
+          height
+        }
+      }
     }
   }
 `

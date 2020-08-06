@@ -28,6 +28,7 @@ const PostCardContainer = ({ title, postcards }) => (
       <Container>
         {postcards.map(postcard => (
           <PostCard
+            key={postcard.slug}
             title={postcard.title}
             excerpt={postcard.excerpt}
             published_at={new Date(postcard.published_at)}
@@ -48,18 +49,20 @@ export default PostCardContainer
 
 PostCardContainer.propTypes = {
   title: PropTypes.string,
-  postcards: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    excerpt: PropTypes.string,
-    published_at: PropTypes.instanceOf(Date).isRequired,
-    reading_time: PropTypes.number.isRequired,
-    featured: PropTypes.bool.isRequired,
-    /**
-     * If the post has any tags, this object should hold the primary tag object.
-     */
-    primary_tag: PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      slug: PropTypes.string.isRequired,
-    }),
-  }),
+  postcards: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      excerpt: PropTypes.string,
+      published_at: PropTypes.string.isRequired,
+      reading_time: PropTypes.number.isRequired,
+      featured: PropTypes.bool.isRequired,
+      /**
+       * If the post has any tags, this object should hold the primary tag object.
+       */
+      primary_tag: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        slug: PropTypes.string.isRequired,
+      }),
+    })
+  ),
 }
