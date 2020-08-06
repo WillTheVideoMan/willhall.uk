@@ -11,8 +11,6 @@ const TagTemplate = ({ data }) => {
       ? data.allGhostPost.edges.map(({ node }) => node)
       : null
 
-  console.log(data.ghostTag)
-
   return (
     <Layout route="/" tag={tag.name}>
       <SEO
