@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
@@ -27,6 +27,7 @@
     "gatsby-plugin-ghost-images": "1.5.1",
     "gatsby-plugin-manifest": "2.4.22",
     "gatsby-plugin-metomic": "0.0.2",
+    "gatsby-plugin-netlify": "^2.3.11",
     "gatsby-plugin-offline": "3.2.22",
     "gatsby-plugin-react-helmet": "3.3.10",
     "gatsby-plugin-remove-serviceworker": "1.0.0",

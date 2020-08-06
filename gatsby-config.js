@@ -77,6 +77,7 @@ module.exports = {
         clientId: process.env.METOMIC_CLIENT_ID,
       },
     },
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
