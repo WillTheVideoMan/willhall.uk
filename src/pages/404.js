@@ -5,7 +5,13 @@ import PostCard from "../components/PostCard"
 
 export default () => (
   <Layout>
-    <SEO title="Oops" />
+    <SEO
+      meta={{
+        title: "404",
+        path: "/404",
+        description: "404: There is nothing to see here.",
+      }}
+    />
     <PostCard
       title="404: There is nothing here."
       excerpt="It looks like there is nothing here."

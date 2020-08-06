@@ -25,7 +25,7 @@ DottedWrapper.propTypes = {
   spacing: PropTypes.number.isRequired,
   length: PropTypes.number.isRequired,
   className: PropTypes.string,
-  children: PropTypes.array,
+  children: PropTypes.element,
 }
 
 DottedWrapper.defaultProps = {

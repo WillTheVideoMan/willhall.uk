@@ -21,6 +21,7 @@ const PaddedDottedWrapper = styled(DottedWrapper)`
 const Tags = styled.div`
   margin-top: ${SPACING.main.major};
   display: flex;
+  flex-wrap: flex;
   font-family: ${TYPOGRAPHY.fontFamily.heading};
 
   * {
@@ -111,12 +112,91 @@ export const postContentFragment = graphql`
       name
       slug
     }
+    primary_author {
+      name
+    }
     tags {
       name
       slug
     }
     childHtmlRehype {
       htmlAst
+    }
+    meta_title
+    meta_description
+    featureImageSharp {
+      childImageSharp {
+        resize(width: 1080) {
+          src
+          width
+          height
+        }
+      }
+    }
+    og_title
+    og_description
+    ogImageSharp {
+      childImageSharp {
+        resize(width: 1080) {
+          src
+          width
+          height
+        }
+      }
+    }
+    twitter_title
+    twitter_description
+    twitterImageSharp {
+      childImageSharp {
+        resize(width: 1080) {
+          src
+          width
+          height
+        }
+      }
+    }
+  }
+  fragment PageContent on GhostPage {
+    title
+    slug
+    primary_author {
+      name
+    }
+    childHtmlRehype {
+      htmlAst
+    }
+    meta_title
+    meta_description
+    featureImageSharp {
+      childImageSharp {
+        resize(width: 1080) {
+          src
+          width
+          height
+        }
+      }
+    }
+    og_title
+    og_description
+    ogImageSharp {
+      childImageSharp {
+        resize(width: 1080) {
+          src
+          width
+          height
+        }
+      }
+    }
+    twitter_title
+    twitter_description
+    twitterImageSharp {
+      childImageSharp {
+        resize(width: 1080) {
+          src
+          width
+          height
+        }
+      }
     }
   }
 `

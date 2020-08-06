@@ -11,9 +11,9 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     lang: `en`,
-    title: `Will Hall`,
-    description: `Will Hall's Journey Through Everything.`,
-    author: `Will Hall`,
+    title: `CONFIG TITLE`,
+    description: `CONFIG DESCRIPTION`,
+    author: `CONFIG AUTHOR`,
     siteUrl: process.env.SITE_URL,
   },
   plugins: [
@@ -39,7 +39,36 @@ module.exports = {
       },
     },
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-sitemap`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-ghost-images`,
+      options: {
+        lookup: [
+          {
+            type: `GhostPost`,
+            imgTags: [`feature_image`, `twitter_image`, `og_image`],
+          },
+          {
+            type: `GhostPage`,
+            imgTags: [`feature_image`, `twitter_image`, `og_image`],
+          },
+          {
+            type: `GhostTag`,
+            imgTags: [`feature_image`],
+          },
+          {
+            type: `GhostSettings`,
+            imgTags: [
+              `cover_image`,
+              `twitter_image`,
+              `og_image`,
+              `icon`,
+              `logo`,
+            ],
+          },
+        ],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     {
@@ -48,11 +77,12 @@ module.exports = {
         clientId: process.env.METOMIC_CLIENT_ID,
       },
     },
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Will Hall`,
-        short_name: `Will Hall`,
+        name: `Will Hall's Journey Through Everything.`,
+        short_name: `Will Hall Blog`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#fff`,

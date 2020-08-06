@@ -16,7 +16,37 @@ const PostTemplate = ({ data }) => {
 
   return (
     <Layout route="/">
-      <SEO title={post.title} route={"/" + post.slug} />
+      <SEO
+        meta={{
+          title: post.title,
+          description: post.custom_excerpt,
+          path: `/${post.slug}`,
+          image: post.featureImageSharp
+            ? post.featureImageSharp.childImageSharp.resize
+            : null,
+        }}
+        alt={{
+          title: post.meta_title,
+          description: post.meta_description,
+          canonical_url: post.canonical_url,
+        }}
+        og={{
+          title: post.og_title,
+          description: post.og_description,
+          type: "article",
+          image: post.ogImageSharp
+            ? post.ogImageSharp.childImageSharp.resize
+            : null,
+        }}
+        twt={{
+          title: post.twitter_title,
+          description: post.twitter_description,
+          author: post.primary_author.name,
+          image: post.twitterImageSharp
+            ? post.twitterImageSharp.childImageSharp.resize
+            : null,
+        }}
+      />
       <Post
         title={post.title}
         published_at={new Date(post.published_at)}
