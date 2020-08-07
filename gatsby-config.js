@@ -20,10 +20,8 @@ module.exports = {
     {
       resolve: `@willthevideoman/gatsby-source-ghost`,
       options: {
-        ghostConfig: {
-          apiUrl: process.env.GHOST_API_URL,
-          contentApiKey: process.env.GHOST_CONTENT_API_KEY,
-        },
+        apiUrl: process.env.GHOST_API_URL,
+        contentApiKey: process.env.GHOST_CONTENT_API_KEY,
       },
     },
     {
