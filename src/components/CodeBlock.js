@@ -9,6 +9,31 @@ const Pre = styled.pre`
   background: var(--colour-accent);
   padding: ${SPACING.main.major};
   overflow-x: scroll;
+
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata,
+  .token.punctuation,
+  .token.operator {
+    color: var(--colour-burst);
+  }
+
+  .token.namespace {
+    opacity: 0.7;
+  }
+
+  .token.important,
+  .token.bold {
+    font-weight: bold;
+  }
+  .token.italic {
+    font-style: italic;
+  }
+
+  .token.entity {
+    cursor: help;
+  }
 `
 
 /**
