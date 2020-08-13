@@ -15,7 +15,8 @@ const Pre = styled.pre`
   .token.doctype,
   .token.cdata,
   .token.punctuation,
-  .token.operator {
+  .token.operator,
+  .token.keyword {
     color: var(--colour-burst);
   }
 
