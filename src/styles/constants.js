@@ -17,6 +17,10 @@ const COLOURS = {
     light: "#eee",
     dark: "#333",
   },
+  burst: {
+    light: "#900",
+    dark: "#f99",
+  },
   background: {
     light: "white",
     dark: "#111",

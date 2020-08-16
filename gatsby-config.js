@@ -31,11 +31,7 @@ module.exports = {
           node.internal.type === `GhostPost` ||
           node.internal.type === `GhostPage`,
         source: node => node.html,
-        plugins: [
-          {
-            resolve: `gatsby-rehype-inline-images`,
-          },
-        ],
+        plugins: [`gatsby-rehype-inline-images`, `gatsby-rehype-prismjs`],
       },
     },
     `gatsby-plugin-sharp`,
