@@ -67,6 +67,15 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
+    {
+      resolve: `@willthevideoman/gatsby-plugin-ackee-tracker`,
+      options: {
+        domainId: process.env.ACKEE_DOMAIN_ID,
+        server: process.env.ACKEE_SERVER,
+        ignoreLocalhost: true,
+        detailed: true,
+      },
+    },
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
