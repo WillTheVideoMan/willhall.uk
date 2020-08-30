@@ -76,12 +76,6 @@ const Layout = ({ route, tag, children }) => {
       {children}
       <Footer>
         <p>© Will Hall 2020</p>
-        <Link
-          onClick={() => window.Metomic("ConsentManager:show")}
-          data-testid="cookie-manager"
-        >
-          Manage Cookies
-        </Link>
       </Footer>
     </App>
   )

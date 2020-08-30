@@ -67,19 +67,6 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-metomic`,
-      options: {
-        clientId: process.env.METOMIC_CLIENT_ID,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-fathom",
-      options: {
-        trackingUrl: "fathom.willhall.uk",
-        siteId: "AAGOA",
-      },
-    },
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,

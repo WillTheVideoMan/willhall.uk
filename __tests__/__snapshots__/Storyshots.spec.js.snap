@@ -559,13 +559,6 @@ Array [
       <p>
         © Will Hall 2020
       </p>
-      <p
-        className="sc-fznZeY jWXHsM"
-        data-testid="cookie-manager"
-        onClick={[Function]}
-      >
-        Manage Cookies
-      </p>
     </footer>
   </main>,
 ]
