@@ -34,7 +34,7 @@
     "gatsby-plugin-styled-components": "3.3.10",
     "gatsby-rehype-inline-images": "1.6.2",
     "gatsby-rehype-prismjs": "1.2.0",
-    "gatsby-transformer-rehype": "1.8.1",
+    "gatsby-transformer-rehype": "1.9.0",
     "gatsby-transformer-sharp": "2.5.14",
     "prismjs": "1.21.0",
     "react": "16.13.1",
