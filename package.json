@@ -32,7 +32,7 @@
     "gatsby-plugin-sharp": "2.6.42",
     "gatsby-plugin-sitemap": "2.4.17",
     "gatsby-plugin-styled-components": "3.3.14",
-    "gatsby-rehype-inline-images": "1.7.2",
+    "gatsby-rehype-inline-images": "1.7.3",
     "gatsby-rehype-prismjs": "1.2.1",
     "gatsby-transformer-rehype": "1.9.1",
     "gatsby-transformer-sharp": "2.5.18",
