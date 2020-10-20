@@ -7,7 +7,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2.0.0
       - name: Cache node modules
-        uses: actions/cache@v2.0.0
+        uses: actions/cache@v2.1.2
         with:
           path: ~/.npm
           key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
