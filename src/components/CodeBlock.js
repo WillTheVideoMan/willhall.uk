@@ -2,15 +2,19 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { TYPOGRAPHY, SPACING } from "../styles/constants"
+import Highlight, { defaultProps } from "prism-react-renderer"
+import theme from "prism-react-renderer/themes/nightOwl"
 
 const Pre = styled.pre`
-  color: var(--colour-primary);
   font-size: ${TYPOGRAPHY.fontSize.body.small};
-  background: var(--colour-accent);
   padding: ${SPACING.main.major};
   overflow-x: scroll;
+`
 
-  .token.comment,
+/*
+color: var(--colour-primary);
+background: var(--colour-accent);
+ .token.comment,
   .token.prolog,
   .token.doctype,
   .token.cdata,
@@ -35,14 +39,28 @@ const Pre = styled.pre`
   .token.entity {
     cursor: help;
   }
-`
 
-/**
- * Returns a code block which is scroll-able when overflowing on the x-axis.
- *
- * This block is a drop-in replacement for `<pre>`, and so it accepts children of `<code>`.
- */
-const CodeBlock = ({ children }) => <Pre tabIndex="0">{children}</Pre>
+
+
+*/
+
+console.log(theme)
+
+const CodeBlock = ({ code, language }) => (
+  <Highlight {...defaultProps} theme={theme} code={code} language={language}>
+    {({ className, style, tokens, getLineProps, getTokenProps }) => (
+      <Pre className={className} style={style}>
+        {tokens.map((line, i) => (
+          <div {...getLineProps({ line, key: i })}>
+            {line.map((token, key) => (
+              <span {...getTokenProps({ token, key })} />
+            ))}
+          </div>
+        ))}
+      </Pre>
+    )}
+  </Highlight>
+)
 
 export default CodeBlock
 

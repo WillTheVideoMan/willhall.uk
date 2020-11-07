@@ -1,11 +1,10 @@
 import React from "react"
-import rehypeReact from "rehype-react"
+import { MDXProvider } from "@mdx-js/react"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "styled-components"
 import PropTypes from "prop-types"
-import InlineSharpImage from "../components/InlineSharpImage"
-import CodeBlock from "./CodeBlock"
-import InlineCode from "./InlineCode"
 import { TYPOGRAPHY, SPACING } from "../styles/constants"
+import CodeBlock from "./CodeBlock"
 
 const Container = styled.article`
   max-width: 36rem;
@@ -19,8 +18,7 @@ const Container = styled.article`
   ol,
   blockquote,
   figure,
-  pre,
-  .gatsby-image-wrapper {
+  pre {
     margin-top: ${SPACING.main.minor};
     margin-bottom: ${SPACING.main.major};
     line-height: ${TYPOGRAPHY.lineHeight.body};
@@ -76,27 +74,18 @@ const Container = styled.article`
   }
 `
 
-const renderAst = new rehypeReact({
-  Fragment: React.Fragment,
-  createElement: React.createElement,
-  components: {
-    "img-sharp-inline": InlineSharpImage,
-    pre: CodeBlock,
-    code: InlineCode,
-  },
-}).Compiler
+const shortcodes = { CodeBlock }
 
-/**
- * The body of an article rendered from an object containing rehyped HTML elements.
- *
- * This components accepts a HTMLAst object, which can be generated through the use of `gatsby-transformer-rehype`.
- *
- * Check the `gatsby-config.js` to see how to configure Gatsby and Ghost for article re-hyping.
- */
-const Article = ({ htmlAst }) => {
+const Article = ({ mdxBody }) => {
   return (
     <Container>
-      {htmlAst ? renderAst(htmlAst) : "Nothing to see here."}
+      {mdxBody ? (
+        <MDXProvider components={shortcodes}>
+          <MDXRenderer>{mdxBody}</MDXRenderer>
+        </MDXProvider>
+      ) : (
+        "Nothing to see here."
+      )}
     </Container>
   )
 }
@@ -104,8 +93,5 @@ const Article = ({ htmlAst }) => {
 export default Article
 
 Article.propTypes = {
-  /**
-   * The HTMLAst tree to traverse, containing all elements from the rehyped HTML.
-   */
-  htmlAst: PropTypes.object.isRequired,
+  mdxBody: PropTypes.string.isRequired,
 }

@@ -34,6 +34,7 @@ const TagTemplate = ({ data }) => {
 
 export default TagTemplate
 
+/*
 export const tagTemplateQuery = graphql`
   query($tag_slug: String!) {
     allGhostPost(
@@ -64,3 +65,4 @@ export const tagTemplateQuery = graphql`
     }
   }
 `
+*/

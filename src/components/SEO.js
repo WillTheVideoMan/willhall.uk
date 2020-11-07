@@ -41,43 +41,9 @@ const SEO = ({ meta, alt, og, twt }) => {
   /**
    * Query the site metadata from the Gatsby configuration and from Ghost.
    */
-  const { ghostSettings, site } = useStaticQuery(
+  const { cover_image, cover_image_og, cover_image_twt, site } = useStaticQuery(
     graphql`
       query {
-        ghostSettings {
-          lang
-          title
-          description
-          meta_title
-          meta_description
-          coverImageSharp {
-            childImageSharp {
-              resize(width: 1080) {
-                src
-                width
-                height
-              }
-            }
-          }
-          ogImageSharp {
-            childImageSharp {
-              resize(width: 1080) {
-                src
-                width
-                height
-              }
-            }
-          }
-          twitterImageSharp {
-            childImageSharp {
-              resize(width: 1080) {
-                src
-                width
-                height
-              }
-            }
-          }
-        }
         site {
           siteMetadata {
             lang
@@ -85,6 +51,33 @@ const SEO = ({ meta, alt, og, twt }) => {
             author
             title
             description
+          }
+        }
+        cover_image: file(relativePath: { eq: "cover.png" }) {
+          childImageSharp {
+            resize(width: 1080) {
+              src
+              height
+              width
+            }
+          }
+        }
+        cover_image_og: file(relativePath: { eq: "cover-og.png" }) {
+          childImageSharp {
+            resize(width: 1080) {
+              src
+              height
+              width
+            }
+          }
+        }
+        cover_image_twt: file(relativePath: { eq: "cover-twt.png" }) {
+          childImageSharp {
+            resize(width: 1080) {
+              src
+              height
+              width
+            }
           }
         }
       }
@@ -108,13 +101,9 @@ const SEO = ({ meta, alt, og, twt }) => {
    */
 
   /**
-   * ghostSettings.lang > site.siteMetadata.lang
+   * site.siteMetadata.lang
    */
-  const lang = ghostSettings
-    ? ghostSettings.lang
-      ? ghostSettings.lang
-      : site.siteMetadata.lang
-    : site.siteMetadata.lang
+  const lang = site.siteMetadata.lang
 
   /**
    * alt.canonical_url > meta.path (+ site.siteMetadata.siteUrl)
@@ -126,15 +115,9 @@ const SEO = ({ meta, alt, og, twt }) => {
     : `${site.siteMetadata.siteUrl}${meta.path}`
 
   /**
-   * ghostSettings.meta_title > ghostSettings.title > site.siteMetadata.title
+   * site.siteMetadata.title
    */
-  const globalTitle = ghostSettings
-    ? ghostSettings.meta_title
-      ? ghostSettings.meta_title
-      : ghostSettings.title
-      ? ghostSettings.title
-      : site.siteMetadata.title
-    : site.siteMetadata.title
+  const globalTitle = site.siteMetadata.title
 
   /**
    * alt.title > meta.title
@@ -142,51 +125,40 @@ const SEO = ({ meta, alt, og, twt }) => {
   const title = alt ? (alt.title ? alt.title : meta.title) : meta.title
 
   /**
-   * ghostSettings.meta_description > ghostSettings.description > site.siteMetadata.description
-   */
-  const globalDescription = ghostSettings
-    ? ghostSettings.meta_description
-      ? ghostSettings.meta_description
-      : ghostSettings.description
-      ? ghostSettings.description
-      : site.siteMetadata.description
-    : site.siteMetadata.description
-
-  /**
-   * alt.description > meta.description > globalDescription
+   * alt.description > meta.description > site.siteMetadata.description
    */
   const description = alt
     ? alt.description
       ? alt.description
       : meta.description
       ? meta.description
-      : globalDescription
-    : globalDescription
+      : site.siteMetadata.description
+    : site.siteMetadata.description
 
   /**
-   * ghostSettings.coverImageSharp > null
+   * cover_image > null
    */
-  const siteImage = ghostSettings
-    ? ghostSettings.coverImageSharp
-      ? ghostSettings.coverImageSharp.childImageSharp.resize
+  const siteImage = cover_image
+    ? cover_image.childImageSharp
+      ? cover_image.childImageSharp.resize
       : null
     : null
 
   /**
-   * ghostSettings.ogImageSharp > siteImage > null
+   * cover_image_og > siteImage > null
    */
-  const ogSiteImage = ghostSettings
-    ? ghostSettings.ogImageSharp
-      ? ghostSettings.ogImageSharp.childImageSharp.resize
+  const ogSiteImage = cover_image_og
+    ? cover_image_og.childImageSharp
+      ? cover_image_og.childImageSharp.resize
       : siteImage
     : siteImage
 
   /**
-   * ghostSettings.twitterImageSharp > siteImage > null
+   * cover_image_twt > siteImage > null
    */
-  const twitterSiteImage = ghostSettings
-    ? ghostSettings.twitterImageSharp
-      ? ghostSettings.twitterImageSharp.childImageSharp.resize
+  const twitterSiteImage = cover_image_twt
+    ? cover_image_twt.childImageSharp
+      ? cover_image_twt.childImageSharp.resize
       : siteImage
     : siteImage
 

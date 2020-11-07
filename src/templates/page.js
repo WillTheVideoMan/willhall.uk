@@ -47,6 +47,7 @@ const PageTemplate = ({ data }) => {
 
 export default PageTemplate
 
+/*
 export const pageTemplateQuery = graphql`
   query($page_slug: String!) {
     ghostPage(slug: { eq: $page_slug }) {
@@ -54,3 +55,4 @@ export const pageTemplateQuery = graphql`
     }
   }
 `
+*/

@@ -60,6 +60,7 @@ PostCard.propTypes = {
   }),
 }
 
+/*
 export const postCardContentFragment = graphql`
   fragment PostCardContent on GhostPost {
     title
@@ -74,3 +75,4 @@ export const postCardContentFragment = graphql`
     }
   }
 `
+*/

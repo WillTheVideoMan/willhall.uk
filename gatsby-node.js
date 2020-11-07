@@ -2,31 +2,17 @@ const path = require(`path`)
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const postTemplate = path.resolve(`./src/templates/post.js`)
+  /*
   const pageTemplate = path.resolve(`./src/templates/page.js`)
   const tagTemplate = path.resolve(`./src/templates/tag.js`)
+  */
 
   const result = await graphql(`
     {
-      allGhostPost {
+      allMdx {
         edges {
           node {
-            slug
-            primary_tag {
-              slug
-            }
-          }
-        }
-      }
-      allGhostPage {
-        edges {
-          node {
-            slug
-          }
-        }
-      }
-      allGhostTag {
-        edges {
-          node {
+            id
             slug
           }
         }
@@ -38,23 +24,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     reporter.panicOnBuild(`Error whilst running GraphQL query.`)
   }
 
-  if (result.data.allGhostPost && result.data.allGhostPost.edges.length > 0) {
-    const posts = result.data.allGhostPost.edges
+  if (result.data.allMdx && result.data.allMdx.edges.length > 0) {
+    const posts = result.data.allMdx.edges
 
     posts.forEach(({ node }) => {
-      node.url = `/${node.slug}/`
-
       actions.createPage({
-        path: node.url,
+        path: `/${node.slug}/`,
         component: postTemplate,
         context: {
-          post_slug: node.slug,
-          primary_tag_slug: node.primary_tag ? node.primary_tag.slug : null,
+          id: node.id,
+          //primary_tag_slug: node.primary_tag ? node.primary_tag.slug : null,
         },
       })
     })
   }
 
+  /* 
   if (result.data.allGhostPage && result.data.allGhostPage.edges.length > 0) {
     const pages = result.data.allGhostPage.edges
 
@@ -71,6 +56,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   }
 
+  
   if (result.data.allGhostTag && result.data.allGhostTag.edges.length > 0) {
     const tags = result.data.allGhostTag.edges
 
@@ -86,47 +72,5 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       })
     })
   }
-}
-
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
-  createTypes(`
-    type GhostPage implements Node {
-      childHtmlRehype: HTMLRehype
-      featureImageSharp: File @link
-      twitterImageSharp: File @link
-      ogImageSharp: File @link
-    }
-
-    type GhostPost implements Node {
-      childHtmlRehype: HTMLRehype
-      featureImageSharp: File @link
-      twitterImageSharp: File @link
-      ogImageSharp: File @link
-    }
-
-    type GhostTag implements Node {
-      featureImageSharp: File @link
-    }
-
-    type GhostSettings implements Node {
-      coverImageSharp: File @link
-      twitterImageSharp: File @link
-      ogImageSharp: File @link
-      logoSharp: File @link
-      iconSharp: File @link
-    }
-
-    type HTMLRehype implements Node {
-      html: String!
-      htmlAst: String!
-      id: ID!
-      tableOfContents: [TableOfContents]
-    }
-
-    type TableOfContents {
-      id: ID!
-      heading: String!
-    }
-  `)
+  */
 }

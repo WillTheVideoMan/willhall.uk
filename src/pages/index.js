@@ -4,11 +4,9 @@ import PostCardContainer from "../components/PostCardContainer"
 import SEO from "../components/SEO"
 import { graphql } from "gatsby"
 
-const Index = ({ data }) => {
+const Index = ({ data: { allMdx } }) => {
   const posts =
-    data.allGhostPost.edges.length > 0
-      ? data.allGhostPost.edges.map(({ node }) => node)
-      : null
+    allMdx.edges.length > 0 ? allMdx.edges.map(({ node }) => node) : null
 
   return (
     <Layout route="/">
@@ -27,10 +25,21 @@ export default Index
 
 export const indexQuery = graphql`
   query {
-    allGhostPost(sort: { fields: featured, order: DESC }) {
+    allMdx(sort: { fields: frontmatter___featured, order: DESC }) {
       edges {
         node {
-          ...PostCardContent
+          slug
+          frontmatter {
+            title
+            excerpt
+            published_at
+            featured
+            reading_time
+            tags {
+              name
+              slug
+            }
+          }
         }
       }
     }

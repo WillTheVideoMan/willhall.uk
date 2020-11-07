@@ -47,7 +47,7 @@ const Post = ({
   featured,
   primary_tag,
   tags,
-  htmlAst,
+  mdxBody,
 }) => {
   return (
     <Container>
@@ -59,7 +59,7 @@ const Post = ({
           featured={featured}
           primary_tag={primary_tag}
         />
-        <Article htmlAst={htmlAst} />
+        <Article mdxBody={mdxBody} />
       </PaddedDottedWrapper>
       {tags && tags.length > 0 ? (
         <Tags>
@@ -95,12 +95,11 @@ Post.propTypes = {
       slug: PropTypes.string.isRequired,
     })
   ),
-  /**
-   * The HTMLAst tree to traverse, containing all elements from the rehyped HTML.
-   */
-  htmlAst: PropTypes.object.isRequired,
+
+  mdxBody: PropTypes.string.isRequired,
 }
 
+/*
 export const postContentFragment = graphql`
   fragment PostContent on GhostPost {
     title
@@ -202,3 +201,4 @@ export const postContentFragment = graphql`
     }
   }
 `
+*/

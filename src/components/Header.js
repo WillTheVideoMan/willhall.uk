@@ -62,62 +62,46 @@ const ThemeIcon = styled.div`
 `
 
 const Header = ({ currentRoute, tag, isDark, handleClick }) => {
-  const { ghostSettings, site } = useStaticQuery(graphql`
+  const { site } = useStaticQuery(graphql`
     query {
-      ghostSettings {
-        navigation {
-          label
-          url
-        }
-        title
-        description
-      }
       site {
         siteMetadata {
           title
           description
+          navigation {
+            label
+            route
+          }
         }
       }
     }
   `)
 
-  const siteTitle =
-    ghostSettings && ghostSettings.title
-      ? ghostSettings.title
-      : site.siteMetadata.title
-
-  const description =
-    ghostSettings && ghostSettings.description
-      ? ghostSettings.description
-      : site.siteMetadata.description
-
   return (
     <Container>
       <Headline>
-        <Title>{siteTitle}</Title>
+        <Title>{site.siteMetadata.title}</Title>
         <ThemeIcon onClick={() => handleClick()}>
           {isDark ? "☾" : "☼"}
         </ThemeIcon>
       </Headline>
-      <Subtitle>{description}</Subtitle>
+      <Subtitle>{site.siteMetadata.description}</Subtitle>
       <Navigation>
-        {ghostSettings
-          ? ghostSettings.navigation.map((link, index) => {
-              return (
-                <>
-                  <NavLink
-                    to={link.url}
-                    active={currentRoute === link.url ? true : false}
-                  >
-                    {link.label}
-                  </NavLink>
-                  {index === ghostSettings.navigation.length - 1 ? null : (
-                    <NavSlash />
-                  )}
-                </>
-              )
-            })
-          : null}
+        {site.siteMetadata.navigation.map((link, index) => {
+          return (
+            <>
+              <NavLink
+                to={link.route}
+                active={currentRoute === link.route ? true : false}
+              >
+                {link.label}
+              </NavLink>
+              {index === site.siteMetadata.navigation.length - 1 ? null : (
+                <NavSlash />
+              )}
+            </>
+          )
+        })}
         <Tag>{tag}</Tag>
       </Navigation>
     </Container>

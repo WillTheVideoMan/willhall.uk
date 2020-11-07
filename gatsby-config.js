@@ -15,67 +15,58 @@ module.exports = {
     description: `Writings, musings and tantalising tutorials. Indulge, if you dare.`,
     author: `Will Hall`,
     siteUrl: process.env.SITE_URL,
+    navigation: [
+      {
+        route: `/`,
+        label: "writing",
+      },
+      {
+        route: `/biography`,
+        label: "biography",
+      },
+    ],
   },
   plugins: [
+    `gatsby-remark-images`,
     {
-      resolve: `@willthevideoman/gatsby-source-ghost`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        apiUrl: process.env.GHOST_API_URL,
-        contentApiKey: process.env.GHOST_CONTENT_API_KEY,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-rehype`,
-      options: {
-        filter: node =>
-          node.internal.type === `GhostPost` ||
-          node.internal.type === `GhostPage`,
-        source: node => node.html,
-        plugins: [`gatsby-rehype-inline-images`, `gatsby-rehype-prismjs`],
-      },
-    },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-plugin-ghost-images`,
-      options: {
-        lookup: [
+        gatsbyRemarkPlugins: [
           {
-            type: `GhostPost`,
-            imgTags: [`feature_image`, `twitter_image`, `og_image`],
-          },
-          {
-            type: `GhostPage`,
-            imgTags: [`feature_image`, `twitter_image`, `og_image`],
-          },
-          {
-            type: `GhostTag`,
-            imgTags: [`feature_image`],
-          },
-          {
-            type: `GhostSettings`,
-            imgTags: [
-              `cover_image`,
-              `twitter_image`,
-              `og_image`,
-              `icon`,
-              `logo`,
-            ],
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1035,
+            },
           },
         ],
       },
     },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-styled-components`,
     {
-      resolve: `@willthevideoman/gatsby-plugin-ackee-tracker`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        domainId: process.env.ACKEE_DOMAIN_ID,
-        server: process.env.ACKEE_SERVER,
-        ignoreLocalhost: true,
-        detailed: true,
+        name: `content-posts`,
+        path: `${__dirname}/content/posts/`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `content-images`,
+        path: `${__dirname}/content/images/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
+      },
+    },
+
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,

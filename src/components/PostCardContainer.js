@@ -29,13 +29,13 @@ const PostCardContainer = ({ title, postcards }) => (
         {postcards.map(postcard => (
           <PostCard
             key={postcard.slug}
-            title={postcard.title}
-            excerpt={postcard.excerpt}
-            published_at={new Date(postcard.published_at)}
-            reading_time={postcard.reading_time}
-            featured={postcard.featured}
-            primary_tag={postcard.primary_tag}
             slug={postcard.slug}
+            title={postcard.frontmatter.title}
+            excerpt={postcard.frontmatter.excerpt}
+            published_at={new Date(postcard.frontmatter.published_at)}
+            reading_time={postcard.frontmatter.reading_time}
+            featured={postcard.frontmatter.featured}
+            primary_tag={postcard.frontmatter.tags[0]}
           />
         ))}
       </Container>
@@ -51,18 +51,14 @@ PostCardContainer.propTypes = {
   title: PropTypes.string,
   postcards: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      excerpt: PropTypes.string,
-      published_at: PropTypes.string.isRequired,
-      reading_time: PropTypes.number.isRequired,
-      featured: PropTypes.bool.isRequired,
-      /**
-       * If the post has any tags, this object should hold the primary tag object.
-       */
-      primary_tag: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        slug: PropTypes.string.isRequired,
-      }),
+      slug: PropTypes.string.isRequired,
+      frontmatter: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        excerpt: PropTypes.string,
+        published_at: PropTypes.string.isRequired,
+        reading_time: PropTypes.number.isRequired,
+        featured: PropTypes.bool.isRequired,
+      }).isRequired,
     })
   ),
 }
