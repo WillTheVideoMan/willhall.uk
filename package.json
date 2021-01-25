@@ -22,7 +22,7 @@
   "dependencies": {
     "@willthevideoman/gatsby-plugin-ackee-tracker": "1.5.0",
     "@willthevideoman/gatsby-source-ghost": "1.1.1",
-    "babel-plugin-styled-components": "1.11.1",
+    "babel-plugin-styled-components": "1.12.0",
     "gatsby": "2.26.0",
     "gatsby-image": "2.5.0",
     "gatsby-plugin-ghost-images": "1.7.0",
